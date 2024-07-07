@@ -1,0 +1,22 @@
+{
+  "name": "dr-zarghami",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "w-css": "sass ./scss/main.scss ./css/scripts-bundle.css --style=expanded -w",
+    "b-css": "sass ./scss/main.scss ./css/scripts-bundle.css --style=compressed",
+    "b-pre-css": "postcss ./css/scripts-bundle.css -o ./css/scripts-bundle-prefixed.css --use autoprefixer -m",
+    "w-js": "esbuild ./js/index.js --bundle --outfile=./js/dist/scripts.bundle.min.js --target=es6,chrome58,edge18,firefox54,safari11 --watch",
+    "b-js": "esbuild ./js/index.js --bundle --outfile=./js/dist/scripts.bundle.min.js --target=es6,chrome58,edge18,firefox54,safari11 --minify --sourcemap"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.18.19"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 version"
+  ]
+}

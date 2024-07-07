@@ -1,0 +1,27 @@
+//roots
+@import "./roots/variabels";
+@import "./roots/fonts";
+@import "./roots/roots";
+@import "./roots/icons";
+
+//components
+@import "./components/header.scss";
+@import "./components/footer.scss";
+@import "./components/blog-cart.scss";
+@import "./components/special-blog-cart.scss";
+@import "./components/blog-sidbar.scss";
+@import "./components/search-blog-form.scss";
+@import "./components/pin-blog-cart.scss";
+@import "./components/category-list.scss";
+@import "./components/bubbels";
+
+//pages
+@import "./pages/front-page.scss";
+@import "./pages/blogs.scss";
+@import "./pages/single-blog.scss";
+@import "./pages/search.scss";
+@import "./pages/services";
+@import "./pages/single-service";
+@import "./pages/about";
+@import "./pages/contact";
+@import "./pages/404";

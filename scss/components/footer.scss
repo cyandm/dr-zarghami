@@ -1,0 +1,140 @@
+footer {
+  display: flex;
+  width: 100%;
+  padding: 2.5rem 0rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+  background: var(--white-2, #fff);
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.04);
+  margin-top: 4.38rem;
+  @media (width <= 768px) {
+    gap: 4rem;
+  }
+  .main-row {
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    @media (width <= 768px) {
+      gap: 1rem;
+    }
+    .footer-widget {
+      width: 13rem;
+
+      @media (width >= 1050px) {
+        flex: 1;
+      }
+      @media (width <= 500px) {
+        flex: 1;
+      }
+      h4 {
+        color: $gray_1;
+        font-family: "iransans";
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem;
+        margin-bottom: 0.75rem;
+      }
+      div {
+        ul.menu {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          li {
+            list-style: none;
+            a {
+              color: $black_1;
+            }
+          }
+        }
+      }
+      .maps {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        a {
+          display: flex;
+          align-items: center;
+          img {
+            width: 2.125rem;
+            height: 2.125rem;
+          }
+        }
+      }
+    }
+    .footer-widget.tel-widget {
+      justify-content: start;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      @media (width <= 500px) {
+        order: 1;
+        flex-basis: 100%;
+      }
+      a {
+        color: $blue_3;
+      }
+    }
+    .footer-widget.address-widget {
+      @media (width <= 500px) {
+        order: 0;
+        flex-basis: 100%;
+      }
+      .address {
+        @media (width <= 500px) {
+          width: 14rem;
+          flex-basis: 100%;
+        }
+      }
+    }
+    .footer-widget.map-widget {
+      @media (width <= 500px) {
+        order: 2;
+        flex-basis: 100%;
+      }
+    }
+  }
+  .social-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    .logo-contain {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      img {
+        width: 4.12rem;
+        height: 4.12rem;
+      }
+      h5 {
+        color: $gray_1;
+      }
+    }
+    .social-medis {
+  
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      a {
+        display: flex;
+        align-items: center;
+        i {
+          &::before {
+            color: $blue_2;
+            font-size: 1.82rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+

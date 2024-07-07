@@ -1,0 +1,281 @@
+//----------------------------------------------- about section-slider style
+.about-section-slider {
+  background: var(--blue-2, #19b4e5);
+  margin-top: -7rem;
+  padding-top: 7rem;
+  .about-slider {
+    .swiper-wrapper {
+      .swiper-slide {
+        padding-top: 2.5rem;
+        height: 37.62rem;
+        display: flex;
+        gap: 0.5rem;
+
+        @media (width <= 992px) {
+          width: 100%;
+          flex-direction: column;
+          height: auto;
+          align-items: center;
+          margin-top: 0;
+        }
+        .slide-info {
+          flex: 2;
+          display: inline-flex;
+          flex-direction: column;
+          gap: 1rem;
+          color: var(--white-2, #fff);
+          align-self: center;
+          h1 {
+            color: #fff;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            white-space: pre-wrap;
+
+          }
+          h2 {
+            color: #fff;
+            margin-bottom: 0.25rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            white-space: pre-wrap;
+
+          }
+          .slide-description {
+            font-size: 1.25rem;
+            line-height: 2.25rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            white-space: pre-wrap;
+
+          }
+        }
+        .slide-img {
+          flex: 1;
+          @media (width <= 992px) {
+            order: 1;
+            display: flex;
+            align-items: end;
+          }
+          img {
+            width: 30.3125rem;
+            height: 37.625rem;
+            @media (width <= 992px) {
+              width: 17.27988rem;
+              height: 21.44844rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .swiper-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 0;
+    @media (width <= 768px) {
+      flex-direction: column;
+    }
+    .empty-row {
+      flex: 2;
+    }
+    .swiper-btn {
+      flex: 1;
+      position: relative;
+      display: flex;
+
+      z-index: 1;
+      gap: 0.5rem;
+      justify-content: end;
+      @media (width <= 992px) {
+        translate:unset;
+        justify-content: start;
+        transform: translateY(-20rem);
+      }
+      @media (width >= 992px) {
+        translate: -15rem -4rem;
+      }
+      @media (width >= 1200px) {
+        translate: -10rem -4rem;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+
+        border-radius: 1rem;
+        background: var(--white-2, #fff);
+
+        /* section effect */
+        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+        display: flex;
+        padding: 0.625rem;
+        justify-content: center;
+        align-items: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        &::after {
+          font-size: 1.18rem;
+          color: $black_1;
+        }
+        @media (width <= 992px) {
+          top: 59%;
+        }
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        position: unset;
+        left:57%;
+        @media (width <= 992px) {
+          right: 4rem;
+        }
+      }
+
+      .swiper-button-prev {
+        right: 36%;
+        @media (width <= 992px) {
+          right: 0.75rem;
+        }
+      }
+
+    }
+  }
+
+
+}
+
+//----------------------------------------------- about facilities style
+.about-facilities {
+  .about-facilities-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    @media (width <=768px) {
+      flex-direction: column;
+    }
+
+    .about-facility-box {
+      display: flex;
+      padding: 1rem;
+      flex-direction: column;
+      align-items: start;
+      gap: 1rem;
+      border-radius: 1.25rem;
+      background: var(--white-2, #fff);
+      flex: 1 1 32%;
+      height: 13.75rem;
+      @media (width <=768px) {
+        flex: unset;
+      }
+
+      /* section effect */
+      box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+      .facility-title {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
+        h3 {
+          color: var(--black-1, #17242f);
+        }
+      }
+      .facility-content {
+      }
+    }
+  }
+}
+
+//----------------------------------------------- attributes section style
+.attributes-section {
+  margin-top: 1.94rem;
+
+  .about-attributes-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    @media (width<=768px) {
+      gap: 1.5rem;
+    }
+    .about-attribute-box {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      @media (width<=768px) {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .attribute-img {
+        flex: 1;
+        img {
+          width: 100%;
+          height: 22.4375rem;
+          border-radius: 1.25rem;
+          object-fit: cover;
+        }
+      }
+      .attribute-content {
+        flex: 1;
+        h3 {
+          margin-bottom: 1.22rem;
+        }
+        .attribute-description {
+        }
+      }
+    }
+    .about-attribute-box.odd-attribute {
+      .attribute-img {
+        order: 1;
+        @media (width <=768px) {
+          order: unset;
+        }
+      }
+    }
+  }
+}
+
+//----------------------------------------------- clinic history section style
+.clinic-history-section {
+  margin-top: 1.94rem;
+  .clinic-history-row {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    .clinic-history-img {
+      width: 100%;
+      height: 19.5rem;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1.25rem;
+      }
+    }
+    .clinic-history-content {
+      color:$gray_1;
+      font-size: 1.25rem;
+      line-height: 2.25rem;
+
+    }
+  }
+}
+
+.last-comment-title{
+  margin-top: 1.94rem;
+  margin-bottom: 0;
+  align-items: center;
+}
+

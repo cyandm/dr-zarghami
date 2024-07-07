@@ -1,0 +1,161 @@
+// --------------------------------------------category tabs style
+.category-tabs {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (width <= 992px) {
+    padding-inline: 0;
+    padding-inline: 0;
+  }
+  @media (width <= 992px) {
+    margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--white-2, #fff);
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+  }
+
+  .categories {
+    ul {
+      @media (width <= 992px) {
+        display: none;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 2.5rem;
+
+      li {
+        list-style: none;
+        color: $gray_1;
+        font-size: 1.25rem;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      li.active {
+        color: $black_1;
+
+        &::after {
+          background: $blue_1;
+          border-radius: 1.25rem;
+          content: "";
+          height: 0.25rem;
+          width: auto;
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .blog-search {
+    @media (width <= 992px) {
+      order: -1;
+      width: 100%;
+    }
+  }
+}
+
+// -------------------------------------------- pin blogs style
+.pin-blogs {
+  margin: 1.5rem 0;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  background: var(--blue-4, rgba(15, 123, 156, 0.04));
+
+  @media (width <= 768px) {
+    display: none;
+  }
+
+  .pin-blogs-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cloudy-circle {
+    right: 10%;
+  }
+}
+
+// -------------------------------------------- All blogs style
+.all-blogs {
+  .all-blogs-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    @media (width <= 768px) {
+      flex-direction: column;
+    }
+
+    .special-row {
+    }
+
+    .pagination {
+      direction: ltr;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 1.5rem;
+      width: 100%;
+      justify-content: start;
+
+      a,
+      span {
+        border-radius: 0.75rem;
+        background: var(--white-2, #fff);
+        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+        display: flex;
+        width: 3rem;
+        padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+
+      .next,
+      .prev {
+        display: none;
+      }
+
+      span {
+        border-radius: 0.75rem;
+        border: 1px solid var(--blue-1, #09cdf8);
+        background: var(--white-2, #fff);
+        color: var(--blue-2, #19b4e5);
+        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+      }
+
+      span.dots {
+        background: none;
+        border: none;
+        box-shadow: none;
+        color: #e6eaed;
+        padding: 0;
+        width: 1rem;
+      }
+    }
+  }
+  .empty-content {
+    margin-top: 2rem;
+
+    .empty-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      .cloudy-circle {
+      }
+    }
+  }
+}

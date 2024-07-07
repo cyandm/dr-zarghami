@@ -1,0 +1,97 @@
+/* --- Font Faces --- */
+@font-face {
+  font-family: "iransans";
+  src: url("../fonts/iransans/light/IRANSansXFaNum-Light.woff2"),
+    url("../fonts/iransans/light/IRANSansXFaNum-Light.ttf") format("truetype"),
+    url("../fonts/iransans/light/IRANSansXFaNum-Light.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iransans";
+  src: url("../fonts/iransans/medium/IRANSansXFaNum-Medium.woff2"),
+    url("../fonts/iransans/medium/IRANSansXFaNum-Medium.ttf") format("truetype"),
+    url("../fonts/iransans/medium/IRANSansXFaNum-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iransans";
+  src: url("../fonts/iransans/bold/IRANSansXFaNum-Bold.woff2"),
+    url("../fonts/iransans/bold/IRANSansXFaNum-Bold.ttf") format("truetype"),
+    url("../fonts/iransans/bold/IRANSansXFaNum-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+//----------------------------------------font size
+.t1 {
+  color: $black_1;
+  font-size: 3.75rem;
+  font-weight: 700;
+  line-height: normal;
+  @media (width <= 992px) {
+    font-size: 2.25rem;
+    line-height: 3.65rem;
+  }
+}
+.t2 {
+  color: $black_1;
+  font-size: 3.125rem;
+  font-weight: 700;
+  line-height: normal;
+  @media (width <= 992px) {
+    font-size: 1.75rem;
+    line-height: normal;
+  }
+}
+
+.h1 {
+  color: $black_1;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 3.65rem;
+  @media (width <= 992px) {
+    font-size: 1.75rem;
+    line-height: normal;
+  }
+}
+
+.h2 {
+  color: $black_1;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: normal;
+}
+.h3 {
+  color: $black_1;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.h4 {
+  color: $black_1;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+.body_big {
+  color: $black_1;
+  font-size: 1.25rem;
+}
+.body {
+  color: $black_1;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+}
+
+.caption {
+  color: var(--black-1, #17242f);
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 0.75rem;
+}

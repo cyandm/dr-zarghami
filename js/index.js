@@ -1,0 +1,12 @@
+import "./modules/about";
+import "./modules/front-page";
+import "./modules/menu";
+import "./modules/blog-cart";
+import "./modules/blogs";;
+import "./modules/quick-access";
+import "./modules/single-service";
+import "./modules/contact";
+import "./modules/service-comment-form";
+import "./modules/mobile-category-list";
+import "./modules/ticker";
+// import "./modules/circle-bg";

@@ -1,0 +1,203 @@
+.special-row {
+  margin-bottom: 1rem;
+
+  .swiper {
+    width: 100%;
+    height: 37rem;
+    @media (width <=992px) {
+      height: 27.67rem;
+    }
+
+    .swiper-slide {
+      width: 100%;
+      height: 37rem;
+      border-radius: 1.25rem;
+      @media (width <=992px) {
+        border-radius: 0;
+        height: 27.67rem;
+      }
+
+      .image-zoom {
+        width: 100%;
+        height: 37rem;
+        @media (width <= 768px) {
+          width: 100%;
+          height: 27rem;
+        }
+
+        .date {
+          display: flex;
+          justify-content: end;
+          top: 1.5rem;
+          left: 1.5rem;
+          border-radius: 0.75rem;
+          background: var(--white-2, #fff);
+          box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+          gap: 0.25rem;
+          align-items: start;
+          padding: 0.5rem;
+          z-index: 1;
+          width: 6.5rem;
+          position: absolute;
+
+          .blog-date {
+            i {
+              &:before {
+                color: $black_1;
+                width: 1.50063rem;
+                height: 1.50063rem;
+              }
+            }
+
+            span {
+              font-size: 0.75rem;
+              line-height: 2.125rem;
+              color: $black_1;
+            }
+          }
+        }
+
+        .image-card {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          height: 37rem;
+          border-radius: 1.25rem;
+          @media (width <= 992px) {
+            border-radius: 0;
+          }
+          @media (width <= 768px) {
+            width: 100%;
+            height: 27rem;
+          }
+
+          -webkit-transition: 0.4s ease;
+          transition: 0.4s ease;
+
+          img {
+
+            width: 100%;
+            height: 100%;
+            -webkit-transition: 0.4s ease;
+            transition: 0.4s ease;
+            object-fit: cover;
+            border-radius: 1.25rem;
+            @media (width <= 768px) {
+              width: 100%;
+              height: 100%;
+            }
+            @media (width <= 992px) {
+              border-radius: 0;
+            }
+          }
+        }
+      }
+
+      .blog-excerpt {
+        transform: translateY(-9rem);
+        position: relative;
+        right: 1.67rem;
+        width: 90%;
+        @media (width <= 992px) {
+          transform: translateY(-20rem);
+        }
+        @media (width <= 768px) {
+          transform: translateY(-13rem);
+        }
+
+        h5 {
+          margin-bottom: 0.25rem;
+          color: $white_2;
+          font-size: 1.25rem;
+          font-weight: 500;
+
+        }
+
+        p {
+          color: $white_2;
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .name {
+          font-size: 0.75rem;
+          display: flex;
+          align-items: center;
+          margin-bottom: 0.5rem;
+          color: $white_2;
+          gap: 0.25rem;
+
+          &:before {
+            content: "";
+            background: $blue_1;
+            box-shadow: 0px 0px 9px 0px rgba(255, 255, 255, 0.45) inset;
+            filter: drop-shadow(0px 4px 12px rgba(48, 210, 244, 0.51));
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+          }
+        }
+      }
+    }
+
+    .swiper-progress-bar {
+      position: relative;
+      width: 95%;
+      display: block;
+      z-index: 1;
+      height: 0.25rem;
+      margin: 0 2rem;
+      transform: translateY(1.2rem);
+      @media (width <= 992px) {
+        width: 85%;
+      }
+
+      .slide_progress-bar {
+        position: absolute;
+        border-radius: 1.25rem;
+        height: 0.25rem;
+        background: var(--white-2, #FFF);
+        width: auto;
+        clear: both;
+        opacity: 0;
+        bottom: 45px;
+        left: 0;
+        right: 0;
+
+        &:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: var(--blue-1, #09CDF8);
+          height: 100%;
+          width: 0;
+          content: "";
+          transition: 0.1s width linear;
+        }
+      }
+
+      &.active {
+        .slide_progress-bar {
+          opacity: 1;
+        }
+      }
+
+      &.animate {
+        .slide_progress-bar {
+          &:after {
+            transition: width linear;
+            transition-delay: unset;
+            width: 100%;
+            transition-duration: 5s;
+          }
+        }
+      }
+    }
+
+  }
+}
+.special-blog-slider.container {
+  @media (width<=992px) {
+    padding-inline: 0;
+  }
+}
