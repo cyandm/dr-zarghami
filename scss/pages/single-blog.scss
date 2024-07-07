@@ -66,12 +66,14 @@
 
     .author-info {
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
       padding: 0.75rem;
       align-items: center;
       justify-content: space-between;
       border-radius: 1rem;
       background: $white_2;
+      gap: 1rem;
 
       /* ---------------------------------section effect */
       box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
@@ -98,6 +100,17 @@
         color: $black_1;
         font-size: 0.75rem;
         line-height: 2.125rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+
+        i {
+          &:before {
+            color: $gray_1;
+            font-size: 1rem;
+          }
+        }
       }
     }
 
@@ -151,7 +164,7 @@
       blockquote {
         background-color: #d9dbdd;
         padding: 20px;
-        border-right: 3px solid #09cdf8;
+        border-right: 3px solid $blue_1;
         margin: 20px 0;
         border-radius: 1.25rem;
       }
@@ -297,19 +310,19 @@
 
             input {
               border: none;
-              background: var(--blue-1, #09cdf8);
+              background: var(--blue-1, $blue_1);
               color: var(--primary, #fefefe);
             }
 
             &:hover {
-              border: 1px solid #09cdf8;
+              border: 1px solid $blue_1;
               background: #fff;
               color: #09cdf8;
               box-shadow: none;
 
               input {
                 background: #fff;
-                color: #09cdf8;
+                color: $blue_1;
                 border: none;
               }
             }
@@ -422,7 +435,7 @@
 
   .mobile-recommended-blogs {
     display: none;
-    @media (width <= 800px) {
+    @media (width <= 992px) {
       display: flex;
       flex-direction: column;
       justify-content: start;
@@ -430,7 +443,7 @@
       gap: 0.75rem;
       width: 100%;
       h5 {
-        font-size: 1.75rem;
+        font-size: 1.25rem;
         font-weight: 700;
         color: $black_1;
       }

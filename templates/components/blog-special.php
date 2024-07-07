@@ -30,8 +30,13 @@ $blogs = get_posts($args);
         <div class="swiper-wrapper">
             <?php foreach ($blogs as $blog) :
 
-                $author = get_field('blog_auther', $blog->ID) ?? !$author = "دکتر ضرغامی _متخصص و جراح";
+                $author = get_field('blog_auther', $blog->ID);
+
+                if (!$author) {
+                    $author = "دکتر ضرغامی _متخصص و جراح";
+                }
             ?>
+
                 <div class="swiper-slide">
                     <div class="image-zoom">
                         <div class="date">

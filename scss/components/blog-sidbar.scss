@@ -4,13 +4,14 @@
   position: sticky;
   top: 5%;
   @media (width >= 992px) {
-    width: 30%;
+    width: 25%;
   }
 
   @media (width <= 992px) {
     min-height: unset;
     overflow: unset;
     position: unset;
+    flex: 1;
   }
   .quick-access {
     display: flex;
@@ -86,9 +87,6 @@
     box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
     flex-direction: column;
 
-    @media (width <= 992px) {
-      border-radius: unset;
-    }
     .categories-side {
       width: 100%;
 
@@ -102,7 +100,7 @@
         }
       }
       ul.cat-list {
-        @media (width <= 992px) {
+        @media (width <= 800px) {
           display: none;
         }
         display: flex;
@@ -171,7 +169,7 @@
       align-items: start;
       gap: 1rem;
       width: 100%;
-      @media (width <= 992px) {
+      @media (width <= 800px) {
         display: none;
       }
       h5 {

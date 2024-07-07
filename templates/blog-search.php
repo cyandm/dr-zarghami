@@ -27,13 +27,16 @@ get_header()
 
             <div class="result-content ">
                 <div class="search-title">
-                    <h2 class="h3"> نتیجه جستجو برای<span class="search-keyword"><?= get_search_query(); ?></span></h2>
+                    <h2 class="h3">نتیجه جستجو برای <span class="search-keyword"><?= get_search_query(); ?></span></h2>
 
                     <?php if ($count <= 0) : ?>
                         <h3>متاسفانه چیزی یافت نشد</h3>
                 </div>
                 <div class="not-found-img">
-                <div class="cloudy-circle"><div class="dark"></div><div class="light"></div></div>
+                    <div class="cloudy-circle">
+                        <div class="dark"></div>
+                        <div class="light"></div>
+                    </div>
                     <img src="<?= get_stylesheet_directory_uri() ?>/imgs/not-found.png" alt="not-found">
                 </div>
             <?php else : ?>

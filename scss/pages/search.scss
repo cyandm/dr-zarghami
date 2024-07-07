@@ -26,7 +26,7 @@
     .result-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 2rem;
       align-items: center;
       justify-content: center;
       @media (width <= 768px) {
@@ -56,12 +56,11 @@
         color: $gray_1;
         .search-keyword {
           color: $black_1;
-          margin-right: 0.5rem;
         }
       }
 
       h3 {
-        color: var(--blue-2, #19b4e5);
+        color: var(--blue-2, $blue_1);
         font-size: 1rem;
         font-style: normal;
         font-weight: 400;
