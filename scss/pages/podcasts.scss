@@ -1,0 +1,11 @@
+main.podcasts {
+  .image-card {
+    position: relative;
+    > div {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}

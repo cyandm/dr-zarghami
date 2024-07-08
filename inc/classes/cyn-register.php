@@ -1,5 +1,7 @@
 <?php
 
+use RankMath\Thumbnail_Overlay;
+
 if (!class_exists('cyn_register')) {
     class cyn_register
     {
@@ -39,7 +41,7 @@ if (!class_exists('cyn_register')) {
                 'hierarchical' => false,
                 'menu_position' => null,
                 'menu_icon' => 'dashicons-clipboard',
-                'supports' => array('title', 'editor', 'thumbnail','comments')
+                'supports' => array('title', 'editor', 'thumbnail', 'comments')
             ];
 
             register_post_type('service', $args);
@@ -111,6 +113,42 @@ if (!class_exists('cyn_register')) {
 
             register_post_type('doctor', $args);
 
+
+
+            /***************************** register podcast post type */
+            $labels = array(
+                'name' => 'پادکست',
+                'singular_name' => 'پادکست',
+                'menu_name' => 'پادکست',
+                'name_admin_bar' => 'پادکست',
+                'add_new' => 'افزودن پادکست',
+                'add_new_item' => 'افزودن پادکست جدید',
+                'new_item' => 'پادکست جدید',
+                'edit_item' => 'ویرایش پادکست',
+                'view_item' => 'دیدن پادکست',
+                'all_items' => 'همه پادکست ها',
+                'search_items' => 'جستجو پادکست',
+                'not_found' => 'پادکست پیدا نشد',
+                'not_found_in_trash' => 'پادکست پیدا نشد'
+            );
+            $args = [
+                'labels' =>  $labels,
+                'public' => true,
+                'publicly_queryable' => true,
+                'show_ui' => true,
+                'show_in_menu' => true,
+                'query_var' => true,
+                'rewrite' => array('slug' => 'podcast'),
+                'exclude_from_search' => false,
+                'has_archive' => true,
+                'hierarchical' => false,
+                'menu_position' => null,
+                'menu_icon' => 'dashicons-megaphone',
+                'supports' => array('title', 'thumbnail', 'category', 'excerpt'),
+                'taxonomies' => array('category', 'post_tag'),
+            ];
+
+            register_post_type('podcast', $args);
         }
     }
 }

@@ -2,12 +2,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 
   @media (width <= 992px) {
     width: 100%;
     flex-direction: column;
     align-items: unset;
+    flex-wrap: wrap;
   }
   .image-card {
     display: flex;
@@ -19,15 +20,17 @@
     img {
       border-radius: 1rem;
       object-fit: cover;
-      width: 100%;
-      height: auto;
+      width: 165px;
+      height: 116px;
       -webkit-transition: 0.4s ease;
       transition: 0.4s ease;
+
+      @media (width <= 992px) {
+        width: 100%;
+      }
     }
   }
   .blog-excerpt {
-    flex: 1;
-
     h5 {
       margin-bottom: 0.25rem;
       font-size: 1rem;

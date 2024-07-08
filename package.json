@@ -18,5 +18,8 @@
   "browserslist": [
     "> 1%",
     "last 2 version"
-  ]
+  ],
+  "dependencies": {
+    "plyr": "^3.7.8"
+  }
 }

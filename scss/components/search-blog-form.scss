@@ -35,6 +35,9 @@
         color: $gray_1;
         background: var(--blue-4, rgb(245, 250, 251));
         border: none;
+        width: 100%;
+        background: transparent;
+
         &:focus-visible {
           border: none;
         }
