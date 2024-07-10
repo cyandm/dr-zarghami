@@ -8,4 +8,43 @@ main.podcasts {
       right: 0;
     }
   }
+
+  @media (max-width: 768px) {
+    .all-blogs .all-blogs-row {
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .plyr__volume {
+      display: none;
+    }
+  }
+
+  .blog-box {
+    gap: 0.25rem;
+
+    .blog-excerpt h5 {
+      min-height: unset;
+      font-size: 1.125rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .special-row .swiper .swiper-slide {
+    .blog-excerpt {
+      transform: translateY(-6rem);
+
+      @media (min-width: 845px) and (max-width: 1100px) {
+        transform: translateY(-16rem);
+      }
+    }
+
+    .image-zoom {
+      height: auto;
+    }
+  }
 }

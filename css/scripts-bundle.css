@@ -6359,5 +6359,38 @@ main.podcasts .image-card > div {
   left: 0;
   right: 0;
 }
+@media (max-width: 768px) {
+  main.podcasts .all-blogs .all-blogs-row {
+    gap: 2rem;
+  }
+}
+@media (max-width: 1100px) {
+  main.podcasts .plyr__volume {
+    display: none;
+  }
+}
+main.podcasts .blog-box {
+  gap: 0.25rem;
+}
+main.podcasts .blog-box .blog-excerpt h5 {
+  min-height: unset;
+  font-size: 1.125rem;
+}
+@media (max-width: 768px) {
+  main.podcasts .blog-box .blog-excerpt h5 {
+    font-size: 1rem;
+  }
+}
+main.podcasts .special-row .swiper .swiper-slide .blog-excerpt {
+  transform: translateY(-6rem);
+}
+@media (min-width: 845px) and (max-width: 1100px) {
+  main.podcasts .special-row .swiper .swiper-slide .blog-excerpt {
+    transform: translateY(-16rem);
+  }
+}
+main.podcasts .special-row .swiper .swiper-slide .image-zoom {
+  height: auto;
+}
 
 /*# sourceMappingURL=scripts-bundle.css.map */

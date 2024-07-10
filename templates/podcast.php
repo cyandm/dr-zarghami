@@ -3,13 +3,7 @@
 use LiteSpeed\Tag;
 
 $pageId = get_queried_object_id();
-$stickies = get_posts([
-    'post_type' => 'podcast',
-    'posts_per_page' => 3,
-    'fields' => 'ids',
-    'terms' => 'best-podcast',
-    'tag' => 'best-podcast',
-]);
+
 
 ?>
 <?php
@@ -20,20 +14,6 @@ $stickies = get_posts([
 
 <main class="podcasts main blogs" id="blog-overview">
 
-    <!-- -------------------------------- Pin Blogs -->
-    <section class=" pin-blogs">
-        <?php if (!empty($stickies)) : ?>
-            <div class="container pin-blogs-row">
-                <?php foreach ($stickies as $postPin) :
-                    get_template_part(
-                        'templates/components/pin-podcast-cart',
-                        null,
-                        ['post-id' => $postPin]
-                    );
-                endforeach; ?>
-            </div>
-        <?php endif; ?>
-    </section>
     <!-- -------------------------------- All Blogs in category-->
     <section class="all-blogs">
         <div id="all" class="all-blogs-row container">
@@ -44,14 +24,14 @@ $stickies = get_posts([
                 'posts_per_page' => 16,
                 'paged' => $paged,
                 'taxonomy' => 'category',
-                'tax_query' => [
-                    [
-                        'taxonomy' => 'post_tag',
-                        'terms' => ['special'],
-                        'field' => 'slug',
-                        'operator' => 'NOT IN',
-                    ]
-                ]
+                // 'tax_query' => [
+                //     [
+                //         'taxonomy' => 'post_tag',
+                //         'terms' => ['special'],
+                //         'field' => 'slug',
+                //         'operator' => 'NOT IN',
+                //     ]
+                // ]
             );
             $posts = new WP_Query($args);
 
@@ -66,14 +46,7 @@ $stickies = get_posts([
                         'templates/components/podcast-cart',
                         null,
                     );
-                    if ($counter == 8) {
-                        set_query_var('page-name', 'podcasts');
-                        get_template_part(
-                            'templates/components/blog-special',
-                            null,
-                        );
-                    }
-                    $counter++;
+
                 endwhile;
                 echo '<div class="pagination">';
                 echo paginate_links(array(
