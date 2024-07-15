@@ -219,26 +219,22 @@
           }
 
           .input-group {
-            i {
-              &:before {
-                color: #292d32;
-              }
-            }
-
             display: flex;
-
             padding: 1rem;
             align-items: start;
             gap: 0.25rem;
-
             justify-content: right;
             width: 100%;
             border-radius: 1rem;
             border: 1px solid var(--gray-2, #e6eaed);
             background: var(--blue-4, rgba(15, 123, 156, 0.04));
-
-            /* background blur */
             backdrop-filter: blur(12px);
+
+            i {
+              &:before {
+                color: #292d32;
+              }
+            }
 
             textarea {
               width: 100%;
@@ -259,12 +255,6 @@
           }
 
           .input-group2 {
-            i {
-              &:before {
-                color: $black_1;
-              }
-            }
-
             display: flex;
             padding: 1rem;
             align-items: center;
@@ -274,6 +264,12 @@
             border-radius: 1rem;
             border: 1px solid var(--gray-2, #e6eaed);
             background: var(--blue-4, rgba(15, 123, 156, 0.04));
+
+            i {
+              &:before {
+                color: $black_1;
+              }
+            }
 
             input {
               border: none;

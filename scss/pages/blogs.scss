@@ -18,13 +18,15 @@
 
   .categories {
     ul {
-      @media (width <= 1260px) {
-        display: none;
-      }
       display: flex;
       align-items: center;
       justify-content: start;
       gap: 2.5rem;
+
+      @media (width <= 1260px) {
+        display: none;
+      }
+
 
       li {
         list-style: none;

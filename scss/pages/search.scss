@@ -1,13 +1,14 @@
 .search-content {
   margin-top: 2.5rem;
-  @media (width <= 768px) {
-    margin-top: 1.5rem;
-    flex-direction: column;
-  }
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
   align-items: start;
+
+  @media (width <= 768px) {
+    margin-top: 1.5rem;
+    flex-direction: column;
+  }
 
   .sidebar {
     @media (width <= 800px) {

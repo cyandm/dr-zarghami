@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install-pkg": "npm i sass postcss postcss-cli autoprefixer esbuild -g",
     "w-css": "sass ./scss/main.scss ./css/scripts-bundle.css --style=expanded -w",
     "b-css": "sass ./scss/main.scss ./css/scripts-bundle.css --style=compressed",
     "b-pre-css": "postcss ./css/scripts-bundle.css -o ./css/scripts-bundle-prefixed.css --use autoprefixer -m",

@@ -14,11 +14,12 @@ header {
 
   .header-row {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     @media (width <= 1100px) {
       display: none;
     }
-    justify-content: space-between;
-    align-items: center;
 
     .logo-contain {
       display: flex;
@@ -170,12 +171,13 @@ header {
 header {
   .mobile-header {
     display: none;
+    justify-content: space-between;
+    align-items: center;
+
     @media (width <= 1100px) {
       display: flex;
     }
 
-    justify-content: space-between;
-    align-items: center;
 
     .hamburger-menu {
       width: 2rem;

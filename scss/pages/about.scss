@@ -171,12 +171,12 @@
       background: var(--white-2, #fff);
       flex: 1 1 32%;
       height: 13.75rem;
+      box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+
       @media (width <=768px) {
         flex: unset;
       }
 
-      /* section effect */
-      box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
       .facility-title {
         display: flex;
         align-items: center;

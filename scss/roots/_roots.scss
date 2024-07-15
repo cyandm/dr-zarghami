@@ -249,6 +249,10 @@ li {
   }
 }
 .cloudy-circle {
+  position: absolute;
+  z-index: -1;
+  animation: in 5s linear 2s infinite normal;
+
   .dark {
     background: rgba(4, 135, 255, 0.49);
     width: 8.5625rem;
@@ -274,9 +278,6 @@ li {
       height: 5.5625rem;
     }
   }
-  position: absolute;
-  z-index: -1;
-  animation: in 5s linear 2s infinite normal;
 }
 
 //-------------------------------------- focuse text animate

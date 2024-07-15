@@ -393,16 +393,13 @@ section.hero-section > div > div.swiper.home-service-slider {
       display: flex;
 
       .empty-div {
+        flex: 1;
         @media (width <= 1024px) {
           display: none;
         }
-        flex: 1;
       }
 
       .tab {
-        @media (width <= 1024px) {
-          display: none;
-        }
         display: flex;
         width: fit-content;
         padding: 0.5rem;
@@ -412,6 +409,11 @@ section.hero-section > div > div.swiper.home-service-slider {
         background: $blue_1;
         margin-bottom: 1.5rem;
         flex: 1;
+
+        @media (width <= 1024px) {
+          display: none;
+        }
+
         @media (width <= 992px) {
           flex: 2;
         }
@@ -540,9 +542,6 @@ section.hero-section > div > div.swiper.home-service-slider {
 
 .services-section > .service-tabs > .tab-row > .tab-mobile {
   display: none;
-  @media (width <=1024px) {
-    display: flex;
-  }
   width: 100%;
   padding: 1rem;
   align-items: flex-start;
@@ -554,6 +553,10 @@ section.hero-section > div > div.swiper.home-service-slider {
   font-size: 1rem;
   font-weight: 500;
   line-height: normal;
+
+  @media (width <=1024px) {
+    display: flex;
+  }
 
   option {
     background: rgba(15, 123, 156, 0.0392156863);
@@ -791,10 +794,11 @@ section.hero-section > div > div.swiper.home-service-slider {
       }
 
       img {
+        height: 22.62rem;
+
         @media (width <= 768px) {
           height: 19.375rem;
         }
-        height: 22.62rem;
       }
     }
   }

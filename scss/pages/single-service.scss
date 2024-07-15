@@ -572,10 +572,11 @@
       }
 
       img {
+        height: 22.62rem;
+        
         @media (width <= 768px) {
           height: 19.375rem;
         }
-        height: 22.62rem;
       }
     }
   }
