@@ -4,7 +4,7 @@ $front_id = get_option('page_on_front');
 
 $img = get_field('service_img', $page_id);
 $extraServices = get_field('sub_service_group', $page_id);
-$doctors = get_field('choose_doctors', $page_id);
+$doctors = get_field('team_images', $page_id);
 $videos = get_field('video_group', $page_id);
 $blogs = get_field('choose_blogs', $page_id);
 ?>
@@ -56,57 +56,15 @@ $blogs = get_field('choose_blogs', $page_id);
             <h2 class="h1"><?= get_field('doctor_title', $page_id); ?></h2>
             <p><?= get_field('doctor_sub_title', $page_id); ?></p>
         </div>
-        <div class="swiper doctors-slider container">
-            <div class="swiper-wrapper">
+        <div class="doctors-team container">
+            <div class="team-images">
                 <?php if (is_array($doctors) && count($doctors) > 0) :
                     foreach ($doctors as $key => $doctor) : ?>
-                        <div class="swiper-slide">
-                            <div class="doctor-info">
-                                <div class="rate-div">
-                                    <h5><?= get_the_title($doctor->ID); ?></h5>
-                                    <div class="star-rate">
 
-                                        <?php
-                                        $stars = get_comment_meta($testimonial->comment_ID, 'custom_field', true);
+                        <?= wp_get_attachment_image($doctor, "full") ?>
 
-                                        for ($i = 1; $i <= 5; $i++) :
-                                        ?>
-
-                                            <?php
-                                            if ($i <= $stars) :
-                                            ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/imgs/star.svg" alt="rate" />
-
-                                            <?php else : ?>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/imgs/star-disable.svg" alt="rate" />
-
-                                        <?php endif;
-                                        endfor;
-                                        ?>
-
-                                    </div>
-
-                                </div>
-                                <span class="sub-title"><?= get_field('doctor_little_description', $doctor->ID); ?></span>
-                                <div class="doctor-description"><?= get_field('doctor_description', $doctor->ID); ?></div>
-                            </div>
-                            <div class="doctor-img">
-                                <!--                                <div class="img" >-->
-                                <!---->
-                                <!--                                </div>-->
-                                <!-- <img src="<?= get_stylesheet_directory_uri() ?>/imgs/service-bg.png" alt=""> -->
-                                <?= wp_get_attachment_image(get_field('doctor_image', $doctor->ID), 'full', false, []); ?>
-                            </div>
-                        </div>
                 <?php endforeach;
                 endif; ?>
-            </div>
-            <div class="swiper-btn-row">
-                <div class="empty-row"></div>
-                <div class="swiper-btn">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
             </div>
         </div>
 
