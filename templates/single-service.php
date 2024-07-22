@@ -58,13 +58,18 @@ $blogs = get_field('choose_blogs', $page_id);
         </div>
         <div class="doctors-team container">
             <div class="team-images">
+
                 <?php if (is_array($doctors) && count($doctors) > 0) :
                     foreach ($doctors as $key => $doctor) : ?>
 
-                        <?= wp_get_attachment_image($doctor, "full") ?>
+                        <div class="team-img <?= $key ?>">
+                            <?= wp_get_attachment_image($doctor, "full") ?>
+                        </div>
 
-                <?php endforeach;
+                <?php
+                    endforeach;
                 endif; ?>
+
             </div>
         </div>
 

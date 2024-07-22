@@ -1,6 +1,6 @@
 //----------------------------------------------- about section-slider style
 .about-section-slider {
-  background: var(--blue-2, #19b4e5);
+  background: $blue_1;
   margin-top: -7rem;
   padding-top: 7rem;
   .about-slider {
@@ -271,6 +271,10 @@
 
     }
   }
+}
+
+.testimonial-section{
+  margin-block-start: 1rem;
 }
 
 .last-comment-title{

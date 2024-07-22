@@ -14,22 +14,23 @@
     flex-wrap: wrap;
 
     h3 {
-      color: var(--blue-3, #0C88CD);
+      color: var(--blue-3, #0c88cd);
       margin-bottom: 0.25rem;
-
+      text-align: center;
     }
 
     span {
       font-size: 1rem;
-      color: var(--gray-1, #6D7982);
-
+      color: var(--gray-1, #6d7982);
+      text-align: center;
     }
 
     .img {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0.25rem;
+      margin-block-end: 1.5rem;
+      margin-block-start: 0.75rem;
 
       img {
         max-width: 100%;
@@ -44,8 +45,5 @@
         width: 100%;
       }
     }
-
-
   }
-
 }

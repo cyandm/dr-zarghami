@@ -3,19 +3,23 @@
   .contact-row {
     display: flex;
     width: 100%;
-    align-items: center;
     gap: 3.375rem;
     flex-wrap: wrap;
-    @media (width <= 992px) {
+    @media (width <= 768px) {
       gap: 0.75rem;
       flex-direction: column;
     }
     .contact-img {
       display: flex;
-      flex: 1;
+      flex: 1.5;
       img {
         width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
 
+        @media (width <= 768px) {
+          max-height: 25rem;
+        }
       }
     }
     .contact-form {
@@ -68,7 +72,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            &::after{
+            &::after {
               content: "\e912";
               font-family: "icomoon" !important;
               font-style: normal;
@@ -78,7 +82,7 @@
               line-height: 1;
               color: $black_1;
             }
-           
+
             option {
               font-size: 1rem;
               color: var(--gray-1, #6d7982);
@@ -87,6 +91,26 @@
             }
           }
         }
+
+        .form-rate {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+
+          @media (width <= 768px) {
+            align-items: center;
+          }
+        }
+
+        .form-btn {
+          @media (width <= 768px) {
+            .btn-icon {
+              width: 100%;
+            }
+          }
+        }
+
         .form-textarea {
           align-items: flex-start;
           i {
@@ -201,52 +225,38 @@
     font-size: 1rem;
     font-weight: 500;
     line-height: 2rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
   }
   .rating {
-  display: flex;
-  gap: 0.75rem;
+    display: flex;
+    gap: 1rem;
     direction: ltr;
     justify-content: center;
     align-items: center;
-    input{
+    input {
       display: none;
       color: #e6eaed;
     }
-    
-    
+
+    label {
+      scale: 1.5;
+    }
   }
 }
 
-
-.rating > label {
-  color: #e6eaed;
-}
-.rating > label:before {
-  font-family: "icomoon" !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  font-size: 2rem;
-  display: inline-block;
-  content: "\e902";
-  cursor: pointer;
-
+.rating > input:checked ~ label svg path,
+.rating:not(:checked) > label:hover svg path,
+.rating:not(:checked) > label:hover ~ label svg path {
+  fill: #ffd234;
+  transition: all 0.5s ease;
 }
 
-.rating > input:checked ~ label,
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-  color: #ffd234;
-}
-
-.rating > input:checked + label:hover,
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label,
-.rating > input:checked ~ label:hover ~ label {
-  color: #ffd234;
+.rating > input:checked + label:hover svg path,
+.rating > input:checked ~ label:hover svg path,
+.rating > label:hover ~ input:checked ~ label svg path,
+.rating > input:checked ~ label:hover ~ label svg path {
+  fill: #ffd234;
+  transition: all 0.5s ease;
 }
 
 input,
