@@ -226,7 +226,7 @@ $certificates = get_field('certificate_section_images', $page_id);
 
 <!-- ************************************ certificates section-->
 <?php if (is_array($certificates) && count($certificates) > 0) : ?>
-    <section class="mt2 certificates-section swiper">
+    <section class="mt2 certificates-section swiper container">
 
         <div class="title container">
             <h2><?= get_field('certificate_section_title', $page_id); ?></h2>
@@ -236,11 +236,22 @@ $certificates = get_field('certificate_section_images', $page_id);
         <div class="certificate-gallery swiper-wrapper">
             <?php foreach ($certificates as $certificate) : ?>
 
-                <div class="certificate-img swiper-slide">
-                    <?= wp_get_attachment_image($certificate, "full") ?>
-                </div>
-
+                <?php if (!empty($certificate)) : ?>
+                    <div class="certificate-img swiper-slide">
+                        <?= wp_get_attachment_image($certificate, "full") ?>
+                    </div>
+                <?php endif; ?>
             <?php endforeach ?>
+        </div>
+
+        <div class="swiper-btn-row">
+
+            <div class="swiper-btn">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+
         </div>
 
     </section>

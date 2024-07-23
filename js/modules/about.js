@@ -20,17 +20,33 @@ if (certificates) {
   var swiper = new Swiper(".certificates-section", {
     slidesPerView: 3,
     speed: 1000,
-    spaceBetween: 20,
-    loop: true,
+    spaceBetween: 16,
 
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
     },
 
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+      },
+      480: {
+        slidesPerView: 2,
+      },
+      700: {
+        slidesPerView: 3,
+      },
+    },
+
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
     },
   });
 }

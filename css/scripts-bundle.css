@@ -5748,20 +5748,24 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
     height: 21.44844rem;
   }
 }
-.about-section-slider .swiper-btn-row {
+
+.about-section-slider .swiper-btn-row,
+.certificates-section .swiper-btn-row {
   display: flex;
   flex-wrap: wrap;
-  height: 0;
 }
 @media (width <= 768px) {
-  .about-section-slider .swiper-btn-row {
+  .about-section-slider .swiper-btn-row,
+  .certificates-section .swiper-btn-row {
     flex-direction: column;
   }
 }
-.about-section-slider .swiper-btn-row .empty-row {
+.about-section-slider .swiper-btn-row .empty-row,
+.certificates-section .swiper-btn-row .empty-row {
   flex: 2;
 }
-.about-section-slider .swiper-btn-row .swiper-btn {
+.about-section-slider .swiper-btn-row .swiper-btn,
+.certificates-section .swiper-btn-row .swiper-btn {
   flex: 1;
   position: relative;
   display: flex;
@@ -5770,24 +5774,29 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
   justify-content: end;
 }
 @media (width <= 992px) {
-  .about-section-slider .swiper-btn-row .swiper-btn {
+  .about-section-slider .swiper-btn-row .swiper-btn,
+  .certificates-section .swiper-btn-row .swiper-btn {
     translate: unset;
     justify-content: start;
     transform: translateY(-20rem);
   }
 }
 @media (width >= 992px) {
-  .about-section-slider .swiper-btn-row .swiper-btn {
+  .about-section-slider .swiper-btn-row .swiper-btn,
+  .certificates-section .swiper-btn-row .swiper-btn {
     translate: -15rem -4rem;
   }
 }
 @media (width >= 1200px) {
-  .about-section-slider .swiper-btn-row .swiper-btn {
+  .about-section-slider .swiper-btn-row .swiper-btn,
+  .certificates-section .swiper-btn-row .swiper-btn {
     translate: -10rem -4rem;
   }
 }
 .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-next,
-.about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev {
+.about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev,
+.certificates-section .swiper-btn-row .swiper-btn .swiper-button-next,
+.certificates-section .swiper-btn-row .swiper-btn .swiper-button-prev {
   border-radius: 1rem;
   background: var(--white-2, #fff);
   /* section effect */
@@ -5800,32 +5809,42 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
   height: 2.75rem;
 }
 .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-next::after,
-.about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev::after {
+.about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev::after,
+.certificates-section .swiper-btn-row .swiper-btn .swiper-button-next::after,
+.certificates-section .swiper-btn-row .swiper-btn .swiper-button-prev::after {
   font-size: 1.18rem;
   color: #17242f;
 }
 @media (width <= 992px) {
   .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-next,
-  .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev {
+  .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev,
+  .certificates-section .swiper-btn-row .swiper-btn .swiper-button-next,
+  .certificates-section .swiper-btn-row .swiper-btn .swiper-button-prev {
     top: 59%;
   }
 }
 .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-next,
-.about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev {
+.about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev,
+.certificates-section .swiper-btn-row .swiper-btn .swiper-button-next,
+.certificates-section .swiper-btn-row .swiper-btn .swiper-button-prev {
   position: unset;
   left: 57%;
 }
 @media (width <= 992px) {
   .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-next,
-  .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev {
+  .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev,
+  .certificates-section .swiper-btn-row .swiper-btn .swiper-button-next,
+  .certificates-section .swiper-btn-row .swiper-btn .swiper-button-prev {
     right: 4rem;
   }
 }
-.about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev {
+.about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev,
+.certificates-section .swiper-btn-row .swiper-btn .swiper-button-prev {
   right: 36%;
 }
 @media (width <= 992px) {
-  .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev {
+  .about-section-slider .swiper-btn-row .swiper-btn .swiper-button-prev,
+  .certificates-section .swiper-btn-row .swiper-btn .swiper-button-prev {
     right: 0.75rem;
   }
 }
@@ -5949,6 +5968,17 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
 
 .testimonial-section {
   margin-block-start: 1rem;
+}
+
+.certificates-section .certificate-img {
+  border-radius: 20px;
+  border: 1px solid #e6eaed;
+  padding-block: 2rem;
+}
+.certificates-section .certificate-img img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
 }
 
 .last-comment-title {
