@@ -30,6 +30,7 @@ if (!class_exists('cyn-theme-init')) {
 
             wp_enqueue_style('cyn-swiper', get_stylesheet_directory_uri() . '/css/swiper.min.css', [], '0.0.0', 'all');
             wp_enqueue_style('cyn-final', get_stylesheet_directory_uri() . '/css/scripts-bundle.css', [], false, 'all');
+            wp_enqueue_style('cyn-tailwind', get_stylesheet_directory_uri() . '/css/final-tailwind.css'); //When @build must change to final.css
 
 
             wp_enqueue_script('cyn-swiper', get_stylesheet_directory_uri() . '/js/libs/swiper-bundle.min.js', [], '0.0.0', true);

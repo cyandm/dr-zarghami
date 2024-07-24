@@ -52,8 +52,8 @@ if (mobileServiceSlider) {
 }
 
 /****************************************************  tab click */
+
 let tabLinks = document.querySelectorAll(".landing-tablinks");
-console.log(tabLinks);
 if (tabLinks) {
   const tabContents = document.querySelectorAll(".tabcontent");
 
@@ -61,31 +61,46 @@ if (tabLinks) {
     tabLinks.forEach(function (tabLink) {
       tabLink.addEventListener("click", function (event) {
         for (let index = 0; index < tabLinks.length; index++) {
+          // console.log(tabLinks[index].id);
           if (event.target.id === tabLinks[index].id) {
             tabLinks[index].classList.remove("active");
-
             tabContents[index].classList.add("active");
             event.currentTarget.classList.add("active");
+            tabLinks[index].parentElement.classList.remove("active");
+            tabContents[index].parentElement.classList.add("active");
+            event.currentTarget.parentElement.classList.add("active");
           } else {
             tabContents[index].classList.remove("active");
             tabLinks[index].classList.remove("active");
+            tabContents[index].parentElement.classList.remove("active");
+            tabLinks[index].parentElement.classList.remove("active");
           }
         }
       });
     });
   }
 }
+const radios = document.querySelectorAll(".radios");
+const radiosparent = document.querySelectorAll(".content");
 
+
+radios.forEach((elem) => {
+   radiosparent.forEach((parent) => {
+     parent.classList.remove("active");
+   });
+      elem.parentElement.classList.remove("active");
+  elem.addEventListener("click", () => {
+    elem.parentElement.classList.add("active");
+  });
+});
+ 
 // js for mobile dropdown
 const dropdown = document.querySelector("#dropdown-menu");
 if (dropdown) {
   const tabContents = document.querySelectorAll(".tabcontent");
-
-  dropdown.addEventListener("change", function (event) {
+  dropdown.addEventListener("change", function (e) {
     for (let index = 0; index < tabContents.length; index++) {
-      console.log(event.target.value);
-      console.log(tabContents[index].id);
-      if (event.target.value === tabContents[index].id) {
+      if (e.target.value === tabContents[index].id) {
         tabContents[index].classList.add("active");
       } else {
         tabContents[index].classList.remove("active");

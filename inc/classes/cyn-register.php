@@ -7,10 +7,12 @@ if (!class_exists('cyn_register')) {
     {
         function __construct()
         {
-            add_action('init', [$this, 'cyn_faq_post_type_register']);
+            add_action('init', [$this, 'cyn_post_type_register']);
+            add_action('init', [$this, 'cyn_taxonomy_register']);
+            add_action('init', [$this, 'cyn_term_register']);
         }
 
-        public function cyn_faq_post_type_register()
+        public function cyn_post_type_register()
         {
             /***************************** register Service post type */
             $labels = array(
@@ -29,7 +31,7 @@ if (!class_exists('cyn_register')) {
                 'not_found_in_trash' => 'سرویس پیدا نشد'
             );
             $args = [
-                'labels' =>  $labels,
+                'labels' => $labels,
                 'public' => true,
                 'publicly_queryable' => true,
                 'show_ui' => true,
@@ -96,7 +98,7 @@ if (!class_exists('cyn_register')) {
                 'not_found_in_trash' => 'پزشک پیدا نشد'
             );
             $args = [
-                'labels' =>  $labels,
+                'labels' => $labels,
                 'public' => true,
                 'publicly_queryable' => true,
                 'show_ui' => true,
@@ -149,6 +151,43 @@ if (!class_exists('cyn_register')) {
             ];
 
             register_post_type('podcast', $args);
+        }
+        public function cyn_taxonomy_register()
+        {
+
+            function make_taxonomy($name, $slug, $post_types, $is_hierarchical = true)
+            {
+                $labels = [
+                    'name' => $name . '‌ها',
+                    'singular_name' => $name,
+                    'search_items' => 'ها' . $name . 'جستجو در',
+                    'all_items' => 'همه ' . $name . '‌ ها',
+                    'edit_item' => ' ویرایش ' . $name,
+                    'update_item' => 'به روز رسانی' . $name,
+                    'add_new_item' => 'افزودن ' . $name . ' جدید',
+                    'new_item_name' => $name . ' جدید',
+                    'menu_name' => $name,
+                ];
+
+                $args = [
+                    'hierarchical' => $is_hierarchical,
+                    'labels' => $labels,
+                    'show_ui' => true,
+                    'show_admin_column' => true,
+                    'query_var' => true,
+                    'rewrite' => ['slug' => $slug],
+                ];
+
+                register_taxonomy($slug, $post_types, $args);
+            }
+
+            make_taxonomy('دسته‌بندی خدمات', 'service_type', ['service']);
+        }
+
+        public function cyn_term_register()
+        {
+            wp_insert_term('جراحی', 'service_type', ['slug' => 'surgery']);
+            wp_insert_term('پیوند کبد', 'service_type', ['slug' => 'peyvand']);
         }
     }
 }

@@ -3,7 +3,7 @@
 let blogSlider = document.querySelector(".front-blogs-slider");
 if (blogSlider) {
   var swiper = new Swiper(".front-blogs-slider", {
-    slidesPerView:1,
+    slidesPerView: 5,
     spaceBetween: 20,
     loop: true,
     pagination: {
@@ -15,8 +15,14 @@ if (blogSlider) {
       disableOnInteraction: false,
     },
     breakpoints: {
+      999: {
+        slidesPerView:3,
+      },
       768: {
         slidesPerView: 2.2,
+      },
+     350: {
+        slidesPerView: 1,
       },
     },
   });

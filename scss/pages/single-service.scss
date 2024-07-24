@@ -164,7 +164,9 @@
     }
   }
 }
-
+.swiper-wrapper{
+  height: auto !important;
+}
 //---------------------------------------------- doctor section style
 .doctor-section {
   margin-top: 2.5rem;
