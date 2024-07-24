@@ -28,14 +28,6 @@ if (!class_exists('cyn_acf')) {
         public function cyn_front_page()
         {
             $fields = [
-                cyn_acf_add_tab('سکشن اول'),
-                cyn_acf_add_text("hero_text_1", ' تیتر بخش  ', '', ' 50'),
-                cyn_acf_add_text("hero_text_2", ' تیتر بخش رنگی  ', '', ' 50'),
-                cyn_acf_add_text("hero_button_title", ' متن دکمه  ', '', ' 50'),
-                cyn_acf_add_url("hero_button_link", ' لینک دکمه  ', '', ' 50'),
-
-                cyn_acf_add_tab('انتخاب خدمات'),
-                cyn_acf_add_post_object("choose_services", ' انتخاب خدمات  ', 'service', '', 1),
                 cyn_acf_add_tab('درباره دکتر'),
                 cyn_acf_add_text("about_title", ' تیتر بخش  ', '', ' 50'),
                 cyn_acf_add_text("about_subtitle", ' متن بخش  ', '', ' 50'),
