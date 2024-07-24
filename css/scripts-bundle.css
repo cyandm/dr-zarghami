@@ -845,25 +845,14 @@ header .mobile-header .mobile-menu.disply-menu .mobile-menu-detail.active .menu-
 }
 
 footer {
-  display: flex;
-  width: 100%;
   padding: 2.5rem 0rem;
-  flex-direction: column;
-  align-items: center;
   gap: 0.875rem;
   background: var(--white-2, #fff);
   box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.04);
   margin-top: 4.38rem;
 }
-@media (width <= 768px) {
-  footer {
-    gap: 4rem;
-  }
-}
 footer .main-row {
-  gap: 2rem;
   flex-wrap: wrap;
-  width: 100%;
   display: flex;
   align-items: start;
 }
@@ -887,11 +876,6 @@ footer .main-row .footer-widget {
 }
 footer .main-row .footer-widget h4 {
   color: #6d7982;
-  font-family: "iransans";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2rem;
   margin-bottom: 0.75rem;
 }
 footer .main-row .footer-widget div ul.menu {
@@ -971,19 +955,6 @@ footer .social-row .logo-contain img {
 }
 footer .social-row .logo-contain h5 {
   color: #6d7982;
-}
-footer .social-row .social-medis {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-footer .social-row .social-medis a {
-  display: flex;
-  align-items: center;
-}
-footer .social-row .social-medis a i::before {
-  color: #00337c;
-  font-size: 1.82rem;
 }
 
 .blog-box {
@@ -2565,6 +2536,7 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
   flex-wrap: wrap;
   transition: all 0.3s ease-out;
   height: 0;
+  gap: 4rem;
 }
 @media (width <= 768px) {
   .services-section .service-tabs .service-tabcontent .tabcontent {
@@ -2904,7 +2876,7 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
     display: flex;
   }
 }
-.blog-section .front-blogs-slider .swiper-pagination {
+.swiper-pagination {
   display: flex;
   padding: 0rem 0.625rem;
   align-items: flex-start;
@@ -2913,18 +2885,18 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
   flex-wrap: wrap;
 }
 @media (width >= 992px) {
-  .blog-section .front-blogs-slider .swiper-pagination {
+  .swiper-pagination {
     display: none;
   }
 }
-.blog-section .front-blogs-slider .swiper-pagination .swiper-pagination-bullet {
+.swiper-pagination .swiper-pagination-bullet {
   border-radius: 0.4375rem;
   background: #e6eaed;
   height: 0.625rem;
   flex: 1;
   transition: flex 0.5s ease-in-out;
 }
-.blog-section .front-blogs-slider .swiper-pagination .swiper-pagination-bullet-active {
+.swiper-pagination .swiper-pagination-bullet-active {
   background: var(--blue-1, #09cdf8);
   flex: 2;
 }
@@ -3003,6 +2975,21 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
 @media (width >= 425px) {
   .testimonial-section #testimonial-form.btn-mobile {
     display: none;
+  }
+}
+
+@media (width <= 992px) {
+  .pc {
+    display: none !important;
+  }
+}
+
+.mobile {
+  display: none;
+}
+@media (width <= 992px) {
+  .mobile {
+    display: block;
   }
 }
 
@@ -4026,6 +4013,10 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
   height: 15rem;
 }
 
+.swiper-wrapper {
+  height: auto !important;
+}
+
 .doctor-section {
   margin-top: 2.5rem;
 }
@@ -4406,7 +4397,7 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
 }
 
 .about-section-slider {
-  background: var(--blue-2, #19b4e5);
+  background: #40A578;
   margin-top: -7rem;
   padding-top: 7rem;
 }
@@ -4638,6 +4629,7 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
   height: 22.4375rem;
   border-radius: 1.25rem;
   object-fit: cover;
+  aspect-ratio: 1/1;
 }
 .attributes-section .about-attributes-row .about-attribute-box .attribute-content {
   flex: 1;

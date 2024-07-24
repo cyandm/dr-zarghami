@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "w-css": "sass ./scss/main.scss ./css/scripts-bundle.css --style=expanded -w",
-    "b-css": "sass ./scss/main.scss ./css/scripts-bundle.css --style=compressed",
+    "w-scss": "sass ./scss/main.scss ./css/scripts-bundle.css --style=expanded -w",
+    "b-scss": "sass ./scss/main.scss ./css/scripts-bundle.css --style=compressed",
     "b-pre-css": "postcss ./css/scripts-bundle.css -o ./css/scripts-bundle-prefixed.css --use autoprefixer -m",
+    "w-tailwind": "npx tailwindcss -i ./css/base-tailwind.css -o ./css/final-tailwind.css --watch",
     "w-js": "esbuild ./js/index.js --bundle --outfile=./js/dist/scripts.bundle.min.js --target=es6,chrome58,edge18,firefox54,safari11 --watch",
     "b-js": "esbuild ./js/index.js --bundle --outfile=./js/dist/scripts.bundle.min.js --target=es6,chrome58,edge18,firefox54,safari11 --minify --sourcemap"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "esbuild": "^0.18.19"
+    "@tailwindcss/typography": "^0.5.13",
+    "esbuild": "^0.18.19",
+    "tailwindcss": "^3.4.4"
   },
   "browserslist": [
     "> 1%",

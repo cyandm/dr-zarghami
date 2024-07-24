@@ -1,20 +1,12 @@
 footer {
-  display: flex;
-  width: 100%;
-  padding: 2.5rem 0rem;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.875rem;
+   padding: 2.5rem 0rem;
+   gap: 0.875rem;
   background: var(--white-2, #fff);
   box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.04);
   margin-top: 4.38rem;
-  @media (width <= 768px) {
-    gap: 4rem;
-  }
+
   .main-row {
-    gap: 2rem;
     flex-wrap: wrap;
-    width: 100%;
     display: flex;
     align-items: start;
     @media (width <= 768px) {
@@ -31,11 +23,7 @@ footer {
       }
       h4 {
         color: $gray_1;
-        font-family: "iransans";
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 2rem;
+        
         margin-bottom: 0.75rem;
       }
       div {
@@ -118,22 +106,8 @@ footer {
         color: $gray_1;
       }
     }
-    .social-medis {
-  
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      a {
-        display: flex;
-        align-items: center;
-        i {
-          &::before {
-            color: $blue_2;
-            font-size: 1.82rem;
-          }
-        }
-      }
-    }
+ 
+    
   }
 }
 

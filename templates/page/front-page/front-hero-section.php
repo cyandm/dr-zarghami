@@ -106,7 +106,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
             <?php if ($heroText11) : ?>
                 <h1 class="hero-title t2"><?= $heroText11 ?></h1>
             <?php endif; ?>
-            <div class="animate-text  animate-letter">
+            <div class="animate-text animate-letter">
                 <?php if ($heroText12) : ?>
                     <h2 class="body title_with_bg animation"><?= $heroText12 ?><span class="focuse"></span>
                     </h2>
@@ -184,7 +184,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
     </div>
 
     <!--    -------------------------------------------------- bubble effects-->
-
+<!-- 
     <div id="background-wrap">
         <div class="bubble x1"></div>
         <div class="bubble x11"></div>
@@ -204,6 +204,6 @@ $imgSmall = get_field('image_helth_small', $page_id);
         <div class="bubble x99"></div>
         <div class="bubble x10"></div>
         <div class="bubble x1010"></div>
-    </div>
+    </div> -->
 
 </section>

@@ -1,6 +1,6 @@
 //----------------------------------------------- about section-slider style
 .about-section-slider {
-  background: var(--blue-2, #19b4e5);
+  background: $green;
   margin-top: -7rem;
   padding-top: 7rem;
   .about-slider {
@@ -224,6 +224,7 @@
           height: 22.4375rem;
           border-radius: 1.25rem;
           object-fit: cover;
+          aspect-ratio: 1/1;
         }
       }
       .attribute-content {

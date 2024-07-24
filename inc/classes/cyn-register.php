@@ -5,10 +5,13 @@ if (!class_exists('cyn_register')) {
     {
         function __construct()
         {
-            add_action('init', [$this, 'cyn_faq_post_type_register']);
+            add_action('init', [$this, 'cyn_post_type_register']);
+            add_action('init', [$this, 'cyn_taxonomy_register']);
+            add_action('init', [$this, 'cyn_term_register']);
+
         }
 
-        public function cyn_faq_post_type_register()
+        public function cyn_post_type_register()
         {
             /***************************** register Service post type */
             $labels = array(
@@ -27,7 +30,7 @@ if (!class_exists('cyn_register')) {
                 'not_found_in_trash' => 'سرویس پیدا نشد'
             );
             $args = [
-                'labels' =>  $labels,
+                'labels' => $labels,
                 'public' => true,
                 'publicly_queryable' => true,
                 'show_ui' => true,
@@ -39,7 +42,7 @@ if (!class_exists('cyn_register')) {
                 'hierarchical' => false,
                 'menu_position' => null,
                 'menu_icon' => 'dashicons-clipboard',
-                'supports' => array('title', 'editor', 'thumbnail','comments')
+                'supports' => array('title', 'editor', 'thumbnail', 'comments')
             ];
 
             register_post_type('service', $args);
@@ -94,7 +97,7 @@ if (!class_exists('cyn_register')) {
                 'not_found_in_trash' => 'پزشک پیدا نشد'
             );
             $args = [
-                'labels' =>  $labels,
+                'labels' => $labels,
                 'public' => true,
                 'publicly_queryable' => true,
                 'show_ui' => true,
@@ -111,6 +114,79 @@ if (!class_exists('cyn_register')) {
 
             register_post_type('doctor', $args);
 
+
+            /***************************** points post type */
+            $labels = array(
+                'name' => 'پادکست پزشکی',
+                'singular_name' => 'پادکست ها',
+                'menu_name' => 'پادکست های پزشکی',
+                'name_admin_bar' => 'پادکست',
+                'add_new' => 'افزودن پادکست',
+                'add_new_item' => 'افزودن پادکست جدید',
+                'new_item' => 'پادکست جدید',
+                'edit_item' => 'ویرایش پادکست',
+                'view_item' => 'مشاهده پادکست',
+                'all_items' => 'همه پادکست ها ',
+            );
+            $args = [
+                'labels' => $labels,
+                'public' => true,
+                'publicly_queryable' => true,
+                'show_ui' => true,
+                'show_in_menu' => true,
+                'query_var' => true,
+                'rewrite' => array('slug' => 'podcast'),
+                'exclude_from_search' => false,
+                'has_archive' => true,
+                'hierarchical' => false,
+                'menu_position' => null,
+                'menu_icon' => 'dashicons-clipboard',
+                'supports' => array('title', 'thumbnail'),
+            ];
+
+            register_post_type('podcasts', $args);
         }
+        public function cyn_taxonomy_register()
+        {
+
+            function make_taxonomy($name, $slug, $post_types, $is_hierarchical = true)
+            {
+                $labels = [
+                    'name' => $name . '‌ها',
+                    'singular_name' => $name,
+                    'search_items' => 'ها' . $name . 'جستجو در',
+                    'all_items' => 'همه ' . $name . '‌ ها',
+                    'edit_item' => ' ویرایش ' . $name,
+                    'update_item' => 'به روز رسانی' . $name,
+                    'add_new_item' => 'افزودن ' . $name . ' جدید',
+                    'new_item_name' => $name . ' جدید',
+                    'menu_name' => $name,
+                ];
+
+                $args = [
+                    'hierarchical' => $is_hierarchical,
+                    'labels' => $labels,
+                    'show_ui' => true,
+                    'show_admin_column' => true,
+                    'query_var' => true,
+                    'rewrite' => ['slug' => $slug],
+                ];
+
+                register_taxonomy($slug, $post_types, $args);
+            }
+
+            make_taxonomy('دسته‌بندی خدمات', 'service_type', ['service']);
+        }
+
+        public function cyn_term_register()
+        {
+            wp_insert_term('جراحی', 'service_type', ['slug' => 'surgery']);
+            wp_insert_term('پیوند کبد', 'service_type', ['slug' => 'peyvand']);
+
+        }
+
+
+
+
     }
 }

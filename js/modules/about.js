@@ -14,3 +14,18 @@ if (aboutSlider) {
         },
     });
 }
+
+const certificate = new Swiper(".certificate-slider", {
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  slidesPerView: 3,
+  spaceBetween: 16,
+  loop: true,
+  freeMode: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
