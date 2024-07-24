@@ -1,5 +1,3 @@
-
-
 let blogSlider = document.querySelector(".front-blogs-slider");
 if (blogSlider) {
   var swiper = new Swiper(".front-blogs-slider", {
@@ -16,16 +14,14 @@ if (blogSlider) {
     },
     breakpoints: {
       999: {
-        slidesPerView:3,
+        slidesPerView: 3,
       },
       768: {
-        slidesPerView: 2.2,
+        slidesPerView: 2,
       },
-     350: {
+      280: {
         slidesPerView: 1,
       },
     },
   });
 }
-
-

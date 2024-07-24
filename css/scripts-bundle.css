@@ -4098,7 +4098,7 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
 .faq-section .faq-row .faq-img img {
   flex: 1;
   width: 22.4375rem;
-  height: 19.5625rem;
+  height: auto;
 }
 @media (width <= 992px) {
   .faq-section .faq-row .faq-img img {
@@ -6321,6 +6321,16 @@ main.podcasts .special-row .swiper .swiper-slide .blog-excerpt {
 }
 main.podcasts .special-row .swiper .swiper-slide .image-zoom {
   height: auto;
+}
+
+.podcast-cart .image-card {
+  position: relative;
+}
+.podcast-cart .image-card > div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /*# sourceMappingURL=scripts-bundle.css.map */

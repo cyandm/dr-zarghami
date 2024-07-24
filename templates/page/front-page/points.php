@@ -13,8 +13,7 @@ $backImg = get_field('background_image', $page_id); ?>
 
         <?php for ($i = 1; $i < 5; $i++) {
             $points = get_field("points_$i"); ?>
-            <div
-                class="shadow-lg flex flex-col gap-4 p-8 justify-center [&_img]:w-full rounded-3xl [&_img]:aspect-square [&_img]:object-cover  pc">
+            <div class="shadow-lg flex flex-col gap-3 p-4 justify-center [&_img]:w-full rounded-2xl [&_img]:aspect-square [&_img]:object-cover [&_img]:rounded-2xl pc">
                 <?= wp_get_attachment_image($points['points_img'], 'full', false, []); ?>
                 <h3 class="h3"><?= $points['points_title'] ?></h3>
                 <p><?= $points['points_text'] ?></p>
@@ -27,8 +26,7 @@ $backImg = get_field('background_image', $page_id); ?>
         <div class="swiper-wrapper blogs-row">
             <?php for ($i = 1; $i < 5; $i++) {
                 $points = get_field("points_$i"); ?>
-                <div
-                    class=" swiper-slideshadow-lg flex flex-col gap-4 p-8 justify-center [&_img]:w-full rounded-3xl [&_img]:aspect-square [&_img]:object-cover ">
+                <div class="swiper-slide shadow-lg flex flex-col gap-3 p-4 mb-8 justify-center rounded-2xl [&_img]:w-full [&_img]:aspect-square [&_img]:object-cover [&_img]:rounded-2xl ">
                     <?= wp_get_attachment_image($points['points_img'], 'full', false, []); ?>
                     <h3 class="h3"><?= $points['points_title'] ?></h3>
                     <p><?= $points['points_text'] ?></p>
@@ -37,6 +35,9 @@ $backImg = get_field('background_image', $page_id); ?>
             <?php } ?>
 
         </div>
-</div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
 
 </section>

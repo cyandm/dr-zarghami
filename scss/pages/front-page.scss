@@ -869,7 +869,7 @@ section.hero-section > div > div.swiper.home-service-slider {
       img {
         flex: 1;
         width: 22.4375rem;
-        height: 19.5625rem;
+        height: auto;
 
         @media (width <= 992px) {
           flex-basis: 100%;
