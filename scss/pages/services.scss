@@ -211,11 +211,11 @@
     }
 
     > img {
+      min-height: 448px;
+
       @media (width <=768px) {
         min-height: 320px;
       }
-
-      min-height: 448px;
     }
   }
 }
