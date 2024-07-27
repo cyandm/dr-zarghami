@@ -4,7 +4,7 @@ $video_file = get_field('about_video');
 $cover_video = get_field('about_poster');
 $backImg = get_field('background_image', $page_id); ?>
 <!-- -->
-<section class="container">
+<section class="important-points container">
     <div class="title">
         <h2><?= get_field('points_section_title'); ?></h2>
         <p><?= get_field('poins_section_subtitle'); ?></p>
@@ -16,7 +16,7 @@ $backImg = get_field('background_image', $page_id); ?>
             <div class="shadow-lg flex flex-col gap-3 p-4 justify-center [&_img]:w-full rounded-2xl [&_img]:aspect-square [&_img]:object-cover [&_img]:rounded-2xl pc">
                 <?= wp_get_attachment_image($points['points_img'], 'full', false, []); ?>
                 <h3 class="h3"><?= $points['points_title'] ?></h3>
-                <p><?= $points['points_text'] ?></p>
+                <p class="point-text"><?= $points['points_text'] ?></p>
 
             </div>
         <?php } ?>

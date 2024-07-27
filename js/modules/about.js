@@ -28,7 +28,7 @@ if (certificates) {
     },
 
     breakpoints: {
-      280: {
+      200: {
         slidesPerView: 1,
       },
       480: {
@@ -44,9 +44,9 @@ if (certificates) {
       prevEl: ".swiper-button-prev",
     },
 
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-    },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   dynamicBullets: true,
+    // },
   });
 }

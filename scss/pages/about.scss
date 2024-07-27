@@ -143,6 +143,31 @@
   }
 }
 
+.certificates-section {
+  .swiper-btn-row {
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+
+    .swiper-btn {
+      flex: 1;
+      position: relative;
+      display: flex;
+      z-index: 1;
+      gap: 0.5rem;
+      justify-content: end;
+      @media (width <= 992px) {
+        translate: unset;
+        justify-content: center;
+        transform: translateY(2rem);
+      }
+      @media (width >= 992px) {
+        translate: -0.256rem -29rem;
+      }
+    }
+  }
+}
+
 //----------------------------------------------- about facilities style
 .about-facilities {
   .about-facilities-row {

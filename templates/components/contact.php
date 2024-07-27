@@ -2,7 +2,7 @@
 $page_id = get_option('page_on_front');
 $turn_img = get_field('turn_img', $page_id);
 ?>
-<div class="h-auto bg-no-repeat	bg-contain bg-[#92D5C0] rounded-xl max-lg:bg-bottom max-lg:pb-[260px]" style="background-image: url(<?= wp_get_attachment_image_url($turn_img, 'full w-full', false, []); ?>);">
+<div class="h-auto bg-no-repeat	bg-contain bg-[#92D5C0] rounded-xl max-lg:bg-bottom max-lg:pb-[340px] max-md:pb-[280px]" style="background-image: url(<?= wp_get_attachment_image_url($turn_img, 'full w-full', false, []); ?>);">
     <div class="w-2/4 min-h-[500px] p-12 max-lg:p-4  body grid gap-4	max-lg:w-full">
         <div class="p-4 rounded-lg bg-white-1 ">
             <h3 class="h3">ویزیت حضوری</h3>
