@@ -168,7 +168,6 @@
             height: 5rem;
             flex-shrink: 0;
             border-radius: 1rem;
-            object-fit: cover;
           }
         }
 
@@ -770,14 +769,89 @@ section.hero-section > div > div.swiper.home-service-slider {
 //   }
 // }
 
+/****************************************************  point section */
 .important-points {
-  .point-text {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    white-space: pre-wrap;
-    margin-block-start: -0.5rem;
+  @media (width <= 992px) {
+    .important-points-desktop {
+      display: none;
+    }
+  }
+
+  .flip-card {
+    width: 100%;
+    height: 32rem;
+    perspective: 1000px;
+
+    @media (width <= 1570px) {
+      height: 28rem;
+
+      img {
+        height: 17rem;
+      }
+    }
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+  }
+
+  .flip-card:focus {
+    outline: 0;
+  }
+
+  .flip-card:hover .flip-card-inner,
+  .flip-card:focus .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .flip-card-front {
+    background: #ffffff;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .important-points-cart {
+      .point-text {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .point-btn {
+        padding-block-end: 0.5rem;
+      }
+    }
+  }
+
+  .flip-card-back {
+    background: linear-gradient(to right, #1f6cc4, #00337c);
+    color: white;
+    transform: rotateY(180deg);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .point-text {
+      padding-inline: 1rem;
+    }
   }
 }
 

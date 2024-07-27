@@ -83,17 +83,16 @@ if (tabLinks) {
 const radios = document.querySelectorAll(".radios");
 const radiosparent = document.querySelectorAll(".content");
 
-
 radios.forEach((elem) => {
-   radiosparent.forEach((parent) => {
-     parent.classList.remove("active");
-   });
-      elem.parentElement.classList.remove("active");
+  radiosparent.forEach((parent) => {
+    parent.classList.remove("active");
+  });
+  elem.parentElement.classList.remove("active");
   elem.addEventListener("click", () => {
     elem.parentElement.classList.add("active");
   });
 });
- 
+
 // js for mobile dropdown
 const dropdown = document.querySelector("#dropdown-menu");
 if (dropdown) {

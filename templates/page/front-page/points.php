@@ -9,15 +9,24 @@ $backImg = get_field('background_image', $page_id); ?>
         <h2><?= get_field('points_section_title'); ?></h2>
         <p><?= get_field('poins_section_subtitle'); ?></p>
     </div>
-    <div class="grid grid-cols-4 gap-4">
+    <div class="important-points-desktop grid grid-cols-4 gap-4">
 
         <?php for ($i = 1; $i < 5; $i++) {
             $points = get_field("points_$i"); ?>
-            <div class="shadow-lg flex flex-col gap-3 p-4 justify-center [&_img]:w-full rounded-2xl [&_img]:aspect-square [&_img]:object-cover [&_img]:rounded-2xl pc">
-                <?= wp_get_attachment_image($points['points_img'], 'full', false, []); ?>
-                <h3 class="h3"><?= $points['points_title'] ?></h3>
-                <p class="point-text"><?= $points['points_text'] ?></p>
-
+            <div class="flip-card rounded-2xl">
+                <div class="flip-card-inner rounded-2xl">
+                    <div class="flip-card-front rounded-2xl">
+                        <div class="important-points-cart flex flex-col gap-3 p-4 [&_img]:w-full rounded-2xl [&_img]:aspect-square [&_img]:object-cover [&_img]:rounded-2xl pc">
+                            <?= wp_get_attachment_image($points['points_img'], 'full', false, []); ?>
+                            <h3 class="h3"><?= $points['points_title'] ?></h3>
+                            <p class="point-text"><?= $points['points_text'] ?></p>
+                            <span class="point-btn">ادامه</span>
+                        </div>
+                    </div>
+                    <div class="flip-card-back rounded-2xl">
+                        <p class="point-text"><?= $points['points_text'] ?></p>
+                    </div>
+                </div>
             </div>
         <?php } ?>
     </div>

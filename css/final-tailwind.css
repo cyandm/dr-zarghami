@@ -5533,10 +5533,6 @@ video {
     padding: 1rem;
   }
 
-  .max-lg\:pb-\[260px\] {
-    padding-bottom: 260px;
-  }
-
   .max-lg\:pb-\[340px\] {
     padding-bottom: 340px;
   }
@@ -5564,14 +5560,6 @@ video {
 
   .max-md\:gap-16 {
     gap: 4rem;
-  }
-
-  .max-md\:pb-\[340px\] {
-    padding-bottom: 340px;
-  }
-
-  .max-md\:pb-\[2800px\] {
-    padding-bottom: 2800px;
   }
 
   .max-md\:pb-\[280px\] {
