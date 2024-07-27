@@ -24,6 +24,7 @@ if (!class_exists('cyn_acf')) {
             add_action('acf/init', [$this, 'cyn_front_page']);
             add_action('acf/init', [$this, 'cyn_podcasts']);
             add_action('acf/init', [$this, 'cyn_about_page']);
+            add_action('acf/init', [$this, 'cyn_partners']);
         }
         public function cyn_front_page()
         {
@@ -152,6 +153,29 @@ if (!class_exists('cyn_acf')) {
                 ],
             ];
             cyn_register_acf_group(' تنظیمات صفحه درباره ما ', $fields, $location);
+        }
+
+
+        public function cyn_partners()
+        {
+            $fields = [
+
+                cyn_acf_add_text("partners_section_title", ' تیتر بخش  ', '', ' 50'),
+                cyn_acf_add_text("parners_section_subtitle", 'زیر تیتر بخش ', '', ' 50'),
+                cyn_acf_add_post_object("choose_partners", ' انتخاب همکاران  ', 'doctor', '', 1),
+
+            ];
+
+            $location = [
+                [
+                    [
+                        'param' => 'page_template',
+                        'operator' => '==',
+                        'value' => 'templates/archive-partners.php',
+                    ],
+                ],
+            ];
+            cyn_register_acf_group(' صفحه همکاران ', $fields, $location);
         }
     }
 }
