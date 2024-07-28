@@ -20,7 +20,9 @@ $backImg = get_field('background_image', $page_id); ?>
                             <?= wp_get_attachment_image($points['points_img'], 'full', false, []); ?>
                             <h3 class="h3"><?= $points['points_title'] ?></h3>
                             <p class="point-text"><?= $points['points_text'] ?></p>
-                            <span class="point-btn">ادامه</span>
+                            <div class="point-btn flex justify-center items-center">
+                                <span class="point-btn btn w-full">ادامه</span>
+                            </div>
                         </div>
                     </div>
                     <div class="flip-card-back rounded-2xl">

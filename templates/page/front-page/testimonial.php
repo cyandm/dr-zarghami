@@ -46,10 +46,10 @@ if (is_array($testimonials) && count($testimonials) > 0) : ?>
                                     <?php
                                     if ($i <= $stars) :
                                     ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/imgs/star.svg" alt="rate" />
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/star.svg" alt="rate" />
 
                                     <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/imgs/star-disable.svg" alt="rate" />
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/star-disable.svg" alt="rate" />
 
                                 <?php endif;
                                 endfor;

@@ -155,7 +155,7 @@ if (testimonial) {
   var swiper = new Swiper(".testimonial-slider", {
     slidesPerView: "auto",
     spaceBetween: 32,
-    loop: true,
+    // loop: true,
     autoplay: {
       delay: 4000,
       disableOnInteraction: true,
