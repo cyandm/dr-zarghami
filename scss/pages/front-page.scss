@@ -400,14 +400,10 @@ section.hero-section > div > div.swiper.home-service-slider {
         }
       }
 
-      .tab {
+      .tabs {
         display: flex;
-        width: fit-content;
-        padding: 0.5rem;
-        align-items: center;
-        gap: 0.5rem;
-        border-radius: 0.75rem;
-        background: $blue_1;
+        width: 100%;
+        flex-direction: column;
         margin-bottom: 1.5rem;
         flex: 1;
 
@@ -417,6 +413,17 @@ section.hero-section > div > div.swiper.home-service-slider {
 
         @media (width <= 992px) {
           flex: 2;
+        }
+
+        .tab {
+          display: flex;
+          width: 100%;
+          padding: 0.5rem;
+          align-items: center;
+          gap: 0.5rem;
+          border-radius: 0.75rem;
+          background: $blue_1;
+          flex: 1;
         }
 
         .tablinks {
@@ -779,11 +786,11 @@ section.hero-section > div > div.swiper.home-service-slider {
 
   .flip-card {
     width: 100%;
-    height: 32rem;
+    height: 34rem;
     perspective: 1000px;
 
     @media (width <= 1570px) {
-      height: 28rem;
+      height: 30rem;
 
       img {
         height: 17rem;
@@ -1114,6 +1121,7 @@ section.hero-section > div > div.swiper.home-service-slider {
     }
   }
 }
+
 .swiper-pagination {
   display: flex;
   padding: 0rem 0.625rem;
@@ -1127,14 +1135,14 @@ section.hero-section > div > div.swiper.home-service-slider {
 
   .swiper-pagination-bullet {
     border-radius: 0.4375rem;
-    background: $gray_2;
+    background: $gray_1;
     height: 0.625rem;
     flex: 1;
     transition: flex 0.5s ease-in-out;
   }
 
   .swiper-pagination-bullet-active {
-    background: var(--blue-1, #09cdf8);
+    background: $blue_1;
     flex: 2;
   }
 }

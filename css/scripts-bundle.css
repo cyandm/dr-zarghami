@@ -83,7 +83,7 @@
   font-size: 1.25rem;
 }
 
-.body, .services-section .service-tabs .tab-row .tab .tablinks, header .mobile-header .mobile-menu .mobile-menu-detail .menu-contain ul.menu > li > a, header .header-row .menu-contain ul.menu > li > a, .btn, .btn-default, .btn-b, .btn-icon {
+.body, .services-section .service-tabs .tab-row .tabs .tablinks, header .mobile-header .mobile-menu .mobile-menu-detail .menu-contain ul.menu > li > a, header .header-row .menu-contain ul.menu > li > a, .btn, .btn-default, .btn-b, .btn-icon {
   color: #17242f;
   font-size: 1rem;
   font-weight: 400;
@@ -3843,28 +3843,34 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
     display: none;
   }
 }
-.services-section .service-tabs .tab-row .tab {
+.services-section .service-tabs .tab-row .tabs {
   display: flex;
-  width: fit-content;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+@media (width <= 1024px) {
+  .services-section .service-tabs .tab-row .tabs {
+    display: none;
+  }
+}
+@media (width <= 992px) {
+  .services-section .service-tabs .tab-row .tabs {
+    flex: 2;
+  }
+}
+.services-section .service-tabs .tab-row .tabs .tab {
+  display: flex;
+  width: 100%;
   padding: 0.5rem;
   align-items: center;
   gap: 0.5rem;
   border-radius: 0.75rem;
   background: #06a1aa;
-  margin-bottom: 1.5rem;
   flex: 1;
 }
-@media (width <= 1024px) {
-  .services-section .service-tabs .tab-row .tab {
-    display: none;
-  }
-}
-@media (width <= 992px) {
-  .services-section .service-tabs .tab-row .tab {
-    flex: 2;
-  }
-}
-.services-section .service-tabs .tab-row .tab .tablinks {
+.services-section .service-tabs .tab-row .tabs .tablinks {
   display: flex;
   padding: 0.625rem 0.75rem;
   justify-content: center;
@@ -3877,7 +3883,7 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
   white-space: nowrap;
   cursor: pointer;
 }
-.services-section .service-tabs .tab-row .tab .tablinks.active {
+.services-section .service-tabs .tab-row .tabs .tablinks.active {
   border-radius: 0.75rem;
   background: #fff;
   box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.14);
@@ -4013,12 +4019,12 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
 }
 .important-points .flip-card {
   width: 100%;
-  height: 32rem;
+  height: 34rem;
   perspective: 1000px;
 }
 @media (width <= 1570px) {
   .important-points .flip-card {
-    height: 28rem;
+    height: 30rem;
   }
   .important-points .flip-card img {
     height: 17rem;
@@ -4327,13 +4333,13 @@ section.hero-section > div > div.swiper.home-service-slider .swiper-wrapper .swi
 }
 .swiper-pagination .swiper-pagination-bullet {
   border-radius: 0.4375rem;
-  background: #e6eaed;
+  background: #6d7982;
   height: 0.625rem;
   flex: 1;
   transition: flex 0.5s ease-in-out;
 }
 .swiper-pagination .swiper-pagination-bullet-active {
-  background: var(--blue-1, #09cdf8);
+  background: #06a1aa;
   flex: 2;
 }
 

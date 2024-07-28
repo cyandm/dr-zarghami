@@ -1552,10 +1552,6 @@ video {
   right: 0px;
 }
 
-.top-28 {
-  top: 7rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -1823,10 +1819,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-screen {
-  width: 100vw;
 }
 
 .max-w-\[400px\] {

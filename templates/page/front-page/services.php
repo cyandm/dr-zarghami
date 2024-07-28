@@ -1,84 +1,112 @@
-<?php
-$page_id = get_option('page_on_front');
-$allServices = get_field('choose_services', $page_id);
-$categories = get_terms([
-    'taxonomy' => 'service_type',
-    'hide_empty' => false,
-    'number' => 5
-]);
+ <?php
+    $allServices = get_field('choose_services', $page_id);
 
-$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
- ?>
-<section class="container services-section  flex flex-col items-center">
-    <div class="title">
-        <h2><?= get_field('services_section_title', $page_id); ?></h2>
-        <p><?= get_field('services_section_title_description', $page_id); ?></p>
-    </div>
-    <div class="service-tabs relative flex   w-full">
-        <div class="tab-row w-full ">
-            <?php
-            foreach ($categories as $key => $cat): ?>
-                <div class="tab relative w-full  <?= ($key == 0) ? 'active' : '' ?>" id="<?= $key; ?>">
-                    <button id="<?= $key ?>"
-                        class="first-row w-full  tablinks landing-tablinks <?= ($key == 0) ? 'active' : '' ?>"
-                        href="<?= get_term_link($cat->term_id) ?>"><?= $cat->name; ?>
-                    </button>
-                    
-                    <?php $services = new WP_Query(
-                        array(
-                            'post_type' => 'service',
-                            'tax_query' => [
-                                array(
-                                    'taxonomy' => 'service_type',
-                                    'field' => 'slug',
-                                    'terms' => $cat->slug
-                                )
-                            ]
-                        )
-                    );
-                    ?>
+    $cat_services = get_terms([
+        'taxonomy' => 'service_type',
+        'hide_empty' => true,
+    ]);
 
-                    <div class="relative right-0 cat-tab top-28 w-full   gap-8 " id="<?= $key; ?>">
+    ?>
 
 
-                        <?php
 
-                        while ($services->have_posts()):
-                            $services->the_post();
-                            $post_id = get_the_ID(); ?>
-                            <div class=" gap-8 content  ">
-                                <button type="radio" name="tabs" class=" radios flex <?= ($key == 0) ? 'active' : '' ?>"
-                                    id=" ">
-                                    <?= get_the_title($post_id); ?></button>
-                                <div class="service-cart rel w-screen <?= ($key == 0) ? 'active' : '' ?>">
-                                    
-                                    <?= get_template_part('/templates/components/service-cart', '', ['post_id' => $post_id]); ?>
-                                </div>
-
-                            </div>
-                            <?php
-                        endwhile;
-                        wp_reset_postdata(); ?>
-                    </div>
-                </div>
-
-            <?php endforeach;
-            ?>
-        </div>
-    </div>
-</section>
+ <section class="container services-section">
+     <div class="title">
+         <h2><?= get_field('services_section_title', $page_id); ?></h2>
+         <p><?= get_field('services_section_title_description', $page_id); ?></p>
+     </div>
 
 
 
 
 
 
+     <?php if (is_array($posts) && count($posts) > 0) : ?>
+
+         <div class="service-tabs">
+             <div class="tab-row">
+                 <select class="tab-mobile" id="dropdown-menu">
+
+                     <?php foreach ($cat_services as $key => $cat) : ?>
+
+                         <option class="tablinks" <?= ($key == 0) ? 'active' : '' ?> value="tab-<?= $key ?>">
+                             <?= $cat->name ?></option>
+
+                     <?php endforeach; ?>
+
+                 </select>
+
+                 <div class="empty-div"></div>
+
+                 <div class="tabs">
+
+                     <div class="tab">
+
+                         <?php foreach ($cat_services as $key => $cat) : ?>
+                             <button class="tablinks landing-tablinks <?= ($key == 0) ? 'active' : '' ?>" id="tab-<?= $key ?>"><?= $cat->name ?></button>
+                         <?php endforeach; ?>
+
+                     </div>
+
+                     <div class="radio-btn-tab flex flex-row gap-4">
+
+                         <?php foreach ($cat_services as $key => $cat) :
+
+                                $posts = get_posts([
+                                    'post_type' => 'service',
+                                    'tax_query' => [
+                                        [
+                                            'taxonomy' => 'service_type',
+                                            'terms' => $cat,
+                                        ]
+                                    ]
+                                ]);
 
 
+                                foreach ($posts as $key => $post) : ?>
+
+                                 <div>
+                                     <input type="radio" name="radio-<?= $key ?>" id="radio-<?= $key ?>" value="radio-<?= $key ?>" class="<?= ($key == 0) ? 'active' : '' ?>" />
+                                     <label for="radio-<?= $key ?>"><?= $post->post_title ?></label>
+                                 </div>
+
+                             <?php endforeach; ?>
+                         <?php endforeach ?>
+                     </div>
+
+                 </div>
+
+             </div>
+             <div class="service-tabcontent">
+                 <?php foreach ($posts as $key => $post) : ?>
+                     <div id="tab-<?= $key ?>" class="tabcontent  <?= ($key == 0) ? 'active' : '' ?> ">
+
+                         <div class="service-img">
+                             <?php $thumbnail_id = get_field('service_image', $cat->ID); ?>
+                             <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
+                         </div>
+                         <div class="service-content animate-text animate-letter">
+                             <h2 class="service-title title_with_bg h2 animation">
+                                 <?= get_field('service_title_front', $cat->ID) ?>
+                                 <span class="focuse"></span>
+                             </h2>
+                             <div class="service-description">
+                                 <?= get_field('service_description_front', $cat->ID) ?>
+                             </div>
+                             <div class="service-btn">
+                                 <a href="<?= get_permalink($cat->ID) ?>" class="btn-b">اطلاعات بیشتر</a>
+                             </div>
+                         </div>
+                     </div>
+                 <?php endforeach; ?>
+             </div>
+
+         </div>
+     <?php endif; ?>
+
+     </div>
 
 
+     </div>
 
-<!-- 
-
-
- 
+ </section>
