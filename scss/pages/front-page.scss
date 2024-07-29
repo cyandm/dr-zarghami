@@ -387,8 +387,38 @@ section.hero-section > div > div.swiper.home-service-slider {
     padding-bottom: 2.5rem;
   }
 
+  .service-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    @media (width <= 1126px) {
+      padding-block-start: 1.5rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      flex-shrink: 0;
+      position: absolute;
+      top: 0;
+      border-radius: 1rem;
+
+      @media (width <= 1024px) {
+        width: 15.125rem;
+        height: 15.125rem;
+        top: unset;
+        position: unset;
+      }
+    }
+  }
+
   .service-tabs {
     position: relative;
+    flex: 1.5;
 
     .tab-row {
       display: flex;
@@ -400,11 +430,15 @@ section.hero-section > div > div.swiper.home-service-slider {
         }
       }
 
-      .tabs {
+      .tab {
         display: flex;
-        width: 100%;
-        flex-direction: column;
-        margin-bottom: 1.5rem;
+        width: fit-content;
+        padding: 0.5rem;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 0.75rem;
+        background: $blue_1;
+        margin-bottom: 1.25rem;
         flex: 1;
 
         @media (width <= 1024px) {
@@ -415,20 +449,9 @@ section.hero-section > div > div.swiper.home-service-slider {
           flex: 2;
         }
 
-        .tab {
-          display: flex;
-          width: 100%;
-          padding: 0.5rem;
-          align-items: center;
-          gap: 0.5rem;
-          border-radius: 0.75rem;
-          background: $blue_1;
-          flex: 1;
-        }
-
         .tablinks {
           display: flex;
-          padding: 0.625rem 0.75rem;
+          padding: 0.75rem;
           justify-content: center;
           align-items: center;
           gap: 0.625rem;
@@ -437,8 +460,10 @@ section.hero-section > div > div.swiper.home-service-slider {
           background: none;
           border: none;
           white-space: nowrap;
+          border-radius: 0.75rem;
           cursor: pointer;
           @extend .body;
+          transition: all 0.5s ease;
         }
 
         .tablinks.active {
@@ -467,7 +492,6 @@ section.hero-section > div > div.swiper.home-service-slider {
         flex-wrap: wrap;
         transition: all 0.3s ease-out;
         height: 0;
-        gap: 4rem;
         @media (width <= 768px) {
           flex-direction: column;
         }
@@ -479,42 +503,13 @@ section.hero-section > div > div.swiper.home-service-slider {
           }
         }
 
-        .service-img {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          position: relative;
-
-          @media (width <= 1126px) {
-            padding-block-start: 1.5rem;
-          }
-
-          img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-            flex-shrink: 0;
-            position: absolute;
-            top: 0;
-
-            @media (width <= 1024px) {
-              width: 15.125rem;
-              height: 15.125rem;
-              top: unset;
-              position: unset;
-            }
-          }
-        }
-
         .service-content {
-          flex: 1;
-          @media (width <= 1024px) {
-            flex: 2;
-          }
+          // flex: 1;
+          // @media (width <= 1024px) {
+          //   flex: 2;
+          // }
 
           .service-title {
-            margin-top: 1.5rem;
             margin-bottom: 1.25rem;
             @media (width <= 768px) {
               margin-top: 0.75rem;
@@ -533,7 +528,7 @@ section.hero-section > div > div.swiper.home-service-slider {
           .service-btn {
             display: flex;
             justify-content: start;
-            margin-block-end: 1.25rem;
+            margin-block-start: 1.25rem;
           }
         }
 
@@ -545,6 +540,27 @@ section.hero-section > div > div.swiper.home-service-slider {
         }
       }
     }
+  }
+}
+
+.radio-button-content {
+  min-height: 10rem;
+}
+
+#content-tab {
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transition: all 0.3s ease-out;
+  height: 0;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease-out;
+    height: auto;
   }
 }
 

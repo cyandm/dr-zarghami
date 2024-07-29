@@ -67,12 +67,9 @@ if (!class_exists('cyn_acf')) {
             for ($i = 1; $i < 5; $i++) {
                 array_push(
                     $arr,
-                    cyn_acf_add_group("points_$i", ' نکات پیوند', [
-                        cyn_acf_add_image("points_img", '  عکس نکته', '', '50'),
-                        cyn_acf_add_text("points_title", 'تیتر نکته', '', '50'),
-                        cyn_acf_add_text("points_text", 'متن نکته', '', '100'),
-
-                    ]),
+                        cyn_acf_add_image("points_img_$i", '  عکس نکته', '', '50'),
+                        cyn_acf_add_text("points_title_$i", 'تیتر نکته', '', '50'),
+                        cyn_acf_add_text("points_text_$i", 'متن نکته', '', '100'),
                 );
             }
             $fields = array_merge($fields, $arr);

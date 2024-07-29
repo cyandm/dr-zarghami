@@ -25,7 +25,7 @@ $partners = get_field("choose_partners");
                     </div>
 
 
-                    <div class="attribute-content animate-letter bg-no-repeat bg-left bg-contain" style="background-image: url(<?= $svg_back; ?>);">
+                    <div class="attribute-content animate-letter bg-no-repeat bg-left bg-contain">
 
                         <h3 class="h2 title_with_bg animation"> <?= get_field('doctor_title', $partner) ?></h3>
 
@@ -39,9 +39,10 @@ $partners = get_field("choose_partners");
                             <?= get_field('doctor_description', $partner) ?>
                         </div>
 
+
                         <div class="attribute-description flex flex-col mt-2 gap-2">
-                            <a href="<?= get_field('doctor_address_link', $partner) ?>" style="color: #00337C">آدرس: <?= get_field('doctor_address', $partner) ?></a>
-                            <a href="<?= get_field('doctor_tel', $partner) ?>" style="color: #00337C">تلفن: <?= get_field('doctor_tel', $partner) ?></a>
+                            <a href="<?= get_field('doctor_address_link', $partner) ?>" class="h4" style="color: #00337C">آدرس: <?= get_field('doctor_address', $partner) ?></a>
+                            <a href="tel:<?= get_field('doctor_tel', $partner) ?>" class="h4" style="color: #00337C">تلفن: <?= get_field('doctor_tel', $partner) ?></a>
                         </div>
                     </div>
                 </div>

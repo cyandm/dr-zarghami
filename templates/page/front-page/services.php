@@ -11,44 +11,124 @@
 
 
  <section class="container services-section">
+
      <div class="title">
          <h2><?= get_field('services_section_title', $page_id); ?></h2>
          <p><?= get_field('services_section_title_description', $page_id); ?></p>
      </div>
 
+     <div class="flex w-full gap-4">
 
+         <div class="service-img">
+             <?php $thumbnail_id = get_field('img_services'); ?>
+             <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
+         </div>
 
+         <div id="homePageTabs" class="service-tabs">
 
+             <div id="tabTitleGroup" class="tab-row">
 
+                 <div class="tab">
+                     <?php foreach ($cat_services as $cat) : ?>
 
-     <?php if (is_array($posts) && count($posts) > 0) : ?>
-
-         <div class="service-tabs">
-             <div class="tab-row">
-                 <select class="tab-mobile" id="dropdown-menu">
-
-                     <?php foreach ($cat_services as $key => $cat) : ?>
-
-                         <option class="tablinks" <?= ($key == 0) ? 'active' : '' ?> value="tab-<?= $key ?>">
-                             <?= $cat->name ?></option>
-
+                         <div class="tab-title tablinks landing-tablinks" data-tab="<?php echo $cat->slug ?>">
+                             <?php echo $cat->name ?>
+                         </div>
                      <?php endforeach; ?>
 
-                 </select>
+                 </div>
 
-                 <div class="empty-div"></div>
+             </div>
 
-                 <div class="tabs">
+             <div class="service-tab-content">
+                 <div id="tabContentGroup" class="service-tabcontent">
+                     <?php foreach ($cat_services as $cat) : ?>
+                         <div class="tabcontent tab-content" data-tab="<?php echo $cat->slug ?>">
 
-                     <div class="tab">
+                             <?php $services = get_posts([
+                                    'post_type' => 'service',
+                                    'tax_query' => [
+                                        [
+                                            'taxonomy' => 'service_type',
+                                            'terms' => $cat,
+                                        ]
+                                    ]
+                                ]);
 
-                         <?php foreach ($cat_services as $key => $cat) : ?>
-                             <button class="tablinks landing-tablinks <?= ($key == 0) ? 'active' : '' ?>" id="tab-<?= $key ?>"><?= $cat->name ?></button>
-                         <?php endforeach; ?>
+                                ?>
 
-                     </div>
 
-                     <div class="radio-btn-tab flex flex-row gap-4">
+                             <div class="radio-buttons flex w-full">
+                                 <?php foreach ($services as $key => $service) : ?>
+
+                                     <div class="title" data-value="<?php echo $service->ID ?>">
+                                         <label class="flex items-center gap-2 h3 font-normal">
+                                             <input type="radio" value="<?php echo $service->ID ?>" name="<?php echo $cat->name ?>" <?php echo $key === 0 ? 'checked' : '' ?> />
+                                             <?php echo $service->post_title ?>
+                                         </label>
+                                     </div>
+
+                                 <?php endforeach; ?>
+
+                             </div>
+
+                             <div class="radio-button-content flex flex-col">
+                                 <?php foreach ($services as $key => $service) : ?>
+
+                                     <div class="service-content content <?php echo $key === 0 ? 'active' : '' ?>" id="content-tab" data-value="<?php echo $service->ID ?>">
+                                         <div class="service-content animate-text animate-letter">
+                                             <h2 class="service-title title_with_bg h2 animation">
+                                                 <?= get_field('service_title_front', $service->ID) ?>
+                                                 <span class="focuse"></span>
+                                             </h2>
+                                         </div>
+
+                                         <?php echo get_field('service_description_front', $service->ID) ?>
+
+                                         <div class="service-btn">
+                                             <a href="<?= get_permalink($service->ID) ?>" class="btn-b">اطلاعات بیشتر</a>
+                                         </div>
+                                     </div>
+
+                                 <?php endforeach; ?>
+
+                             </div>
+
+                         </div>
+                     <?php endforeach; ?>
+
+
+                 </div>
+             </div>
+         </div>
+     </div>
+
+ </section>
+
+
+
+ <!-- <?php foreach ($posts as $key => $post) : ?>
+     <div id="tab-<?= $key ?>" class="tabcontent  <?= ($key == 0) ? 'active' : '' ?> ">
+
+
+         <div class="service-content animate-text animate-letter">
+             <h2 class="service-title title_with_bg h2 animation">
+                 <?= get_field('service_title_front', $post->ID) ?>
+                 <span class="focuse"></span>
+             </h2>
+             <div class="service-description">
+                 <?= get_field('service_description_front', $post->ID) ?>
+             </div>
+             <div class="service-btn">
+                 <a href="<?= get_permalink($post->ID) ?>" class="btn-b">اطلاعات بیشتر</a>
+             </div>
+         </div>
+     </div>
+ <?php endforeach; ?> -->
+
+
+
+ <!-- <div class="radio-btn-tab flex flex-row gap-4">
 
                          <?php foreach ($cat_services as $key => $cat) :
 
@@ -71,42 +151,54 @@
                                  </div>
 
                              <?php endforeach; ?>
-                         <?php endforeach ?>
-                     </div>
+                         <?php endforeach ?> -->
+
+
+
+ <!-- <?php if (is_array($posts) && count($posts) > 0) : ?>
+
+     <div class="service-tabs">
+         <div class="tab-row">
+             <select class="tab-mobile" id="dropdown-menu">
+
+                 <?php foreach ($cat_services as $key => $cat) : ?>
+
+                     <option class="tablinks" <?= ($key == 0) ? 'active' : '' ?> value="tab-<?= $key ?>">
+                         <?= $cat->name ?></option>
+
+                 <?php endforeach; ?>
+
+             </select>
+
+             <div class="empty-div"></div>
+
+             <div class="tabs">
+
+                 <div class="tab">
+
+                     <?php foreach ($cat_services as $key => $cat) : ?>
+                         <button class="tablinks landing-tablinks <?= ($key == 0) ? 'active' : '' ?>" id="tab-<?= $key ?>"><?= $cat->name ?></button>
+                     <?php endforeach; ?>
 
                  </div>
 
-             </div>
-             <div class="service-tabcontent">
-                 <?php foreach ($posts as $key => $post) : ?>
-                     <div id="tab-<?= $key ?>" class="tabcontent  <?= ($key == 0) ? 'active' : '' ?> ">
 
-                         <div class="service-img">
-                             <?php $thumbnail_id = get_field('service_image', $cat->ID); ?>
-                             <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
-                         </div>
-                         <div class="service-content animate-text animate-letter">
-                             <h2 class="service-title title_with_bg h2 animation">
-                                 <?= get_field('service_title_front', $cat->ID) ?>
-                                 <span class="focuse"></span>
-                             </h2>
-                             <div class="service-description">
-                                 <?= get_field('service_description_front', $cat->ID) ?>
-                             </div>
-                             <div class="service-btn">
-                                 <a href="<?= get_permalink($cat->ID) ?>" class="btn-b">اطلاعات بیشتر</a>
-                             </div>
-                         </div>
-                     </div>
-                 <?php endforeach; ?>
              </div>
 
          </div>
-     <?php endif; ?>
 
      </div>
+     <div class="service-tabcontent">
+         <?php foreach ($cat_services as $key => $cat) : ?>
+
+             <div id="tab-<?= $key ?>" class="tabcontent  <?= ($key == 0) ? 'active' : '' ?> ">
 
 
+                 <?php echo $cat->name ?>
+
+             </div>
+         <?php endforeach; ?>
      </div>
 
- </section>
+     </div>
+ <?php endif; ?> -->
