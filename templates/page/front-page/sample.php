@@ -12,6 +12,7 @@
 
             <div class="w-full">
                 <a href="<?= get_field('surgery_video_link'); ?>" class="btn-b float-left">مطالعه کامل </a>
+                <a href="<?= get_field('surgery_video_link'); ?>" class="btn-mobile btn w-full float-left">مطالعه کامل </a>
             </div>
         </div>
         <?= wp_get_attachment_image(get_field('surgery_img'), 'full w-2/5 max-w-[400px] max-md:w-full max-md:max-w-[unset] max-md:h-80 aspect-square rounded-2xl object-cover', false, []); ?>

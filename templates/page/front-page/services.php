@@ -17,7 +17,7 @@
          <p><?= get_field('services_section_title_description', $page_id); ?></p>
      </div>
 
-     <div class="flex w-full gap-4">
+     <div class="flex w-full gap-4 max-lg:flex-col">
 
          <div class="service-img">
              <?php $thumbnail_id = get_field('img_services'); ?>
@@ -83,10 +83,12 @@
                                              </h2>
                                          </div>
 
-                                         <?php echo get_field('service_description_front', $service->ID) ?>
+                                         <div class="service_description">
+                                             <?php echo get_field('service_description_front', $service->ID) ?>
+                                         </div>
 
                                          <div class="service-btn">
-                                             <a href="<?= get_permalink($service->ID) ?>" class="btn-b">اطلاعات بیشتر</a>
+                                             <a href="<?= get_permalink($service->ID) ?>" class="btn">اطلاعات بیشتر</a>
                                          </div>
                                      </div>
 
@@ -106,56 +108,7 @@
  </section>
 
 
-
- <!-- <?php foreach ($posts as $key => $post) : ?>
-     <div id="tab-<?= $key ?>" class="tabcontent  <?= ($key == 0) ? 'active' : '' ?> ">
-
-
-         <div class="service-content animate-text animate-letter">
-             <h2 class="service-title title_with_bg h2 animation">
-                 <?= get_field('service_title_front', $post->ID) ?>
-                 <span class="focuse"></span>
-             </h2>
-             <div class="service-description">
-                 <?= get_field('service_description_front', $post->ID) ?>
-             </div>
-             <div class="service-btn">
-                 <a href="<?= get_permalink($post->ID) ?>" class="btn-b">اطلاعات بیشتر</a>
-             </div>
-         </div>
-     </div>
- <?php endforeach; ?> -->
-
-
-
- <!-- <div class="radio-btn-tab flex flex-row gap-4">
-
-                         <?php foreach ($cat_services as $key => $cat) :
-
-                                $posts = get_posts([
-                                    'post_type' => 'service',
-                                    'tax_query' => [
-                                        [
-                                            'taxonomy' => 'service_type',
-                                            'terms' => $cat,
-                                        ]
-                                    ]
-                                ]);
-
-
-                                foreach ($posts as $key => $post) : ?>
-
-                                 <div>
-                                     <input type="radio" name="radio-<?= $key ?>" id="radio-<?= $key ?>" value="radio-<?= $key ?>" class="<?= ($key == 0) ? 'active' : '' ?>" />
-                                     <label for="radio-<?= $key ?>"><?= $post->post_title ?></label>
-                                 </div>
-
-                             <?php endforeach; ?>
-                         <?php endforeach ?> -->
-
-
-
- <!-- <?php if (is_array($posts) && count($posts) > 0) : ?>
+ <!-- <?php if (is_array($cat_services) && count($cat_services) > 0) : ?>
 
      <div class="service-tabs">
          <div class="tab-row">

@@ -62,7 +62,10 @@ if (is_array($testimonials) && count($testimonials) > 0) : ?>
             </div>
         </div>
 
-        <div class="btn btn-mobile" id=testimonial-form><a href="/comment"><?= get_field('testimonial_button_title', $page_id) ?></a></div>
+        <div class="container  btn-mobile" id=testimonial-form>
+            <a href="/comment" class="btn w-full"><?= get_field('testimonial_button_title', $page_id) ?>
+            </a>
+        </div>
 
     </section>
 <?php endif; ?>

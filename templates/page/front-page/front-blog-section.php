@@ -16,16 +16,15 @@ if (count($blogs) > 0) : ?>
                 <h2><?= get_field('blog_section_title', $page_id); ?></h2>
                 <p><?= get_field('blog_section_description', $page_id); ?></p>
             </div>
-            <a href="<?= get_field('blog_button_link', $page_id); ?>"
-               class="btn"><?= get_field('blog_button_title', $page_id); ?></a>
+            <a href="<?= get_field('blog_button_link', $page_id); ?>" class="btn btn-b"><?= get_field('blog_button_title', $page_id); ?></a>
         </div>
         <?php
-        if (is_array($blogs) && count($blogs) > 0) :?>
+        if (is_array($blogs) && count($blogs) > 0) : ?>
             <!--        -------------------------------small view -->
             <div class="container swiper front-blogs-slider">
                 <div class="swiper-wrapper blogs-row">
                     <?php foreach ($blogs as $key => $blog) :
-                        if ($key < 3) :?>
+                        if ($key < 3) : ?>
                             <div class="swiper-slide">
                                 <?php
                                 set_query_var('id', $blog->ID);
@@ -35,13 +34,17 @@ if (count($blogs) > 0) : ?>
                                 ); ?>
 
                             </div>
-                        <?php
+                    <?php
                         endif;
                     endforeach;
                     ?>
                 </div>
 
                 <div class="swiper-pagination"></div>
+
+                <div class="btn-mobile">
+                    <a href="<?= get_field('blog_button_link', $page_id); ?>" class="btn w-full mt-8"><?= get_field('blog_button_title', $page_id); ?></a>
+                </div>
             </div>
 
             <!--        ------------------------------- large view -->
@@ -62,4 +65,4 @@ if (count($blogs) > 0) : ?>
             </div>
         <?php endif ?>
     </section>
-<?php endif; ?><?php
+    <?php endif; ?><?php

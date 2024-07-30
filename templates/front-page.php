@@ -1,6 +1,6 @@
 <?php /* Template Name: Front Page */ ?>
 <?php get_header(); ?>
-<main class="flex flex-col gap-10">
+<main class="front-page flex flex-col gap-10">
   <?php get_template_part('templates/page/front-page/front-hero-section', null,);
   get_template_part('templates/page/front-page/services', null,);
   get_template_part('templates/page/front-page/insurances', null,);

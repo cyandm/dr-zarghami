@@ -15,8 +15,8 @@ if ($term_query->have_posts()) :
     <section class="podcast-section container">
         <div class="flex justify-between">
             <div class="title">
-                <h2><?= get_field('podcasts_section_title'); ?></h2>
-                <p><?= get_field('podcasts_section_subtitle'); ?></p>
+                <h2><?= get_field('podcasts_section_title', $page_id); ?></h2>
+                <p><?= get_field('podcasts_section_subtitle', $page_id); ?></p>
             </div>
             <a href="<?= get_field('about_button_link'); ?>" class="btn-b">مشاهده همه</a>
         </div>
@@ -60,6 +60,12 @@ if ($term_query->have_posts()) :
 
             </div>
             <div class="swiper-pagination"></div>
+
+            <div class="btn-mobile">
+                <a href="<?= get_field('about_button_link'); ?>" class="btn w-full mt-8">مشاهده همه</a>
+
+            </div>
+
 
         </div>
 

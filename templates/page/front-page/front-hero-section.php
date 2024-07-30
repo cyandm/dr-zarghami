@@ -115,7 +115,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
 
             <div class="button-div">
                 <?php if ($btnLink) : ?>
-                    <a href="<?= $btnLink ?>" class="btn-b"><?= get_field('hero_button_title', $page_id); ?></a>
+                    <a href="<?= $btnLink ?>" class="btn"><?= get_field('hero_button_title', $page_id); ?></a>
                 <?php endif; ?>
                 <?php if ($imgSmall) : ?>
                     <?= wp_get_attachment_image($imgSmall, 'thumbnail', false, []); ?>
@@ -140,7 +140,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
 
             <div class="button-div">
                 <?php if ($btnLink) : ?>
-                    <a href="<?= $btnLink ?>" class="btn-b"><?= get_field('hero_button_title', $page_id); ?></a>
+                    <a href="<?= $btnLink ?>" class="btn"><?= get_field('hero_button_title', $page_id); ?></a>
                 <?php endif; ?>
                 <?php if ($imgSmall) : ?>
                     <?= wp_get_attachment_image($imgSmall, 'thumbnail', false, []); ?>
