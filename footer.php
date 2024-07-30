@@ -38,7 +38,7 @@ $locations = get_field('locations_links', $front_page_id);
             <h4>مشاهده آدرس روی نقشه</h4>
             <div class="social-media flex gap-4">
                 <?php
-                for ($i = 1; $i < 4; $i++) {
+                for ($i = 1; $i < 5; $i++) {
                 ?>
                     <a href="<?= get_option("location_link_$i"); ?>">
                         <img class="" src="<?= get_option("location_logo_$i") ?>" />
