@@ -2,7 +2,7 @@
 $page_id = get_queried_object_id();
 $front_id = get_option('page_on_front');
 
-$img = get_field('service_img', $page_id);
+$img = get_the_post_thumbnail($page_id, 'full');
 $extraServices = get_field('sub_service_group', $page_id);
 $doctors = get_field('team_images', $page_id);
 $videos = get_field('video_group', $page_id);
@@ -16,13 +16,13 @@ $blogs = get_field('choose_blogs', $page_id);
         if ($excerpt && $img) : ?>
             <div class="single-service-text container">
                 <div class="has-border">
-                    <h1 class="h2"><?= get_field('service_title', $page_id); ?></h1>
+                    <h1 class="h2"><?= get_the_title($page_id) ?></h1>
                     <div class="single-excerpt-content"><?= $excerpt ?></div>
                 </div>
                 <a href="tel:<?= get_field('service_call_link', $page_id); ?>" class="btn-b">تماس بگیر</a>
             </div>
             <div class="single_service-img">
-                <?= wp_get_attachment_image($img, 'full', false, []); ?>
+                <?= $img ?>
             </div>
         <?php endif; ?>
     </section>
