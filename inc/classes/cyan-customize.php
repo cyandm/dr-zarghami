@@ -12,7 +12,6 @@ if (!class_exists('cyn_customize')) {
         {
 
             $this->cyn_register_footer($wp_customize);
-
         }
 
         /**
@@ -114,24 +113,25 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'information', 'text', 'address', 'آدرس');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'open_time', 'ساعت مراجعه');
             $this->cyn_add_control($wp_customize, 'information', 'url', 'online', 'لینک مراجعه');
-            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_1', 'لینک شبکه اول', );
+            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_1', 'لینک شبکه اول',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_1', 'لوگوی شبکه اول');
-            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_2', 'لینک شبکه دوم', );
+            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_2', 'لینک شبکه دوم',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_2', 'لوگوی شبکه دوم');
-            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_3', 'لینک شبکه سوم', );
+            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_3', 'لینک شبکه سوم',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_3', 'لوگوی شبکه سوم');
-            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_4', 'لینک شبکه چهارم', );
+            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_4', 'لینک شبکه چهارم',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_4', 'لوگوی شبکه چهارم');
+            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_5', 'لینک شبکه پنجم',);
+            $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_5', 'لوگوی شبکه پنجم');
 
-            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_1', 'لینک لوکیشن اول', );
+            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_1', 'لینک لوکیشن اول',);
             $this->cyn_add_control($wp_customize, 'footer_location', 'file', 'location_logo_1', 'لوگوی لوکیشن اول');
-            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_2', 'لینک لوکیشن دوم', );
+            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_2', 'لینک لوکیشن دوم',);
             $this->cyn_add_control($wp_customize, 'footer_location', 'file', 'location_logo_2', 'لوگوی لوکیشن دوم');
-            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_3', 'لینک لوکیشن سوم', );
+            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_3', 'لینک لوکیشن سوم',);
             $this->cyn_add_control($wp_customize, 'footer_location', 'file', 'location_logo_3', 'لوگوی لوکیشن سوم');
-            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_4', 'لینک لوکیشن چهارم', );
+            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_4', 'لینک لوکیشن چهارم',);
             $this->cyn_add_control($wp_customize, 'footer_location', 'file', 'location_logo_4', 'لوگوی لوکیشن چهارم');
-
         }
 
 

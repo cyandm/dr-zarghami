@@ -815,7 +815,6 @@ section.hero-section > div > div.swiper.home-service-slider {
 .important-points {
   @media (width <= 992px) {
     .important-points-desktop {
-      display: none;
     }
   }
 
@@ -1292,7 +1291,7 @@ section.hero-section > div > div.swiper.home-service-slider {
 .mobile {
   display: none;
   @media (width <=992px) {
-    display: block;
+    display: none;
   }
 }
 
@@ -1324,4 +1323,16 @@ section.hero-section > div > div.swiper.home-service-slider {
       bottom: 6rem;
     }
   }
+}
+
+.equal-height {
+  .swiper-pagination {
+    @media (width <= 425px) {
+      bottom: var(--swiper-pagination-bottom, 8px);
+    }
+  }
+}
+
+.important-points-desktop{
+    margin-bottom: 2rem;
 }

@@ -59,7 +59,7 @@ $locations = get_field('locations_links', $front_page_id);
         <p class="caption">متخصص انواع جراحی های داخلی</p>
         <div class="grayscale flex items-center gap-3 ">
             <?php
-            for ($i = 1; $i < 5; $i++) {
+            for ($i = 1; $i < 6; $i++) {
             ?>
                 <a href="<?= get_option("social_link_$i"); ?>" class="w-6 flex items-center aspect-square">
                     <img src="<?= get_option("social_logo_$i") ?>" />
