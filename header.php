@@ -45,7 +45,7 @@ $defaultCallNumber = get_field('call_number', $front_id); ?>
                     </div>
                     <div class="btn-contain">
                         <?php if ($defaultBtnTitle || $headerCallNumberTitle) :  ?>
-                            <a href="tel:<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn">
+                            <a href="<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn">
                                 <?= ($headerCallNumberTitle) ? $headerCallNumberTitle : $defaultBtnTitle ?>
                             </a>
                         <?php endif; ?>
@@ -59,7 +59,7 @@ $defaultCallNumber = get_field('call_number', $front_id); ?>
             <div class="btn-contain">
                 <?php if ($defaultBtnTitle || $headerCallNumberTitle) :  ?>
 
-                    <a href="tel:<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn">
+                    <a href="<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn">
                         <?= ($headerCallNumberTitle) ? $headerCallNumberTitle : $defaultBtnTitle ?>
                     </a>
                 <?php endif; ?>
@@ -75,7 +75,7 @@ $defaultCallNumber = get_field('call_number', $front_id); ?>
             </div>
             <div class="btn-contain">
                 <?php if ($defaultBtnTitle || $headerCallNumberTitle) :  ?>
-                    <a href="tel:<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn">
+                    <a href="<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn">
                         <?= ($headerCallNumberTitle) ? $headerCallNumberTitle : $defaultBtnTitle ?>
                     </a>
                 <?php endif; ?>

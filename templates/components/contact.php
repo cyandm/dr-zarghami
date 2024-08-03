@@ -25,8 +25,15 @@ $turn_img = get_field('turn_img', $page_id);
             </div>
             <p>ایمیل</p>
             <a href="mailto:<?= get_option('email'); ?>" class="text-blue-3"><?= get_option('email'); ?></a>
+
             <p class="h3 pt-4">ویزیت آنلاین</p>
             <a href="<?= get_option('online'); ?>" class="text-blue-3">برای دریافت مشاوره غیرحضوری کلیک نمایید</a>
+
+            <p class="h3 pt-4"><?= get_option('online_text'); ?></p>
+            <a href="<?= get_option('online_url'); ?>" class="text-blue-3">
+                <img src="<?= get_option("online_file") ?>" class="pt-2 rounded-2xl max-w-[130px]" />
+            </a>
+
             <p class="h3 pt-4">ارتباط با پزشک</p>
             <div class="grayscale flex items-center gap-3 ">
                 <?php
