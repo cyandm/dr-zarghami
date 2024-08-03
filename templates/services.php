@@ -5,23 +5,23 @@
 get_header();
 
 
-$page_id = get_queried_object_id();
+// $page_id = get_queried_object_id();
 
-$query_arg = array(
-    'post_type' => 'service',
-    'posts_per_page' => -1,
-    'orderby' => array(
-        'date' => 'DE',
-        'menu_order' => 'ASC',
-    ),
-    'post_status' => 'publish',
-);
-$allServices = new WP_Query($query_arg);
+// $query_arg = array(
+//     'post_type' => 'service',
+//     'posts_per_page' => -1,
+//     'orderby' => array(
+//         'date' => 'DE',
+//         'menu_order' => 'ASC',
+//     ),
+//     'post_status' => 'publish',
+// );
+// $allServices = new WP_Query($query_arg);
 
 $hero_img = get_field('hero_img');
 $hero_title = get_field('hero_title');
 $hero_text = get_field('hero_text');
-
+$select_services = get_field('select_services');
 ?>
 <main class=" main services" id="service-overview">
     <section class="services-section-page">
@@ -36,28 +36,28 @@ $hero_text = get_field('hero_text');
         </div>
 
     </section>
-    <?php if ($allServices->have_posts()) :
+    <?php if ($select_services) :
         $counter = 0;
-        while ($allServices->have_posts()) : $allServices->the_post();
-            $serviceId = get_the_ID(); ?>
-            <?php $subServices = get_field('sub_service_repeater', $serviceId); ?>
+        foreach ($select_services as $select_service) :
+    ?>
+            <?php $subServices = get_field('sub_service_repeater', $select_service); ?>
             <section class="about-service-section <?= ($counter % 4 == 0) ? 'even-section' : 'odd-section' ?>">
                 <div class="service-content container">
                     <div class="image">
-                        <?= get_the_post_thumbnail($serviceId, 'full') ?>
+                        <?= get_the_post_thumbnail($select_service, 'full') ?>
                     </div>
 
                     <div class="content">
-                        <h2 class="h2"><?= get_the_title(); ?></h2>
-                        <div class="excerpt-service"><?= get_the_excerpt($serviceId) ?></div>
+                        <h2 class="h2"><?= get_the_title($select_service); ?></h2>
+                        <div class="excerpt-service"><?= get_the_excerpt($select_service) ?></div>
                         <div class="btn-content">
-                            <a href="<?= get_permalink($serviceId); ?>" class="btn-b">اطلاعات بیشتر</a>
+                            <a href="<?= get_permalink($select_service); ?>" class="btn-b">اطلاعات بیشتر</a>
                         </div>
                     </div>
                 </div>
             </section>
     <?php $counter++;
-        endwhile;
+        endforeach;
     endif;
     wp_reset_query(); ?>
 </main>
