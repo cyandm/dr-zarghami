@@ -1829,16 +1829,12 @@ video {
   width: 100%;
 }
 
-.max-w-\[400px\] {
-  max-width: 400px;
-}
-
-.max-w-\[120px\] {
-  max-width: 120px;
-}
-
 .max-w-\[130px\] {
   max-width: 130px;
+}
+
+.max-w-\[400px\] {
+  max-width: 400px;
 }
 
 .flex-shrink {
@@ -3178,16 +3174,12 @@ video {
   padding-left: 2rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
-}
-
-.pt-3 {
-  padding-top: 0.75rem;
-}
-
 .pt-2 {
   padding-top: 0.5rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-left {
