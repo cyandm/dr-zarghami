@@ -25,6 +25,7 @@ if (!class_exists('cyn_acf')) {
             add_action('acf/init', [$this, 'cyn_podcasts']);
             add_action('acf/init', [$this, 'cyn_about_page']);
             add_action('acf/init', [$this, 'cyn_partners']);
+            add_action('acf/init', [$this, 'cyn_contact']);
         }
         public function cyn_front_page()
         {
@@ -67,9 +68,9 @@ if (!class_exists('cyn_acf')) {
             for ($i = 1; $i < 5; $i++) {
                 array_push(
                     $arr,
-                        cyn_acf_add_image("points_img_$i", '  عکس نکته', '', '50'),
-                        cyn_acf_add_text("points_title_$i", 'تیتر نکته', '', '50'),
-                        cyn_acf_add_text("points_text_$i", 'متن نکته', '', '100'),
+                    cyn_acf_add_image("points_img_$i", '  عکس نکته', '', '50'),
+                    cyn_acf_add_text("points_title_$i", 'تیتر نکته', '', '50'),
+                    cyn_acf_add_text("points_text_$i", 'متن نکته', '', '100'),
                 );
             }
             $fields = array_merge($fields, $arr);
@@ -173,6 +174,28 @@ if (!class_exists('cyn_acf')) {
                 ],
             ];
             cyn_register_acf_group(' صفحه همکاران ', $fields, $location);
+        }
+
+
+        public function cyn_contact()
+        {
+            $fields = [
+
+                cyn_acf_add_text("contact_title", ' عنوان بالای فرم ', '', ' 50'),
+                cyn_acf_add_text("contact_subtitle", ' زیر عنوان بالای فرم ', '', ' 50'),
+                cyn_acf_add_image("contact_img", 'عکس کنار فرم تماس',),
+            ];
+
+            $location = [
+                [
+                    [
+                        'param' => 'page_template',
+                        'operator' => '==',
+                        'value' => 'templates/contact.php',
+                    ],
+                ],
+            ];
+            cyn_register_acf_group(' صفحه تماس با ما ', $fields, $location);
         }
     }
 }
