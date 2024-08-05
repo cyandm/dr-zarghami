@@ -4,6 +4,7 @@
     $cat_services = get_terms([
         'taxonomy' => 'service_type',
         'hide_empty' => true,
+        'slug' => ['hepatobiliary-surgery', 'liver-transplant-surgery'],
     ]);
 
     ?>
