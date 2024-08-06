@@ -137,6 +137,8 @@ $certificates = get_field('certificate_section_images', $page_id);
                             <?php
                             if (($video['video_img']['id'])) {
                                 echo wp_get_attachment_image($video['video_img']['id'], 'full', false, []);
+                            } else {
+                                echo '<img src=' . get_stylesheet_directory_uri() . '/imgs/placeholder-image.webp>';
                             }
                             ?>
 

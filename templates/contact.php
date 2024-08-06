@@ -27,7 +27,7 @@ $contact_subtitle = get_field('contact_subtitle');
                 <div class="contact-img rounded-2xl max-md:min-h-80" style="background-image: url(<?php echo wp_get_attachment_url($contact_img) ?>); background-position: center; background-repeat: no-repeat; background-size: cover;">
                     <?php  ?>
                 </div>
-                <div class="contact-form md:pt-4">
+                <div class="contact-form md:pt-4" id="contact-form">
                     <div class="title p-0">
                         <h2 class="contact-title"><?php echo $contact_title ?></h2>
                         <p><?php echo $contact_subtitle ?></p>

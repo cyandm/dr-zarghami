@@ -40,7 +40,7 @@ $defaultCallNumber = get_field('call_number', $front_id); ?>
                         </div>
                     </div>
                     <div class="menu-contain">
-                        <?php wp_nav_menu(['menu' => 'header-menu']) ?>
+                        <?php wp_nav_menu(['menu' => 'header-menu']); ?>
 
                     </div>
                     <div class="btn-contain">
@@ -71,7 +71,7 @@ $defaultCallNumber = get_field('call_number', $front_id); ?>
                 <?php the_custom_logo() ?>
             </div>
             <div class="menu-contain">
-                <?php wp_nav_menu(['menu' => 'header-menu']) ?>
+                <?php wp_nav_menu(['menu' => 'header-menu']); ?>
             </div>
             <div class="btn-contain">
                 <?php if ($defaultBtnTitle || $headerCallNumberTitle) :  ?>

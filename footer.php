@@ -25,7 +25,7 @@ $locations = get_field('locations_links', $front_page_id);
         </div>
         <div class="footer-widget tel-widget">
             <span><?= get_option('phone_number_title'); ?></span>
-            <a href="tel:<?= get_option('phone_number'); ?>" class="text-blue-3"><?= get_option('phone_number'); ?></a>
+            <a href="<?= get_option('phone_number_link'); ?>" class="text-blue-3"><?= get_option('phone_number'); ?></a>
             <span><?= get_option('phone_number2_title'); ?></span>
             <a href="tel:<?= get_option('phone_number2'); ?>" class="text-blue-3"><?= get_option('phone_number2'); ?></a>
             <span><?= get_option('phone_number3_title'); ?></span>
@@ -55,8 +55,8 @@ $locations = get_field('locations_links', $front_page_id);
         <div class="logo-contain">
             <?php the_custom_logo() ?>
         </div>
-        <p>دکتر یحیی ضرغامی</p>
-        <p class="caption">متخصص انواع جراحی های داخلی</p>
+        <p><?= get_option("doctor_name"); ?></p>
+        <p class="caption"><?= get_option("doctor_skill"); ?></p>
         <div class="grayscale flex items-center gap-3 ">
             <?php
             for ($i = 1; $i < 6; $i++) {
@@ -68,6 +68,9 @@ $locations = get_field('locations_links', $front_page_id);
 
             <?php } ?>
         </div>
+
+        <p class="caption"><?= get_option("developer_name"); ?></p>
+
     </div>
 </footer>
 <?php wp_footer(); ?>

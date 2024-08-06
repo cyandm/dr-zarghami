@@ -11,7 +11,7 @@ $turn_img = get_field('turn_img', $page_id);
 
                 <div class="flex flex-col">
                     <span><?= get_option('phone_number_title'); ?></span>
-                    <a href="tel:<?= get_option('phone_number'); ?>" class="text-blue-3"><?= get_option('phone_number'); ?></a>
+                    <a href="<?= get_option('phone_number_link'); ?>" class="text-blue-3"><?= get_option('phone_number'); ?></a>
                 </div>
                 <div class="flex flex-col">
                     <span><?= get_option('phone_number2_title'); ?></span>

@@ -164,7 +164,7 @@
     }
   }
 }
-.swiper-wrapper{
+.swiper-wrapper {
   height: auto !important;
 }
 //---------------------------------------------- doctor section style
@@ -472,5 +472,19 @@
     > h2 {
       color: $blue_2;
     }
+  }
+}
+
+.video-thumbnails .video-thumbnail {
+  @media (width <= 768px) {
+    height: 18rem !important;
+    max-height: 18rem !important;
+  }
+}
+
+.video-thumbnails .main-video {
+  @media (width <= 768px) {
+    height: 18rem !important;
+    max-height: 18rem !important;
   }
 }
