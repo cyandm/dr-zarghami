@@ -109,8 +109,8 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'information', 'text', 'developer_name', 'اسم شرکت توسعه دهنده');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number2_title', 'تیتر شماره تلفن دوم');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number3_title', 'تیتر شماره تلفن سوم');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number', 'متن لینک به صفحه درباره ما');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_link', 'لینک به صفحه درباره ما');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number', 'متن لینک به صفحه تماس با ما');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_link', 'لینک به صفحه تماس با ما');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number2', 'شماره تلفن دوم');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number3', 'شماره تلفن سوم');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'email', 'ایمیل');
