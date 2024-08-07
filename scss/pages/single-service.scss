@@ -348,9 +348,6 @@
       .video-1 {
         flex: 1 1 35%;
         height: 13.56rem;
-        @media (width <= 900px) {
-          height: 9rem;
-        }
       }
 
       .video-2 {
@@ -366,9 +363,6 @@
       .video-4 {
         flex: 1 1 35%;
         height: 18.18rem;
-        @media (width <= 900px) {
-          height: 9rem;
-        }
       }
 
       .video-1,
@@ -377,6 +371,7 @@
       .video-4 {
         @media (width <= 900px) {
           flex: unset;
+          width: 49%;
         }
       }
     }
@@ -476,9 +471,15 @@
 }
 
 .video-thumbnails .video-thumbnail {
+  @media (width <= 900px) {
+    height: 16rem;
+  }
   @media (width <= 768px) {
-    height: 18rem !important;
-    max-height: 18rem !important;
+    height: 6rem !important;
+    max-height: 6rem !important;
+  }
+  @media (width <= 448px) {
+    width: 48% !important;
   }
 }
 
@@ -486,5 +487,11 @@
   @media (width <= 768px) {
     height: 18rem !important;
     max-height: 18rem !important;
+  }
+}
+
+.video-thumbnails {
+  @media (width <= 900px) {
+    flex-direction: row !important;
   }
 }

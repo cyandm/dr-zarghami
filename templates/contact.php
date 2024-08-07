@@ -37,16 +37,16 @@ $contact_subtitle = get_field('contact_subtitle');
                         <div class="form-input">
 
                             <i class="icon-call1"></i>
-                            <input type="text" name="phone" id="phone" placeholder=" تلفن همراه">
+                            <input type="text" name="phone" id="phone" placeholder=" تلفن همراه" required>
                         </div>
                         <div class="form-input">
                             <i class="icon-user-1"></i>
-                            <input type="text" name="name" id="name" placeholder=" نام شما ">
+                            <input type="text" name="name" id="name" placeholder=" نام شما " required>
 
                         </div>
                         <div class="form-input form-textarea">
                             <i class="icon-message-2"></i>
-                            <textarea name="message" id="message" rows="7" maxlength="65525" placeholder="پیام شما"></textarea>
+                            <textarea name="message" id="message" rows="7" maxlength="65525" placeholder="پیام شما" required></textarea>
                         </div>
                         <div class="form-btn">
 

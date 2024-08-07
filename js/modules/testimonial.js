@@ -1,19 +1,19 @@
 import { errorToast, successFormToast } from "./toastify";
 
-function contact() {
-  const form = document.querySelector("#contact_form");
+function testimonial() {
+  const formComment = document.querySelector("#service_comment_form");
 
-  if (!form) return;
+  if (!formComment) return;
 
-  form.addEventListener("submit", (e) => {
+  formComment.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const formData = new FormData(form);
+    const formData = new FormData(formComment);
     formData.append("nonce", rest_details.nonce);
 
     jQuery(($) => {
       $.ajax({
-        url: rest_details.url + "/cynApi/v1/contactForm",
+        url: rest_details.url + "/cynApi/v1/testimonialForm",
         type: "post",
         cache: false,
         processData: false,
@@ -22,7 +22,7 @@ function contact() {
 
         success: (res) => {
           successFormToast.showToast();
-          form.reset();
+          formComment.reset();
         },
 
         error: (err) => {
@@ -33,4 +33,4 @@ function contact() {
   });
 }
 
-contact();
+testimonial();

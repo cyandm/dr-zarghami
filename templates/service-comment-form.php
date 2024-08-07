@@ -25,17 +25,17 @@ $services = $allServices->posts; ?>
                 <img src="<?= get_stylesheet_directory_uri() ?>/imgs/comment.webp" alt="contact">
             </div>
             <div class="contact-form">
-                <h2 class="h2 contact-title">نظراتتون رو باما به اشتراک بزارید</h2>
+                <h2 class="h2 contact-title">نظراتتون رو با ما به اشتراک بزارید</h2>
                 <span>تجربه های خودتون رو با ما به اشتراک بزارید</span>
                 <form method="post" action="" id="service_comment_form">
                     <div class="form-input">
 
                         <i class="icon-call1"></i>
-                        <input type="text" name="phone" id="phone" placeholder=" تلفن همراه">
+                        <input type="text" name="phone" id="phone" placeholder=" تلفن همراه" required>
                     </div>
                     <div class="form-input">
                         <i class="icon-user-1"></i>
-                        <input type="text" name="name" id="name" placeholder=" نام شما ">
+                        <input type="text" name="name" id="name" placeholder=" نام شما " required>
                     </div>
                     <div class="form-input">
                         <select name="service" id="">
@@ -47,7 +47,7 @@ $services = $allServices->posts; ?>
                     </div>
                     <div class="form-input form-textarea">
                         <i class="icon-message-2"></i>
-                        <textarea name="message" id="message" rows="7" maxlength="65525" placeholder="پیام شما"></textarea>
+                        <textarea name="message" id="message" rows="7" maxlength="65525" placeholder="پیام شما" required></textarea>
                     </div>
                     <div class="form-rate">
                         <span for="rating">چند ستاره امتیاز میدی؟</span>
