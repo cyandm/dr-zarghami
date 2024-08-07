@@ -13,7 +13,7 @@ function contact() {
 
     jQuery(($) => {
       $.ajax({
-        url: rest_details.url + "/cynApi/v1/contactForm",
+        url: rest_details.url + "cynApi/v1/contactForm",
         type: "post",
         cache: false,
         processData: false,

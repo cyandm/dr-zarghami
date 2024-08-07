@@ -13,7 +13,7 @@ function testimonial() {
 
     jQuery(($) => {
       $.ajax({
-        url: rest_details.url + "/cynApi/v1/testimonialForm",
+        url: rest_details.url + "cynApi/v1/testimonialForm",
         type: "post",
         cache: false,
         processData: false,
