@@ -175,13 +175,13 @@
       @media (width >= 992px) {
         .hero-service-box.box-1 {
           top: 6.5rem;
-          left: 40%;
+          left: 45%;
           animation: slideAnimation 3s linear infinite;
         }
 
         .hero-service-box.box-2 {
           bottom: 10rem;
-          right: 40%;
+          right: 32%;
           animation: slideAnimation 4s linear infinite;
         }
 
@@ -193,8 +193,41 @@
 
         .hero-service-box.box-4 {
           bottom: 6rem;
-          left: 6%;
+          left: 4%;
           animation: slideAnimation 6s linear infinite;
+        }
+
+        .hero-service-box.box-5 {
+          bottom: 20rem;
+          left: 0%;
+          animation: slideAnimation 6s linear infinite;
+        }
+      }
+
+      @media (width >= 1440px) and (width <= 1535px) {
+        .hero-service-box.box-1 {
+          top: 6.5rem;
+          left: 40%;
+        }
+
+        .hero-service-box.box-2 {
+          bottom: 10rem;
+          right: 35%;
+        }
+
+        .hero-service-box.box-3 {
+          bottom: -1.5rem;
+          left: 25%;
+        }
+
+        .hero-service-box.box-4 {
+          bottom: 6rem;
+          left: -2%;
+        }
+
+        .hero-service-box.box-5 {
+          bottom: 20rem;
+          left: -4%;
         }
       }
     }
@@ -1333,6 +1366,6 @@ section.hero-section > div > div.swiper.home-service-slider {
   }
 }
 
-.important-points-desktop{
-    margin-bottom: 2rem;
+.important-points-desktop {
+  margin-bottom: 2rem;
 }

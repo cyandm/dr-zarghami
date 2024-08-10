@@ -110,7 +110,7 @@
     @media (width <= 768px) {
       transform: unset;
       justify-content: center;
-      margin-block: 3rem 1.5rem;
+      margin-block: 2.5rem 3.5rem;
     }
 
     .swiper-button-next,
@@ -329,4 +329,9 @@
   margin-top: 1.94rem;
   margin-bottom: 0;
   align-items: center;
+}
+
+
+.pswp__img{
+  object-fit: contain;
 }

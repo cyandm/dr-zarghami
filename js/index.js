@@ -11,4 +11,5 @@ import "./modules/mobile-category-list";
 import "./modules/ticker";
 import "./modules/plyr";
 import "./modules/toastify";
+import "./modules/image-opener";
 // import "./modules/circle-bg";

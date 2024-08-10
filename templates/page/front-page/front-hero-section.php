@@ -40,7 +40,6 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
                                                 <?= wp_get_attachment_image($thumbnail_id, 'thumbnail', false, []); ?>
-
                                             </div>
                                         </div>
                                     </a>
@@ -158,7 +157,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                 if (is_array($heroServices) || count($heroServices) > 0) :
                     $classNum = 1;
                     foreach ($heroServices as $key => $item) :
-                        if ($key < 4) : ?>
+                        if ($key < 5) : ?>
                             <a href="<?= get_the_permalink($item); ?>">
                                 <div class="hero-service-box box-<?= $classNum ?>">
                                     <div class="service-box-title">

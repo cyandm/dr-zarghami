@@ -239,8 +239,11 @@ $certificates = get_field('certificate_section_images', $page_id);
             <?php foreach ($certificates as $certificate) : ?>
 
                 <?php if (!empty($certificate)) : ?>
-                    <div class="certificate-img swiper-slide">
-                        <?= wp_get_attachment_image($certificate, "full") ?>
+                    <div class="certificate-img swiper-slide" id="static-thumbnails">
+                        <a href="<?= wp_get_attachment_image_url($certificate, "full") ?>">
+                            <?= wp_get_attachment_image($certificate, "full") ?>
+
+                        </a>
                     </div>
                 <?php endif; ?>
             <?php endforeach ?>
