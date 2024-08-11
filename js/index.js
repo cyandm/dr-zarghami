@@ -12,4 +12,5 @@ import "./modules/ticker";
 import "./modules/plyr";
 import "./modules/toastify";
 import "./modules/image-opener";
+import "./modules/call-popup";
 // import "./modules/circle-bg";

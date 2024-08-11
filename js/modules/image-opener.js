@@ -1,11 +1,11 @@
-import PhotoSwipeLightbox from "photoswipe/lightbox";
+import PhotoSwipeLightbox from "../libs/photoswipe-lightbox.esm.min";
 
 const lightbox = new PhotoSwipeLightbox({
   // may select multiple "galleries"
-  gallery: "#static-thumbnails",
+  gallery: ".certificate-gallery",
 
   // Elements within gallery (slides)
-  children: "a",
+  children: "#static-thumbnails",
 
   // setup PhotoSwipe Core dynamic import
   pswpModule: () => import("photoswipe"),

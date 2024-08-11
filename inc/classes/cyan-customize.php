@@ -120,6 +120,7 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'information', 'text', 'online_text', 'متن نوبت گیری با اسکن کد');
             $this->cyn_add_control($wp_customize, 'information', 'url', 'online_url', 'لینک کد');
             $this->cyn_add_control($wp_customize, 'information', 'file', 'online_file', 'عکس کد');
+            $this->cyn_add_control($wp_customize, 'social_media', 'text', 'social_link_text', 'متن پاپ آپ هدر',);
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_1', 'لینک شبکه اول',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_1', 'لوگوی شبکه اول');
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_2', 'لینک شبکه دوم',);

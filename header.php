@@ -45,7 +45,7 @@ $defaultCallNumber = get_field('call_number', $front_id); ?>
                     </div>
                     <div class="btn-contain">
                         <?php if ($defaultBtnTitle || $headerCallNumberTitle) :  ?>
-                            <a href="<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn">
+                            <a href="<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn open-call-popup">
                                 <?= ($headerCallNumberTitle) ? $headerCallNumberTitle : $defaultBtnTitle ?>
                             </a>
                         <?php endif; ?>
@@ -59,7 +59,7 @@ $defaultCallNumber = get_field('call_number', $front_id); ?>
             <div class="btn-contain">
                 <?php if ($defaultBtnTitle || $headerCallNumberTitle) :  ?>
 
-                    <a href="<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn">
+                    <a href="<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn open-call-popup">
                         <?= ($headerCallNumberTitle) ? $headerCallNumberTitle : $defaultBtnTitle ?>
                     </a>
                 <?php endif; ?>
@@ -74,11 +74,42 @@ $defaultCallNumber = get_field('call_number', $front_id); ?>
                 <?php wp_nav_menu(['menu' => 'header-menu']); ?>
             </div>
             <div class="btn-contain">
-                <?php if ($defaultBtnTitle || $headerCallNumberTitle) :  ?>
-                    <a href="<?= ($headerCallNumber) ? $headerCallNumber : $defaultCallNumber ?>" class="btn">
+                    <a href="#" class="btn open-call-popup">
                         <?= ($headerCallNumberTitle) ? $headerCallNumberTitle : $defaultBtnTitle ?>
                     </a>
-                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="call-popup w-full absolute min-h-full top-0 bg-[#38383869] z-[9999] backdrop-blur flex justify-center content-center items-center hide-popup" id="call-popup">
+
+            <div class="call-popup-wrapper bg-[#ffffff] z-[99999] rounded-2xl pt-4 pb-8 px-4 w-[35%] max-xl:w-[50%] max-md:w-[90%]" id="call-popup-banner">
+
+                <div class="call-popup-icon w-full flex content-end justify-end">
+                    <i class="icon-close-circle cursor-pointer text-xl" id="call-popup-closer"></i>
+                </div>
+
+                <div class="call-popup-items flex flex-col items-center gap-6 justify-center">
+
+                    <div class="call-popup-text">
+                        <p class="h2"><?= get_option("social_link_text"); ?></p>
+                    </div>
+
+                    <div class="grayscale flex items-center gap-3 justify-center">
+
+                        <?php
+                        for ($i = 1; $i < 6; $i++) {
+                        ?>
+                            <a href="<?= get_option("social_link_$i"); ?>" class="w-8 h-auto flex items-center aspect-square">
+                                <img src="<?= get_option("social_logo_$i") ?>" />
+
+                            </a>
+
+                        <?php } ?>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
 
