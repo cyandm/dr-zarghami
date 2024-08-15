@@ -151,6 +151,45 @@ if (!class_exists('cyn_register')) {
             ];
 
             register_post_type('podcast', $args);
+
+
+
+
+            /***************************** register testimonial post type */
+            $labels = array(
+                'name' => 'نظرات',
+                'singular_name' => 'نظر',
+                'menu_name' => 'نظرات',
+                'name_admin_bar' => 'نظرات',
+                'add_new' => 'افزودن نظر',
+                'add_new_item' => 'افزودن نظر جدید',
+                'new_item' => 'نظر جدید',
+                'edit_item' => 'ویرایش نظر',
+                'view_item' => 'دیدن نظر',
+                'all_items' => 'همه نظرات',
+                'search_items' => 'جستجو نظرات',
+                'not_found' => 'نظر پیدا نشد',
+                'not_found_in_trash' => 'نظر پیدا نشد'
+            );
+            $args = [
+                'labels' =>  $labels,
+                'public' => true,
+                'publicly_queryable' => true,
+                'show_ui' => true,
+                'show_in_menu' => true,
+                'query_var' => true,
+                'rewrite' => array('slug' => 'testimonial'),
+                'exclude_from_search' => false,
+                'has_archive' => true,
+                'hierarchical' => false,
+                'menu_position' => null,
+                'menu_icon' => 'dashicons-video-alt3',
+                'supports' => array('title', 'thumbnail', 'category', 'excerpt'),
+                'taxonomies' => array('category', 'post_tag'),
+            ];
+
+            register_post_type('testimonial', $args);
+
         }
         public function cyn_taxonomy_register()
         {

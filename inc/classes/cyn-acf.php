@@ -26,7 +26,9 @@ if (!class_exists('cyn_acf')) {
             add_action('acf/init', [$this, 'cyn_about_page']);
             add_action('acf/init', [$this, 'cyn_partners']);
             add_action('acf/init', [$this, 'cyn_contact']);
+            add_action('acf/init', [$this, 'cyn_testimonial']);
         }
+
         public function cyn_front_page()
         {
             $fields = [
@@ -37,14 +39,17 @@ if (!class_exists('cyn_acf')) {
                 cyn_acf_add_image("about_poster", 'پوستر ویدیو',),
                 cyn_acf_add_file("about_video", '  ویدیو درباره ', '', '50'),
                 cyn_acf_add_url("about_video_link", ' لینک ویدیو  ', '', ' 50'),
+
                 cyn_acf_add_tab('نوبت گیری'),
                 cyn_acf_add_text("turn_title", ' تیتر بخش  ', '', ' 50'),
                 cyn_acf_add_text("turn_subtitle", ' متن بخش  ', '', ' 50'),
                 cyn_acf_add_image("turn_img", 'عکس بخش نوبت گیری',),
+
                 cyn_acf_add_tab(' پادکست های پزشکی'),
                 cyn_acf_add_text("podcasts_section_title", ' تیتر بخش  ', '', ' 50'),
                 cyn_acf_add_text("podcasts_section_subtitle", ' متن بخش  ', '', ' 50'),
                 cyn_acf_add_post_object("choose_podcasts", ' انتخاب پادکست  ', 'podcast', '', 1),
+
                 cyn_acf_add_tab("متن درمورد جراحی"),
                 cyn_acf_add_image("surgery_img", 'عکس در مورد جراحی'),
                 cyn_acf_add_text("surgery_section_title", ' تیتر بخش  ', '', ' 50'),
@@ -53,14 +58,13 @@ if (!class_exists('cyn_acf')) {
                 cyn_acf_add_text("surgery_section_title2", ' تیتر 2 بخش  ', '', ' 50'),
                 cyn_acf_add_text("surgery_section_title3", ' تیتر3  بخش  ', '', ' 50'),
                 cyn_acf_add_text("surgery_section_text2", ' متن قسمت دوم بخش  ', '', ' 50'),
-
-
-
                 cyn_acf_add_url("surgery_video_link", ' لینک بخش ', '', ' 50'),
+
 
                 cyn_acf_add_tab(' نکات پیوند اعضا'),
                 cyn_acf_add_text("points_section_title", ' تیتر بخش  ', '', ' 50'),
                 cyn_acf_add_text("poins_section_subtitle", ' متن بخش  ', '', ' 50'),
+
 
 
             ];
@@ -105,6 +109,7 @@ if (!class_exists('cyn_acf')) {
             ];
             cyn_register_acf_group(' توضیحات پادکست ', $fields, $location);
         }
+
         public function cyn_about_page()
         {
             $fields = [
@@ -196,6 +201,26 @@ if (!class_exists('cyn_acf')) {
                 ],
             ];
             cyn_register_acf_group(' صفحه تماس با ما ', $fields, $location);
+        }
+
+
+
+        public function cyn_testimonial()
+        {
+            $fields = [
+                cyn_acf_add_file("testimonial_video", 'ویدیو مورد نظر جهت نمایش در قسمت نظرات', '', ' 50'),
+            ];
+
+            $location = [
+                [
+                    [
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'testimonial',
+                    ],
+                ],
+            ];
+            cyn_register_acf_group('قسمت نظرات', $fields, $location);
         }
     }
 }

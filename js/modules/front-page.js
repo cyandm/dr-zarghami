@@ -184,7 +184,8 @@ let testimonial = document.getElementsByClassName("testimonial-slider");
 if (testimonial) {
   var swiper = new Swiper(".testimonial-slider", {
     slidesPerView: "auto",
-    spaceBetween: 32,
+    spaceBetween: 16,
+    centeredSlides: false,
     // loop: true,
     autoplay: {
       delay: 4000,
@@ -195,8 +196,10 @@ if (testimonial) {
       768: {
         slidesPerView: "auto",
         spaceBetween: 16,
-        centeredSlides: true,
       },
+    },
+    pagination: {
+      el: ".swiper-pagination",
     },
   });
 }

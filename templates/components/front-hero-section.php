@@ -39,7 +39,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                             </div>
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
-                                                <?= wp_get_attachment_image($thumbnail_id, 'thumbnail', false, []); ?>
+                                                <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
 
                                             </div>
                                         </div>
@@ -63,7 +63,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                             </div>
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
-                                                <?= wp_get_attachment_image($thumbnail_id, 'thumbnail', false, []); ?>
+                                                <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
 
                                             </div>
                                         </div>
@@ -87,7 +87,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                             </div>
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
-                                                <?= wp_get_attachment_image($thumbnail_id, 'thumbnail', false, []); ?>
+                                                <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
 
                                             </div>
                                         </div>
@@ -167,7 +167,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                     </div>
                                     <div class="service-box-img">
                                         <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
-                                        <?= wp_get_attachment_image($thumbnail_id, 'thumbnail', false, []); ?>
+                                        <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
 
                                     </div>
                                 </div>

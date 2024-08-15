@@ -19,4 +19,10 @@ controls: [
   "fullscreen", // Toggle fullscreen
 ];
 
-const players = Plyr.setup(".audio-player", {});
+const players = Plyr.setup(".audio-player", {
+  controls: ["play", "progress", "current-time", "mute", "volume"],
+});
+
+const player = Plyr.setup(".video-player", {
+  controls: ["play", "progress", "current-time", "mute", "fullscreen"],
+});
