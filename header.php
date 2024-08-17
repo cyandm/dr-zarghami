@@ -74,13 +74,13 @@ $defaultCallNumber = get_field('call_number', $front_id); ?>
                 <?php wp_nav_menu(['menu' => 'header-menu']); ?>
             </div>
             <div class="btn-contain">
-                    <a href="#" class="btn open-call-popup">
-                        <?= ($headerCallNumberTitle) ? $headerCallNumberTitle : $defaultBtnTitle ?>
-                    </a>
+                <a href="#" class="btn open-call-popup">
+                    <?= ($headerCallNumberTitle) ? $headerCallNumberTitle : $defaultBtnTitle ?>
+                </a>
             </div>
         </div>
 
-        <div class="call-popup w-full absolute min-h-full top-0 bg-[#38383869] z-[9999] backdrop-blur flex justify-center content-center items-center hide-popup" id="call-popup">
+        <div class="call-popup w-full absolute min-h-screen top-0 bg-[#38383869] z-[9999] backdrop-blur flex justify-center content-center items-center hide-popup" id="call-popup">
 
             <div class="call-popup-wrapper bg-[#ffffff] z-[99999] rounded-2xl pt-4 pb-8 px-4 w-[35%] max-xl:w-[50%] max-md:w-[90%]" id="call-popup-banner">
 

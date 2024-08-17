@@ -20,7 +20,5 @@ if (
     if (el.target == $popupElement) {
       $popupElement.classList.remove("show-popup");
     }
-
-    console.log(el.target);
   })
 );

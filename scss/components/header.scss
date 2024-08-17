@@ -1,9 +1,12 @@
+html {
+  position: relative;
+}
+
 header {
   padding: 1rem 0;
   background: $white_2;
   box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
   margin-top: 1.25rem;
-  position: relative;
 
   @media (width <= 768px) {
     margin-top: 1.5rem;
@@ -349,8 +352,6 @@ header {
                 }
               }
 
-              ul.active-sub {
-              }
             }
           }
         }
