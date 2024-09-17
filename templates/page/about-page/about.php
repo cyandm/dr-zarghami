@@ -15,7 +15,7 @@ $cover_video_3 = get_field('about_poster_3');
     <div class="about-section pc flex gap-4">
 
 
-        <video controls class="about-video w-3/5 h-[750px] object-cover rounded-2xl"
+        <video controls class="about-video w-3/5 h-[680px] object-cover rounded-2xl"
             src="<?= $video_file_1["url"] ?>"
             poster=" <?= wp_get_attachment_image_url($cover_vide_1, 'full', false, []); ?>">
             <source src="<?= $video_file_1["url"] ?>" type="video/mp4" controls>

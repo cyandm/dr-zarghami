@@ -66,12 +66,14 @@
 
     .author-info {
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
       padding: 0.75rem;
       align-items: center;
       justify-content: space-between;
       border-radius: 1rem;
       background: $white_2;
+      gap: 1rem;
 
       /* ---------------------------------section effect */
       box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
@@ -98,27 +100,57 @@
         color: $black_1;
         font-size: 0.75rem;
         line-height: 2.125rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+
+        i {
+          &:before {
+            color: $gray_1;
+            font-size: 1rem;
+          }
+        }
       }
     }
 
     .content-single {
-      display: flex;
+      // display: flex;
       width: 100%;
       padding: 1rem;
       justify-content: center;
       align-items: start;
       border-radius: 1.25rem;
       background: var(--white-2, #fff);
-      flex-direction: column;
+      // flex-direction: column;
+      line-height: 2rem;
+text-align: right !important;
       /* ------------------------------section effect */
       box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
 
       h2 {
         line-height: 3.5rem !important;
+        font-size: 28px;
+        margin-top: 2%;
       }
 
       h3 {
         line-height: 2.75rem !important;
+        font-size: 24px;
+                margin-top: 2%;
+
+      }
+
+      h4 {
+        line-height: 2.75rem !important;
+        font-size: 20px;
+                margin-top: 2%;
+
+      }
+
+      h5 {
+        line-height: 2.75rem !important;
+        font-size: 16px;
       }
 
       img {
@@ -130,6 +162,13 @@
         @media (width <=768px) {
           max-height: 15rem;
         }
+      }
+      a {
+        color: #06a1aa;
+      }
+      ul{
+        list-style: disc;
+        margin-right: 3%;
       }
 
       div.columns {
@@ -151,7 +190,7 @@
       blockquote {
         background-color: #d9dbdd;
         padding: 20px;
-        border-right: 3px solid #09cdf8;
+        border-right: 3px solid $blue_1;
         margin: 20px 0;
         border-radius: 1.25rem;
       }
@@ -206,26 +245,22 @@
           }
 
           .input-group {
-            i {
-              &:before {
-                color: #292d32;
-              }
-            }
-
             display: flex;
-
             padding: 1rem;
             align-items: start;
             gap: 0.25rem;
-
             justify-content: right;
             width: 100%;
             border-radius: 1rem;
             border: 1px solid var(--gray-2, #e6eaed);
             background: var(--blue-4, rgba(15, 123, 156, 0.04));
-
-            /* background blur */
             backdrop-filter: blur(12px);
+
+            i {
+              &:before {
+                color: #292d32;
+              }
+            }
 
             textarea {
               width: 100%;
@@ -246,12 +281,6 @@
           }
 
           .input-group2 {
-            i {
-              &:before {
-                color: $black_1;
-              }
-            }
-
             display: flex;
             padding: 1rem;
             align-items: center;
@@ -261,6 +290,12 @@
             border-radius: 1rem;
             border: 1px solid var(--gray-2, #e6eaed);
             background: var(--blue-4, rgba(15, 123, 156, 0.04));
+
+            i {
+              &:before {
+                color: $black_1;
+              }
+            }
 
             input {
               border: none;
@@ -297,19 +332,19 @@
 
             input {
               border: none;
-              background: var(--blue-1, #09cdf8);
+              background: var(--blue-1, $blue_1);
               color: var(--primary, #fefefe);
             }
 
             &:hover {
-              border: 1px solid #09cdf8;
+              border: 1px solid $blue_1;
               background: #fff;
               color: #09cdf8;
               box-shadow: none;
 
               input {
                 background: #fff;
-                color: #09cdf8;
+                color: $blue_1;
                 border: none;
               }
             }
@@ -422,7 +457,7 @@
 
   .mobile-recommended-blogs {
     display: none;
-    @media (width <= 800px) {
+    @media (width <= 992px) {
       display: flex;
       flex-direction: column;
       justify-content: start;
@@ -430,7 +465,7 @@
       gap: 0.75rem;
       width: 100%;
       h5 {
-        font-size: 1.75rem;
+        font-size: 1.25rem;
         font-weight: 700;
         color: $black_1;
       }

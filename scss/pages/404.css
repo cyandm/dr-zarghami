@@ -1,0 +1,43 @@
+.unfind-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+.unfind-row .unfind-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+.unfind-row .unfind-content h3 {
+  color: var(--blue-3, #0c88cd);
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+.unfind-row .unfind-content span {
+  font-size: 1rem;
+  color: var(--gray-1, #6d7982);
+  text-align: center;
+}
+.unfind-row .unfind-content .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block-end: 1.5rem;
+  margin-block-start: 0.75rem;
+}
+.unfind-row .unfind-content .img img {
+  max-width: 100%;
+}
+.unfind-row .unfind-content .btn-row {
+  display: flex;
+  align-items: center;
+}
+.unfind-row .unfind-content .btn-row a {
+  width: 100%;
+}/*# sourceMappingURL=404.css.map */

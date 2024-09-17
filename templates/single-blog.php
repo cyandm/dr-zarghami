@@ -49,7 +49,7 @@ if (!$author) {
                     </div>
                     <div class="author-info">
                         <span class="name"><?= $author ?></span>
-                        <span class="blog-date"><i class=""></i><span><?= get_the_date('j F Y', $post_id); ?></span></span>
+                        <span class="blog-date"><i class="icon-date"></i><span><?= get_the_date('j F Y', $post_id); ?></span></span>
                     </div>
                     <?php if ($blog->post_content) : ?>
                         <div class="content-single" id="content-single">

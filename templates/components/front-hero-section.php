@@ -35,11 +35,11 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                         <div class="hero-service-box box-<?= $classNum ?>">
                                             <div class="service-box-title">
                                                 <h4 class="h4"><?= $item->post_title ?></h4>
-                                                <p class="caption"><?= get_field('sub_title', $item->ID) ?></p>
+                                                <p class="caption max-lg:hidden"><?= get_field('sub_title', $item->ID) ?></p>
                                             </div>
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
-                                                <?= wp_get_attachment_image($thumbnail_id, 'thumbnail', false, []); ?>
+                                                <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
 
                                             </div>
                                         </div>
@@ -63,7 +63,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                             </div>
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
-                                                <?= wp_get_attachment_image($thumbnail_id, 'thumbnail', false, []); ?>
+                                                <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
 
                                             </div>
                                         </div>
@@ -87,7 +87,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                             </div>
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
-                                                <?= wp_get_attachment_image($thumbnail_id, 'thumbnail', false, []); ?>
+                                                <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
 
                                             </div>
                                         </div>
@@ -115,7 +115,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
 
             <div class="button-div">
                 <?php if ($btnLink) : ?>
-                    <a href="<?= $btnLink ?>" class="btn-b"><?= get_field('hero_button_title', $page_id); ?></a>
+                    <a href="<?= $btnLink ?>" class="btn"><?= get_field('hero_button_title', $page_id); ?></a>
                 <?php endif; ?>
                 <?php if ($imgSmall) : ?>
                     <?= wp_get_attachment_image($imgSmall, 'thumbnail', false, []); ?>
@@ -140,7 +140,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
 
             <div class="button-div">
                 <?php if ($btnLink) : ?>
-                    <a href="<?= $btnLink ?>" class="btn-b"><?= get_field('hero_button_title', $page_id); ?></a>
+                    <a href="<?= $btnLink ?>" class="btn"><?= get_field('hero_button_title', $page_id); ?></a>
                 <?php endif; ?>
                 <?php if ($imgSmall) : ?>
                     <?= wp_get_attachment_image($imgSmall, 'thumbnail', false, []); ?>
@@ -167,7 +167,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                     </div>
                                     <div class="service-box-img">
                                         <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
-                                        <?= wp_get_attachment_image($thumbnail_id, 'thumbnail', false, []); ?>
+                                        <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
 
                                     </div>
                                 </div>

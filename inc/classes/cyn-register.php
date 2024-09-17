@@ -1,5 +1,7 @@
 <?php
 
+use RankMath\Thumbnail_Overlay;
+
 if (!class_exists('cyn_register')) {
     class cyn_register
     {
@@ -8,7 +10,6 @@ if (!class_exists('cyn_register')) {
             add_action('init', [$this, 'cyn_post_type_register']);
             add_action('init', [$this, 'cyn_taxonomy_register']);
             add_action('init', [$this, 'cyn_term_register']);
-
         }
 
         public function cyn_post_type_register()
@@ -115,21 +116,25 @@ if (!class_exists('cyn_register')) {
             register_post_type('doctor', $args);
 
 
-            /***************************** points post type */
+
+            /***************************** register podcast post type */
             $labels = array(
-                'name' => 'پادکست پزشکی',
-                'singular_name' => 'پادکست ها',
-                'menu_name' => 'پادکست های پزشکی',
+                'name' => 'پادکست',
+                'singular_name' => 'پادکست',
+                'menu_name' => 'پادکست',
                 'name_admin_bar' => 'پادکست',
                 'add_new' => 'افزودن پادکست',
                 'add_new_item' => 'افزودن پادکست جدید',
                 'new_item' => 'پادکست جدید',
                 'edit_item' => 'ویرایش پادکست',
-                'view_item' => 'مشاهده پادکست',
-                'all_items' => 'همه پادکست ها ',
+                'view_item' => 'دیدن پادکست',
+                'all_items' => 'همه پادکست ها',
+                'search_items' => 'جستجو پادکست',
+                'not_found' => 'پادکست پیدا نشد',
+                'not_found_in_trash' => 'پادکست پیدا نشد'
             );
             $args = [
-                'labels' => $labels,
+                'labels' =>  $labels,
                 'public' => true,
                 'publicly_queryable' => true,
                 'show_ui' => true,
@@ -140,11 +145,51 @@ if (!class_exists('cyn_register')) {
                 'has_archive' => true,
                 'hierarchical' => false,
                 'menu_position' => null,
-                'menu_icon' => 'dashicons-clipboard',
-                'supports' => array('title', 'thumbnail'),
+                'menu_icon' => 'dashicons-megaphone',
+                'supports' => array('title', 'thumbnail', 'category', 'excerpt'),
+                'taxonomies' => array('category', 'post_tag'),
             ];
 
-            register_post_type('podcasts', $args);
+            register_post_type('podcast', $args);
+
+
+
+
+            /***************************** register testimonial post type */
+            $labels = array(
+                'name' => 'نظرات',
+                'singular_name' => 'نظر',
+                'menu_name' => 'نظرات',
+                'name_admin_bar' => 'نظرات',
+                'add_new' => 'افزودن نظر',
+                'add_new_item' => 'افزودن نظر جدید',
+                'new_item' => 'نظر جدید',
+                'edit_item' => 'ویرایش نظر',
+                'view_item' => 'دیدن نظر',
+                'all_items' => 'همه نظرات',
+                'search_items' => 'جستجو نظرات',
+                'not_found' => 'نظر پیدا نشد',
+                'not_found_in_trash' => 'نظر پیدا نشد'
+            );
+            $args = [
+                'labels' =>  $labels,
+                'public' => true,
+                'publicly_queryable' => true,
+                'show_ui' => true,
+                'show_in_menu' => true,
+                'query_var' => true,
+                'rewrite' => array('slug' => 'testimonial'),
+                'exclude_from_search' => false,
+                'has_archive' => true,
+                'hierarchical' => false,
+                'menu_position' => null,
+                'menu_icon' => 'dashicons-video-alt3',
+                'supports' => array('title', 'category', 'editor'),
+                'taxonomies' => array('category', 'post_tag'),
+            ];
+
+            register_post_type('testimonial', $args);
+
         }
         public function cyn_taxonomy_register()
         {
@@ -182,11 +227,6 @@ if (!class_exists('cyn_register')) {
         {
             wp_insert_term('جراحی', 'service_type', ['slug' => 'surgery']);
             wp_insert_term('پیوند کبد', 'service_type', ['slug' => 'peyvand']);
-
         }
-
-
-
-
     }
 }

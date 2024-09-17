@@ -1,5 +1,3 @@
-
-
 let blogSlider = document.querySelector(".front-blogs-slider");
 if (blogSlider) {
   var swiper = new Swiper(".front-blogs-slider", {
@@ -11,21 +9,19 @@ if (blogSlider) {
       clickable: true,
     },
     autoplay: {
-      delay: 3000,
+      delay: 5000,
       disableOnInteraction: false,
     },
     breakpoints: {
       999: {
-        slidesPerView:3,
+        slidesPerView: 3,
       },
-      768: {
-        slidesPerView: 2.2,
+      680: {
+        slidesPerView: 2,
       },
-     350: {
+      280: {
         slidesPerView: 1,
       },
     },
   });
 }
-
-

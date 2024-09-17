@@ -23,19 +23,24 @@ if (!class_exists('cyn-theme-init')) {
 
         public function cyn_enqueue_files()
         {
-            wp_localize_script('scripts', 'ajax_var', array(
-                'url'   => admin_url('admin-ajax.php'),
-                'nonce' => wp_create_nonce('ajax-nonce')
-            ));
 
+
+            wp_enqueue_style('cyn-photoswipe', get_stylesheet_directory_uri() . '/css/photoswipe.css', [], '0.0.0', 'all');
             wp_enqueue_style('cyn-swiper', get_stylesheet_directory_uri() . '/css/swiper.min.css', [], '0.0.0', 'all');
             wp_enqueue_style('cyn-final', get_stylesheet_directory_uri() . '/css/scripts-bundle.css', [], false, 'all');
             wp_enqueue_style('cyn-tailwind', get_stylesheet_directory_uri() . '/css/final-tailwind.css'); //When @build must change to final.css
 
 
+            wp_enqueue_script('cyn-photoswipe-core', get_stylesheet_directory_uri() . '/js/libs/photoswipe.esm.min.js', [], '0.0.0', true);
+            wp_enqueue_script('cyn-photoswipe', get_stylesheet_directory_uri() . '/js/libs/photoswipe-lightbox.esm.min.js', [], '0.0.0', true);
             wp_enqueue_script('cyn-swiper', get_stylesheet_directory_uri() . '/js/libs/swiper-bundle.min.js', [], '0.0.0', true);
             wp_enqueue_script('cyn-gsap', get_stylesheet_directory_uri() . '/js/libs/gsap.min.js', [], '0.0.0', true);
             wp_enqueue_script('cyn-script', get_stylesheet_directory_uri() . '/js/dist/scripts.bundle.min.js', ['cyn-swiper', 'cyn-gsap', 'jquery'], null, true);
+
+            wp_localize_script('cyn-script', 'rest_details', [
+                'url' => rest_url(),
+                'nonce' => wp_create_nonce('rest_nonce'),
+            ]);
 
             wp_dequeue_script('global-styles');
         }

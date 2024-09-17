@@ -43,25 +43,16 @@ $stickies = get_posts(['post__in' => get_option('sticky_posts')]);
         <div id="all" class="all-blogs-row container">
             <?php
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-            $args = array(
+            $allposts = array(
                 'post_type' => 'post',
-                'posts_per_page' => 16,
+                'posts_per_page' => 8,
                 'paged' => $paged,
-                'taxonomy' => 'category',
-                'tax_query' => [
-                    [
-                        'taxonomy' => 'post_tag',
-                        'terms' => ['special'],
-                        'field' => 'slug',
-                        'operator' => 'NOT IN',
-                    ]
-                ]
+        
             );
-            $posts = new WP_Query($args);
+            $posts = new WP_Query($allposts);
 
             if ($posts->have_posts()) :
-                $counter = 1;
-                while ($posts->have_posts()) : $posts->the_post();
+                 while ($posts->have_posts()) : $posts->the_post();
 
                     $post_id = get_the_ID();
 
@@ -70,15 +61,10 @@ $stickies = get_posts(['post__in' => get_option('sticky_posts')]);
                         'templates/components/blog-cart',
                         null,
                     );
-                    if ($counter == 8) {
-                        set_query_var('page-name', 'blogs');
-                        get_template_part(
-                            'templates/components/blog-special',
-                            null,
-                        );
-                    }
-                    $counter++;
+                     
                 endwhile;
+
+                // var_dump(the_pagination());
                 echo '<div class="pagination">';
                 echo paginate_links(array(
                     'total' => $posts->max_num_pages,
@@ -89,16 +75,54 @@ $stickies = get_posts(['post__in' => get_option('sticky_posts')]);
                     'mid_size' => 1,
                 ));
                 echo '</div>';
-            else:
-                get_template_part(
-                    'templates/components/empty-service-overview',
-                    null,
-                );
+         
             endif;
             wp_reset_query(); ?>
 
         </div>
     </section>
+
+        <section class="all-blogs">
+        <div id="all" class="all-blogs-row container">
+            <?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 1,
+                    'paged' => $paged,
+                     'tax_query' => [
+                        [
+                            'taxonomy' => 'post_tag',
+                            'terms' => 'special',
+                            'field' => 'slug',
+                            // 'operator' => 'NOT IN',
+                        ]
+                    ]
+                );
+                $posts = new WP_Query($args);
+
+                if ($posts->have_posts()):
+                     while ($posts->have_posts()):
+                        $posts->the_post();
+
+                        $post_id = get_the_ID();
+
+                        // set_query_var('id', $post_id);
+                      
+                            set_query_var('page-name', 'blogs');
+                            get_template_part(
+                                'templates/components/blog-special',
+                                null,
+                            );
+                        
+                     endwhile;
+     
+              
+                endif;
+                wp_reset_query(); ?>
+        
+            </div>
+        </section>
 </main>
 
 <?php get_footer(); ?>

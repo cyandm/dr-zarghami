@@ -1,9 +1,14 @@
+html {
+  position: relative;
+}
+
 header {
   padding: 1rem 0;
   background: $white_2;
   box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
   margin-top: 1.25rem;
-  position: relative;
+    z-index: 222;
+    position: relative;
   @media (width <= 768px) {
     margin-top: 1.5rem;
     padding: 0;
@@ -14,21 +19,25 @@ header {
 
   .header-row {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     @media (width <= 1100px) {
       display: none;
     }
-    justify-content: space-between;
-    align-items: center;
 
     .logo-contain {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 0.5rem;
       width: 14rem;
 
       a {
         display: flex;
+        img{
+          width: 70px;
+        }
       }
 
       h5 {
@@ -78,7 +87,7 @@ header {
               &::after {
                 background: $blue_1;
                 box-shadow: 0px 0px 4px 0px rgba(255, 255, 255, 0.45) inset,
-                0px 8px 14px 0px rgba(9, 205, 248, 0.4);
+                  0px 8px 14px 0px rgba(9, 205, 248, 0.4);
                 transition: all 0.3s ease-in-out;
               }
             }
@@ -90,7 +99,7 @@ header {
             &::after {
               background: $blue_1;
               box-shadow: 0px 0px 4px 0px rgba(255, 255, 255, 0.45) inset,
-              0px 8px 14px 0px rgba(9, 205, 248, 0.4);
+                0px 8px 14px 0px rgba(9, 205, 248, 0.4);
             }
           }
         }
@@ -123,9 +132,8 @@ header {
             align-items: center;
             transition: all 0.3s ease-in-out;
             flex-direction: column;
-            transform: translateY(4.5rem);
             z-index: 999;
-
+            margin-top: 2.68rem;
             > li {
               list-style: none;
               padding: 0.5rem;
@@ -170,12 +178,12 @@ header {
 header {
   .mobile-header {
     display: none;
+    justify-content: space-between;
+    align-items: center;
+
     @media (width <= 1100px) {
       display: flex;
     }
-
-    justify-content: space-between;
-    align-items: center;
 
     .hamburger-menu {
       width: 2rem;
@@ -217,7 +225,7 @@ header {
         -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
         -webkit-transition: -webkit-transform 0.4s ease-in-out,
-        visibility 0s 0.4s;
+          visibility 0s 0.4s;
         transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
 
         .logo-close-btn {
@@ -287,7 +295,7 @@ header {
                   &::before {
                     background: $blue_1;
                     box-shadow: 0px 0px 4px 0px rgba(255, 255, 255, 0.45) inset,
-                    0px 8px 14px 0px rgba(9, 205, 248, 0.4);
+                      0px 8px 14px 0px rgba(9, 205, 248, 0.4);
                     transition: all 0.3s ease-in-out;
                   }
                 }
@@ -330,7 +338,6 @@ header {
                 height: 0;
                 transition: height 0.3s ease-in-out;
                 overflow: hidden;
-               
 
                 > li {
                   list-style: none;
@@ -344,13 +351,11 @@ header {
                     width: 100%;
                   }
                 }
-                >li:first-child{
+                > li:first-child {
                   margin-top: 1.25rem;
                 }
               }
 
-              ul.active-sub {
-              }
             }
           }
         }
@@ -393,7 +398,6 @@ header {
   }
 }
 
-
 //-------------------------------------------------------- call-icon style
 .call-icon {
   position: fixed;
@@ -410,4 +414,18 @@ header {
     display: block;
     opacity: 1;
   }
+}
+
+.call-popup {
+  transition: all 0.4s ease-in-out;
+}
+
+.hide-popup {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show-popup {
+  opacity: 1 !important;
+  pointer-events: all;
 }

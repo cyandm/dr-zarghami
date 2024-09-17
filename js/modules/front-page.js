@@ -1,40 +1,40 @@
 /****************************************************  home text effect  */
-let animateletter = document.querySelectorAll(".animate-letter");
-if (animateletter) {
-  const observerCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        typitvs(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  };
+// let animateletter = document.querySelectorAll(".animate-letter");
+// if (animateletter) {
+//   const observerCallback = (entries, observer) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         typitvs(entry.target);
+//         observer.unobserve(entry.target);
+//       }
+//     });
+//   };
 
-  const observer = new IntersectionObserver(observerCallback, {
-    threshold: 0.2,
-  });
+//   const observer = new IntersectionObserver(observerCallback, {
+//     threshold: 0.2,
+//   });
 
-  document.querySelectorAll(".animate-letter").forEach((element) => {
-    observer.observe(element);
-  });
+//   document.querySelectorAll(".animate-letter").forEach((element) => {
+//     observer.observe(element);
+//   });
 
-  function typitvs(element) {
-    let h2 = element.querySelector(".animation");
-    let text = h2.textContent;
+//   function typitvs(element) {
+//     let h2 = element.querySelector(".animation");
+//     let text = h2.textContent;
 
-    h2.textContent = text.charAt(0);
-    let i = 1;
-    let len = text.length;
-    let interval = setInterval(function () {
-      if (i < len) {
-        h2.textContent += text[i];
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 180);
-  }
-}
+//     h2.textContent = text.charAt(0);
+//     let i = 1;
+//     let len = text.length;
+//     let interval = setInterval(function () {
+//       if (i < len) {
+//         h2.textContent += text[i];
+//         i++;
+//       } else {
+//         clearInterval(interval);
+//       }
+//     }, 180);
+//   }
+// }
 
 /****************************************************  home-service-slider */
 let mobileServiceSlider = document.querySelector(".home-service-slider");
@@ -53,61 +53,90 @@ if (mobileServiceSlider) {
 
 /****************************************************  tab click */
 
-let tabLinks = document.querySelectorAll(".landing-tablinks");
-if (tabLinks) {
-  const tabContents = document.querySelectorAll(".tabcontent");
+function homePageTabs() {
+  const homePageTabs = document.querySelector("#homePageTabs");
+  if (!homePageTabs) return;
 
-  if (tabLinks && tabContents) {
-    tabLinks.forEach(function (tabLink) {
-      tabLink.addEventListener("click", function (event) {
-        for (let index = 0; index < tabLinks.length; index++) {
-          // console.log(tabLinks[index].id);
-          if (event.target.id === tabLinks[index].id) {
-            tabLinks[index].classList.remove("active");
-            tabContents[index].classList.add("active");
-            event.currentTarget.classList.add("active");
-            tabLinks[index].parentElement.classList.remove("active");
-            tabContents[index].parentElement.classList.add("active");
-            event.currentTarget.parentElement.classList.add("active");
-          } else {
-            tabContents[index].classList.remove("active");
-            tabLinks[index].classList.remove("active");
-            tabContents[index].parentElement.classList.remove("active");
-            tabLinks[index].parentElement.classList.remove("active");
-          }
+  const tabTitleGroup = homePageTabs.querySelector("#tabTitleGroup");
+  const tabContentGroup = homePageTabs.querySelector("#tabContentGroup");
+  const tabDecriptionGroup = homePageTabs.querySelectorAll("#content-tab");
+
+  if (!tabTitleGroup || !tabContentGroup) return;
+
+  const tabTitleGroupInner = tabTitleGroup.querySelectorAll("div.tab-title");
+  const tabContentGroupInner =
+    tabContentGroup.querySelectorAll("div.tab-content");
+
+  if (!tabTitleGroupInner || !tabContentGroupInner) return;
+
+  tabTitleGroupInner[0].classList.add("active");
+  tabContentGroupInner[0].classList.add("active");
+
+  tabTitleGroupInner.forEach((tabTitle) => {
+    tabTitle.addEventListener("click", () => {
+      if (tabTitle.classList.contains("active")) {
+        tabTitle.classList.remove("active");
+      } else {
+        tabTitleGroupInner.forEach((tabs) => {
+          tabs.classList.remove("active");
+        });
+        tabTitle.classList.add("active");
+      }
+      tabTitle.classList.add("active");
+
+      tabContentGroupInner.forEach((tabContent) => {
+        tabContent.classList.remove("active");
+
+        if (tabContent.dataset.tab === tabTitle.dataset.tab) {
+          tabContent.classList.add("active");
         }
       });
     });
-  }
-}
-const radios = document.querySelectorAll(".radios");
-const radiosparent = document.querySelectorAll(".content");
-
-
-radios.forEach((elem) => {
-   radiosparent.forEach((parent) => {
-     parent.classList.remove("active");
-   });
-      elem.parentElement.classList.remove("active");
-  elem.addEventListener("click", () => {
-    elem.parentElement.classList.add("active");
   });
-});
- 
-// js for mobile dropdown
-const dropdown = document.querySelector("#dropdown-menu");
-if (dropdown) {
-  const tabContents = document.querySelectorAll(".tabcontent");
-  dropdown.addEventListener("change", function (e) {
-    for (let index = 0; index < tabContents.length; index++) {
-      if (e.target.value === tabContents[index].id) {
-        tabContents[index].classList.add("active");
-      } else {
-        tabContents[index].classList.remove("active");
-      }
-    }
+
+  tabContentGroupInner.forEach((tabContentGroup) => {
+    const radioButtons = tabContentGroup.querySelector(".radio-buttons");
+    const radioButtonContents = tabContentGroup.querySelector(
+      ".radio-button-content"
+    );
+
+    if (!radioButtons || !radioButtonContents) return;
+
+    const titles = radioButtons.querySelectorAll(".title");
+    const contents = radioButtonContents.querySelectorAll(".content");
+
+    if (!titles || !contents) return;
+
+    titles.forEach((title) => {
+      title.addEventListener("click", () => {
+        contents.forEach((content) => {
+          content.classList.remove("active");
+
+          if (content.dataset.value === title.dataset.value) {
+            content.classList.add("active");
+          }
+        });
+      });
+    });
   });
 }
+
+homePageTabs();
+
+// // js for mobile dropdown
+// const dropdown = document.querySelector("#dropdown-menu");
+// if (dropdown) {
+//   const tabContents = document.querySelectorAll(".tabcontent");
+//   dropdown.addEventListener("change", function (e) {
+//     for (let index = 0; index < tabContents.length; index++) {
+//       if (e.target.value === tabContents[index].id) {
+//         tabContents[index].classList.add("active");
+//       } else {
+//         tabContents[index].classList.remove("active");
+//       }
+//     }
+//   });
+// }
 
 /****************************************************  insurance slider */
 
@@ -155,8 +184,9 @@ let testimonial = document.getElementsByClassName("testimonial-slider");
 if (testimonial) {
   var swiper = new Swiper(".testimonial-slider", {
     slidesPerView: "auto",
-    spaceBetween: 32,
-    loop: true,
+    spaceBetween: 16,
+    centeredSlides: false,
+    // loop: true,
     autoplay: {
       delay: 4000,
       disableOnInteraction: true,
@@ -166,8 +196,10 @@ if (testimonial) {
       768: {
         slidesPerView: "auto",
         spaceBetween: 16,
-        centeredSlides: true,
       },
+    },
+    pagination: {
+      el: ".swiper-pagination",
     },
   });
 }

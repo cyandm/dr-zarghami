@@ -1,27 +1,33 @@
 .services-section-page {
-  margin-top: 10rem;
-
   @media (width <= 768px) {
-    margin-top: 0;
+    margin-block-start: 1rem;
   }
+
   .service-hero {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    @media (width <= 1150px) {
-      flex-direction: column;
-      margin-top: 3rem;
-    }
+    margin-block-end: 3rem;
+
     .image-column {
       display: flex;
-      img {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      width: 100%;
+      height: 770px;
+
+      @media (width <= 768px) {
+        background-position: left !important;
+        height: 480px;
       }
 
       .img-1 {
         translate: -2rem 0rem;
-        @media (width <= 768px) {
+
+        @media (width <=768px) {
           width: 13.58944rem;
           height: 12.88238rem;
           translate: 0rem 0rem;
@@ -31,7 +37,8 @@
       .img-2 {
         translate: 2rem -10rem;
         object-fit: contain;
-        @media (width <= 768px) {
+
+        @media (width <=768px) {
           translate: 2rem -4rem;
           width: 7rem;
         }
@@ -39,42 +46,50 @@
     }
 
     .content-column {
-      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      margin-inline: unset;
+      padding-block-end: 4rem;
+      min-width: 100%;
+      height: 560px;
+      background: linear-gradient(0deg, rgba(#fbfbfb, 100), rgba(#d9d9d9, 0));
 
       h1 {
-        color: var(--blue-3, #0c88cd);
-        margin-bottom: 0.81rem;
+        color: var(--blue-3, #00337c);
+        margin-bottom: 0.75rem;
       }
 
       .excerpt-content {
-        color: var(--gray-1, #6d7982);
+        color: #3a3e42;
         line-height: 2.25rem;
-        margin-bottom: 1.5rem;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        white-space: pre-wrap;
+        max-width: 940px;
+
         @media (width <= 768px) {
-          margin-bottom: 1rem;
+          margin-block-end: -5rem;
         }
       }
     }
   }
+
   .service-hero-images {
     display: none;
     height: 11rem;
     width: 100%;
     text-align: left;
+
     .under-search-img1 {
       translate: 31rem 2rem;
-      @media (width <= 992px) {
+
+      @media (width <=992px) {
         display: none;
       }
     }
+
     .under-search-img2 {
       translate: -3rem -4rem;
     }
+
     .under-search-img3 {
       translate: -2rem 5rem;
     }
@@ -88,26 +103,48 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
+  margin-block-end: 1.75rem;
+
+  @media (width <=768px) {
+    margin-block-end: 2rem;
+  }
+
   .service-content {
     display: flex;
+    flex-direction: row;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
-    @media (width <= 768px) {
-      gap: 0;
+
+    @media (width <=768px) {
+      gap: 0.5rem;
+      flex-direction: column;
     }
+
     .image {
       display: flex;
       text-align: center;
       justify-content: center;
-      flex: 1;
+      border-radius: 1.25rem;
+      max-width: 30%;
+      max-height: 245px;
+
+      @media (width <=768px) {
+        min-height: 245px;
+        min-width: 100%;
+      }
 
       img {
-        @media (width <= 768px) {
-          width: 16.75rem;
-          height: 16.75rem;
+        min-width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 1.25rem;
+        height: 245px;
+
+        @media (width <=768px) {
+          min-height: 245px;
         }
       }
     }
@@ -120,9 +157,10 @@
       list-style: none;
 
       h2 {
-        color: $blue_3;
+        color: $blue_2;
         margin-bottom: 1rem;
-        @media (width <= 768px) {
+
+        @media (width <=768px) {
           font-weight: 500;
           font-size: 1.25rem;
           margin-bottom: 0.75rem;
@@ -138,54 +176,23 @@
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 8;
-        white-space: pre-wrap;
-        @media (width <= 768px) {
+        -webkit-line-clamp: 3;
+
+        @media (width <=768px) {
           line-height: 1.625rem;
           font-size: 1rem;
         }
       }
-      .btn-b {
-        @media (width <= 768px) {
-          width: 100%;
-        }
-      }
-    }
-  }
-  .sub-services-slide {
-    @media (width >= 992px) {
-      order: 1;
-    }
-    .sub-services {
-      display: flex;
-      align-items: center;
-      gap: 0.9375rem;
-      .ticker-items {
-        align-items: center;
+
+      .btn-content {
+        width: 100%;
         display: flex;
-        gap: 0.9375rem;
-        margin-top: 0.5rem;
-        li {
-          height: 4.25rem;
-          flex-shrink: 0;
-          border-radius: 0.75rem;
-          background: var(--blue-4, rgba(15, 123, 156, 0.04));
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          white-space: nowrap;
-          color: var(--blue-3, #0c88cd);
-          font-size: 1.25rem;
-          font-weight: 500;
-          padding: 1.25rem;
-          list-style: none;
-          margin: 0;
-          @media (width <= 768px) {
-            font-weight: 400;
-            font-size: 1rem;
-            padding: 1rem 1.25rem;
-            height: 3.25rem;
-            margin-bottom: 1.5rem;
+        flex-direction: row;
+        justify-content: end;
+
+        .btn-b {
+          @media (width <=768px) {
+            width: 100%;
           }
         }
       }
@@ -193,28 +200,21 @@
   }
 }
 
-.even-section {
-  .service-content {
-    .image {
-      order: 1;
-      @media (width <= 768px) {
-        order: unset;
-      }
+.about-service-section.even-section {
+  .image {
+    min-height: 448px;
+    min-width: 45%;
+
+    @media (width <=768px) {
+      min-height: 320px;
+      min-width: 100%;
     }
-  }
-}
 
-.odd-section {
-  background: #d8eaff;
-  margin: 2.5rem 0;
-  padding: 1.61rem 0;
-  @media (width <= 768px) {
-  }
+    > img {
+      min-height: 448px;
 
-  .sub-services {
-    .ticker-items {
-      li {
-        background: $white_1;
+      @media (width <=768px) {
+        min-height: 320px;
       }
     }
   }

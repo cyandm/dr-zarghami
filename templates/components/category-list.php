@@ -12,7 +12,7 @@ $terms = $all_terms->query; ?>
 <!-- ------------------------------------for mobile view-->
 <div class="cat-list-mobile">
     <select class="mobile-cat" id="mobile-category-list">
-        <option id="all" value="<?= get_bloginfo('url') ?>/blogs"><span class="text">دسته بندی ها</span>( همه)</option>
+        <option id="all" value="<?= get_bloginfo('url') ?>/blogs"><span class="text">دسته بندی ها</span> (همه)</option>
         <?php foreach ($terms as $key => $term) : ?>
             <?php if ($key < 5) : ?>
                 <option <?= ($id == $term->term_id) ? 'selected' : '' ?> value="<?= get_term_link($term->term_id) ?>">

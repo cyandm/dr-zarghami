@@ -1,5 +1,6 @@
 <?php $faqs = get_field('fags', $page_id);
 
+$pageLink = get_page_url_by_template('templates/contact.php');
 ?>
 <section class=" faq-section" id="faq-section">
     <div class="title-with-btn container">
@@ -15,9 +16,9 @@
             <?= wp_get_attachment_image(get_field('image_faq_section', $page_id), 'full', false, []); ?>
         </div>
         <div class="faq-content">
-            <?php if (is_array($faqs) && count($faqs) > 0): ?>
-                <?php foreach ($faqs as $key => $faq):
-                    if ($faq['question'] && $faq['answer']): ?>
+            <?php if (is_array($faqs) && count($faqs) > 0) : ?>
+                <?php foreach ($faqs as $key => $faq) :
+                    if ($faq['question'] && $faq['answer']) : ?>
                         <div class="accordion-item">
                             <div class="accordion-item-header <?= ($key == 'faq_1') ? 'active' : '' ?>">
                                 <div class="h4"><?= $faq['question'] ?></div>
@@ -29,8 +30,17 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endif;
+                <?php endif;
                 endforeach; ?>
+
+                <?php if (get_field('faq_section_button_title', $page_id)) : ?>
+                    <div>
+
+                        <a href="<?= $pageLink ?>" class="btn max-md:w-full mt-5 mb-8"><?= get_field('faq_section_button_title', $page_id); ?></a>
+
+                    </div>
+
+                <?php endif ?>
 
             <?php endif; ?>
         </div>
