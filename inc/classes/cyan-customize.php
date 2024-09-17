@@ -67,7 +67,7 @@ if (!class_exists('cyn_customize')) {
             $wp_customize->add_panel(
                 'footer_panel',
                 [
-                    'title' => 'تنظیمات فوتر',
+                    'title' => 'تنظیمات فوتر و بنر تماس با ما',
                     'priority' => 1
                 ]
             );
@@ -103,10 +103,10 @@ if (!class_exists('cyn_customize')) {
                     'panel' => 'footer_panel'
                 ]
             );
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_title', 'تیتر شماره تلفن اول');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'doctor_name', 'نام دکتر نمایش در فوتر');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'doctor_skill', 'حرفه دکتر نمایش در فوتر');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'developer_name', 'اسم شرکت توسعه دهنده');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_title', 'تیتر شماره تلفن اول');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number2_title', 'تیتر شماره تلفن دوم');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number3_title', 'تیتر شماره تلفن سوم');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number', 'متن لینک به صفحه تماس با ما');
@@ -116,6 +116,8 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'information', 'text', 'email', 'ایمیل');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'address', 'آدرس');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'open_time', 'ساعت مراجعه');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'online_visit', 'متن ویزیت آنلاین');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'online_visit_text', 'متن لینک دار ویزیت آنلاین');
             $this->cyn_add_control($wp_customize, 'information', 'url', 'online', 'لینک مراجعه');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'online_text', 'متن نوبت گیری با اسکن کد');
             $this->cyn_add_control($wp_customize, 'information', 'url', 'online_url', 'لینک کد');
@@ -131,7 +133,6 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_4', 'لوگوی شبکه چهارم');
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_5', 'لینک شبکه پنجم',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_5', 'لوگوی شبکه پنجم');
-
             $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_1', 'لینک لوکیشن اول',);
             $this->cyn_add_control($wp_customize, 'footer_location', 'file', 'location_logo_1', 'لوگوی لوکیشن اول');
             $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_2', 'لینک لوکیشن دوم',);

@@ -26,8 +26,8 @@ $turn_img = get_field('turn_img', $page_id);
             <p>ایمیل</p>
             <a href="mailto:<?= get_option('email'); ?>" class="text-blue-3"><?= get_option('email'); ?></a>
 
-            <p class="h3 pt-4">ویزیت آنلاین</p>
-            <a href="<?= get_option('online'); ?>" class="text-blue-3">برای دریافت مشاوره غیرحضوری کلیک نمایید</a>
+            <p class="h3 pt-4"><?= get_option('online_visit'); ?></p>
+            <a href="<?= get_option('online'); ?>" class="text-blue-3"><?= get_option('online_visit_text'); ?></a>
 
             <p class="h3 pt-4"><?= get_option('online_text'); ?></p>
             <a href="<?= get_option('online_url'); ?>" class="text-blue-3">
