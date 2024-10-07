@@ -92,6 +92,14 @@ if (is_array($testimonials_group) && count($testimonials_group) > 0) : ?>
                 <div class="swiper-pagination md:!w-[285px] !w-full max-md:!left-[unset]"></div>
             </div>
 
+            <div class="swiper-btn-row flex">
+
+                <div class="swiper-btn flex flex-row justify-between">
+                    <div class="swiper-button-prev w-11 h-11 border rounded-2xl bg-[#ffffff] after:text-xl after:text-[#000000]"></div>
+                    <div class="swiper-button-next w-11 h-11 border rounded-2xl bg-[#ffffff] after:text-xl after:text-[#000000]"></div>
+                </div>
+            </div>
+
         </div>
 
         <div class="container  btn-mobile" id=testimonial-form>

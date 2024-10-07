@@ -33,7 +33,7 @@ $contact_subtitle = get_field('contact_subtitle');
                         <p><?php echo $contact_subtitle ?></p>
                     </div>
 
-                    <form method="post" action="./form-configure.php" id="contact_form">
+                    <form method="post" action="" id="contact_form">
                         <div class="form-input">
 
                             <i class="icon-call1"></i>

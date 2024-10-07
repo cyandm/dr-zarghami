@@ -38,6 +38,17 @@ class cyn_ajax
             wp_send_json_error(['error' => 'not created'], 403);
         }
 
+        $to = "info@dr-zarghami.com"; // ایمیل شما
+        $subject = "درخواست تماس با شما ثبت شد";
+        $message = "<h2>اطلاعات درخواست تماس:</h2>\n\n" .
+            "نام: {$formData['name']}\n" .
+            "ایمیل: {$formData['email']}\n" .
+            "تلفن: {$formData['phone']}\n" .
+            "پیام: {$formData['message']}\n";
+        $headers = ['Content-Type: text/html; charset=UTF-8'];
+
+        wp_mail($to, $subject, nl2br($message), $headers);
+
         wp_send_json_success(['new_post' => $new_post_ID]);
     }
 
@@ -57,6 +68,18 @@ class cyn_ajax
         if ($new_post_ID === 0 || is_wp_error($new_post_ID)) {
             wp_send_json_error(['error' => 'not created'], 403);
         }
+
+        $to = "info@dr-zarghami.com";
+        $subject = "نظر جدید ثبت شد";
+        $message = "<h2>اطلاعات نظر جدید:</h2>\n\n" .
+            "نام: {$formData['name']}\n" .
+            "ایمیل: {$formData['email']}\n" .
+            "تلفن: {$formData['phone']}\n" .
+            "پیام: {$formData['message']}\n" .
+            "امتیاز: {$formData['rating']}\n";
+        $headers = ['Content-Type: text/html; charset=UTF-8'];
+
+        wp_mail($to, $subject, nl2br($message), $headers);
 
         wp_send_json_success(['new_post' => $new_post_ID]);
     }
