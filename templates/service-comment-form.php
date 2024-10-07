@@ -25,8 +25,8 @@ $services = $allServices->posts; ?>
                 <img src="<?= get_stylesheet_directory_uri() ?>/imgs/comment.webp" alt="contact">
             </div>
             <div class="contact-form">
-                <h2 class="h2 contact-title">نظراتتون رو با ما به اشتراک بزارید</h2>
-                <span>تجربه های خودتون رو با ما به اشتراک بزارید</span>
+                <h2 class="h2 contact-title">نظراتتون رو با ما به اشتراک بذارید</h2>
+                <span>تجربه های خودتون رو با ما به اشتراک بذارید</span>
                 <form method="post" action="" id="service_comment_form">
                     <div class="form-input">
 
