@@ -24,71 +24,71 @@ $args = array(
 $blogs = new WP_Query($args);
 ?>
 <?php get_header(); ?>
-    <main class=" main blogs" id="blog-overview">
-        <!-- -------------------------------- categories tab -->
-        <section class="category-tabs container">
-            <?php get_template_part(
-                'templates/components/category-list',
-                null,
-            ); ?>
-            <?php get_template_part(
-                'templates/components/search-blog-form',
-                null,
-            ); ?>
-        </section>
+<main class=" main blogs" id="blog-overview">
+    <!-- -------------------------------- categories tab -->
+    <section class="category-tabs container">
+        <?php get_template_part(
+            'templates/components/category-list',
+            null,
+        ); ?>
+        <?php get_template_part(
+            'templates/components/search-blog-form',
+            null,
+        ); ?>
+    </section>
 
-        <!-- -------------------------------- Pin Blogs -->
-        <section class=" pin-blogs">
-            <?php if (is_array($stickies) && count($stickies) > 0) : ?>
-                <div class="container pin-blogs-row">
-                    <?php foreach ($stickies as $key => $postPin) :
-                        if ($key < 3) :
-                            set_query_var('id', $postPin->ID);
-                            get_template_part(
-                                'templates/components/pin-blog-cart',
-                                'null',
-                            );
-                        endif;
-                    endforeach; ?>
-                </div>
-            <?php endif; ?>
-        </section>
-
-        <!-- -------------------------------- All Blogs in category-->
-        <section class="all-blogs">
-            <div id="all" class="all-blogs-row container">
-                <?php
-                if ($blogs->have_posts()) :
-                    $counter = 1;
-                    while ($blogs->have_posts()) : $blogs->the_post();
-                        $post_id = get_the_ID();
-                        set_query_var('id', $post_id);
+    <!-- -------------------------------- Pin Blogs -->
+    <section class=" pin-blogs">
+        <?php if (is_array($stickies) && count($stickies) > 0) : ?>
+            <div class="container pin-blogs-row">
+                <?php foreach ($stickies as $key => $postPin) :
+                    if ($key < 3) :
+                        set_query_var('id', $postPin->ID);
                         get_template_part(
-                            'templates/components/blog-cart',
-                            null,
+                            'templates/components/pin-blog-cart',
+                            'null',
                         );
+                    endif;
+                endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </section>
 
-                        if ($counter == 8) {
-                            set_query_var('page-name', 'tax');
-                            get_template_part(
-                                'templates/components/blog-special',
-                                null,
-                            );
-                        }
-                        $counter++;
-                    endwhile;
-                else:
+    <!-- -------------------------------- All Blogs in category-->
+    <section class="all-blogs">
+        <div id="all" class="all-blogs-row container">
+            <?php
+            if ($blogs->have_posts()) :
+                $counter = 1;
+                while ($blogs->have_posts()) : $blogs->the_post();
+                    $post_id = get_the_ID();
+                    set_query_var('id', $post_id);
                     get_template_part(
-                        'templates/components/empty-service-overview',
+                        'templates/components/blog-cart',
                         null,
                     );
-                endif;
-                    wp_reset_postdata();
-                ?>
-            </div>
+
+                    if ($counter == 8) {
+                        set_query_var('page-name', 'tax');
+                        get_template_part(
+                            'templates/components/blog-special',
+                            null,
+                        );
+                    }
+                    $counter++;
+                endwhile;
+            else:
+                get_template_part(
+                    'templates/components/empty-service-overview',
+                    null,
+                );
+            endif;
+            wp_reset_postdata();
+            ?>
+        </div>
 
 
-        </section>
-    </main>
+    </section>
+</main>
 
 <?php get_footer(); ?>

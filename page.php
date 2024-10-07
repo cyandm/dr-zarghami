@@ -49,7 +49,7 @@ if (!$author) {
                     </div>
                     <?php if ($blog->post_content) : ?>
                         <div class="content-single" id="content-single">
-                            <?= get_the_content(); ?>
+                            <?php the_content(); ?>
                         </div>
                     <?php endif; ?>
                     <div class="blog-comments">

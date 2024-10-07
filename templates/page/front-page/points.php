@@ -11,7 +11,7 @@ $backImg = get_field('background_image', $page_id); ?>
         <h2><?= get_field('points_section_title', $page_id); ?></h2>
         <p><?= get_field('poins_section_subtitle', $page_id); ?></p>
     </div>
-    <div class="important-points-desktop grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 max-xl:grid-cols-2 gap-4">
+    <div class="important-points-desktop grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 max-xl:grid-cols-2 gap-4 max-lg:hidden">
 
         <?php for ($i = 1; $i < 5; $i++) {
         ?>
@@ -23,7 +23,7 @@ $backImg = get_field('background_image', $page_id); ?>
                             <h3 class="h3">
                                 <?= get_field("points_title_$i", $page_id) ?>
                             </h3>
-                            <p class="point-text"><?= get_field("points_text_$i", $page_id) ?></p>
+                            <p class="point-text  "><?= get_field("points_text_$i", $page_id) ?></p>
                             <div class="point-btn flex justify-center items-center">
                                 <span class="point-btn btn w-full">ادامه</span>
                             </div>
@@ -44,7 +44,7 @@ $backImg = get_field('background_image', $page_id); ?>
                 <div class="swiper-slide shadow-lg flex flex-col gap-3 p-4 mb-8 justify-center rounded-2xl [&_img]:w-full [&_img]:aspect-square [&_img]:object-cover [&_img]:rounded-2xl ">
                     <?= get_field("points_img_$i", $page_id) ? wp_get_attachment_image(get_field("points_img_$i", $page_id), 'full', false, []) : ''; ?>
                     <h3 class="h3"><?= get_field("points_title_$i", $page_id) ?></h3>
-                    <p><?= get_field("points_text_$i", $page_id) ?></p>
+                    <p class="para"><?= get_field("points_text_$i", $page_id) ?></p>
 
                 </div>
             <?php } ?>

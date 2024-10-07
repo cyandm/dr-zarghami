@@ -9,16 +9,16 @@ footer {
     flex-wrap: wrap;
     display: flex;
     align-items: start;
-    @media (width <= 768px) {
+    @media (max-width: 768px) {
       gap: 1rem;
     }
     .footer-widget {
       width: 13rem;
 
-      @media (width >= 1050px) {
+      @media (min-width: 1050px) {
         flex: 1;
       }
-      @media (width <= 500px) {
+      @media (max-width: 500px) {
         flex: 1;
       }
       h4 {
@@ -58,7 +58,7 @@ footer {
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
-      @media (width <= 500px) {
+      @media (max-width: 500px) {
         order: 1;
         flex-basis: 100%;
       }
@@ -67,19 +67,19 @@ footer {
       }
     }
     .footer-widget.address-widget {
-      @media (width <= 500px) {
+      @media (max-width: 500px) {
         order: 0;
         flex-basis: 100%;
       }
       .address {
-        @media (width <= 500px) {
+        @media (max-width: 500px) {
           width: 14rem;
           flex-basis: 100%;
         }
       }
     }
     .footer-widget.map-widget {
-      @media (width <= 500px) {
+      @media (max-width: 500px) {
         order: 2;
         flex-basis: 100%;
       }

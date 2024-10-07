@@ -13,4 +13,5 @@ import "./modules/plyr";
 import "./modules/toastify";
 import "./modules/image-opener";
 import "./modules/call-popup";
-// import "./modules/circle-bg";
+import "./modules/change-position-header-with-scroll";
+import "./modules/preloader";

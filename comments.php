@@ -17,7 +17,7 @@ comment_form(
     )
 );
 if (have_comments()) :
-    ?>
+?>
     <div class="comment-list" id="comment-list">
         <?php
         $list = wp_list_comments(
@@ -42,7 +42,7 @@ if (have_comments()) :
     </div>
 <?php
 else :
-    ?>
+?>
     <div class="comment-list">
 
         <p style="margin-top: 1rem;">دیدگاهی وجود ندارد.</p>

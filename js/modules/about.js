@@ -2,7 +2,7 @@ let aboutSlider = document.querySelector(".about-slider");
 if (aboutSlider) {
   var swiper = new Swiper(".about-slider", {
     autoplay: {
-      delay: 5000,
+      delay: 10000,
       disableOnInteraction: false,
     },
     speed: 1000,
@@ -12,6 +12,10 @@ if (aboutSlider) {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+
+    pagination: {
+      el: ".swiper-pagination",
+    },
   });
 }
 
@@ -19,7 +23,7 @@ let certificates = document.querySelector(".certificates-section");
 if (certificates) {
   var swiper = new Swiper(".certificates-section", {
     slidesPerView: 3,
-    speed: 1000,
+    speed: 1500,
     spaceBetween: 16,
 
     autoplay: {

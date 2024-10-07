@@ -23,7 +23,7 @@ if (!$author) {
     $author = "دکتر ضرغامی _متخصص و جراح";
 }
 ?>
-<main class="  main single-blog">
+<main class="main single-blog">
     <section class="single-blog">
         <div class="container main-container">
             <div class="breadcramb container">
@@ -45,7 +45,7 @@ if (!$author) {
                 <div class="all-content container">
                     <h1 class="h2"><?= get_the_title($post_id) ?></h1>
                     <div class="blog-img-single">
-                        <?= wp_get_attachment_image(get_field('blog_main_img', $post_id), 'full', false, []); ?>
+                        <?= get_the_post_thumbnail($post_id, 'full') ?>
                     </div>
                     <div class="author-info">
                         <span class="name"><?= $author ?></span>
@@ -53,7 +53,7 @@ if (!$author) {
                     </div>
                     <?php if ($blog->post_content) : ?>
                         <div class="content-single" id="content-single">
-                            <?= get_the_content(); ?>
+                            <?php the_content(); ?>
                         </div>
                     <?php endif; ?>
                     <div class="blog-comments">

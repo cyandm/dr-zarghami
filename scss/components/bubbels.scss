@@ -68,10 +68,10 @@
   -webkit-transform: scale(0.6);
   -moz-transform: scale(0.6);
   transform: scale(0.6);
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     top: 45%;
   }
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     top: 60%;
   }
 }
@@ -89,11 +89,11 @@
   -webkit-transform: scale(0.6);
   -moz-transform: scale(0.6);
   transform: scale(0.6);
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     left: 4%;
     top: 50%;
   }
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     top: 78%;
   }
 }
@@ -111,11 +111,11 @@
   -webkit-transform: scale(0.4);
   -moz-transform: scale(0.4);
   transform: scale(0.4);
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     left: 4%;
     top: 50%;
   }
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     top: 70%;
   }
 }
@@ -133,10 +133,10 @@
   -webkit-transform: scale(0.4);
   -moz-transform: scale(0.4);
   transform: scale(0.4);
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     top: 50%;
   }
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     top: 70%;
   }
 }
@@ -154,10 +154,10 @@
   -webkit-transform: scale(0.7);
   -moz-transform: scale(0.7);
   transform: scale(0.7);
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     display: none;
   }
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     top: 50%;
   }
 }
@@ -175,10 +175,10 @@
   -webkit-transform: scale(0.7);
   -moz-transform: scale(0.7);
   transform: scale(0.7);
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     display: none;
   }
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     top: 42%;
   }
 }
@@ -198,10 +198,10 @@
   transform: scale(0.3);
   height: 1.5rem;
   width: 1.5rem;
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     top: 50%;
   }
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     top: 80%;
   }
 }
@@ -222,10 +222,10 @@
   transform: scale(0.3);
   height: 1.5rem;
   width: 1.5rem;
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     display: none;
   }
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     top: 50%;
   }
 }
@@ -244,7 +244,7 @@
   -webkit-transform: scale(0.5);
   -moz-transform: scale(0.5);
   transform: scale(0.5);
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     display: none;
   }
 }
@@ -265,10 +265,10 @@
   transform: scale(0.8);
   height: 1.5rem;
   width: 1.5rem;
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     top: 40%;
   }
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     display: none;
   }
 }
@@ -287,10 +287,10 @@
   transform: scale(0.8);
   height: 1.5rem;
   width: 1.5rem;
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     display: none;
   }
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     top: 70%;
   }
 }
@@ -327,7 +327,7 @@
   transform: scale(0.4);
   height: 0.75rem;
   width: 0.75rem;
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     display: none;
   }
 }
@@ -348,10 +348,10 @@
   transform: scale(0.3);
   height: 0.75rem;
   width: 0.75rem;
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     top: 38%;
   }
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     top: 70%;
   }
 }
@@ -371,7 +371,7 @@
   transform: scale(0.3);
   height: 0.75rem;
   width: 0.75rem;
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     display: none;
   }
 }
@@ -389,10 +389,10 @@
   -webkit-transform: scale(0.6);
   -moz-transform: scale(0.6);
   transform: scale(0.6);
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     top: 48%;
   }
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     top: 60%;
   }
 }
@@ -410,7 +410,7 @@
   -webkit-transform: scale(0.6);
   -moz-transform: scale(0.6);
   transform: scale(0.6);
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     display: none;
   }
 }
@@ -429,7 +429,7 @@
   -webkit-transform: scale(0.3);
   -moz-transform: scale(0.3);
   transform: scale(0.3);
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     display: none;
   }
 }
@@ -448,7 +448,7 @@
   -webkit-transform: scale(0.3);
   -moz-transform: scale(0.3);
   transform: scale(0.3);
-  @media (width <= 992px) {
+  @media (max-width: 992px) {
     display: none;
   }
 }

@@ -8,8 +8,7 @@ if (is_array($testimonials_group) && count($testimonials_group) > 0) : ?>
         <div class="title-with-btn">
             <div>
                 <h2><?= get_field('testimonial_section_title', $page_id) ?></h2>
-                <p><?= get_field('testimonial__section_description', $page_id) ?>
-                </p>
+                <p><?= get_field('testimonial__section_description', $page_id) ?></p>
             </div>
             <div class="" id=testimonial-form>
                 <a class="btn-b" href="/comment"><?= get_field('testimonial_button_title', $page_id) ?></a>
@@ -20,25 +19,75 @@ if (is_array($testimonials_group) && count($testimonials_group) > 0) : ?>
             <div class="swiper-wrapper">
                 <?php foreach ($testimonials_group as $testimonial) : ?>
 
-                    <?php $testimonial_video = get_field('testimonial_video', $testimonial);
-                    if ($testimonial_video):
-                    ?>
+                    <div class="swiper-slide h-[362px] max-md:h-[380px] flex">
+                        <div class="testimonial w-full [&>.plyr]:w-full justify-between">
 
-                        <div class="swiper-slide">
-                            <div class="testimonial">
+                            <div class="comment-title font-medium text-sm">
+                                <span class="comment-name">
+                                    <?= get_the_title($testimonial) ?>
+                                </span>
+
+                                <span class="service-comment">
+
+                                    <?php
+                                    $service_cat = get_the_terms($testimonial, 'category');
+                                    if ($service_cat): ?>
+
+                                        <span class="icon-arrow-left"></span>
+
+                                        <?php foreach ($service_cat as $cat): ?>
+
+                                            <span><?php echo $cat->name; ?></span>
+
+                                    <?php
+                                        endforeach;
+                                    endif;
+                                    ?>
+                                </span>
+                            </div>
+
+                            <?php $testimonial_video = get_field('testimonial_video', $testimonial);
+                            if ($testimonial_video):
+                            ?>
 
                                 <video id="player" class="rounded-2xl w-full fade-in-down aspect-square video-player" playsinline controls poster="<?= get_the_post_thumbnail_url($testimonial) ?>" data-poster="<?= get_the_post_thumbnail_url($testimonial) ?>">
                                     <source src="<?= $testimonial_video['url'] ?>" type="video/mp4" />
                                 </video>
 
-                            </div>
-                        </div>
+                            <?php endif; ?>
 
+                            <?php setup_postdata($testimonial) ?>
+
+                            <p class="description"><?= get_the_content($testimonial); ?></p>
+
+                            <div class="star-rate flex flex-row gap-1 pt-2">
+                                <?php
+                                $stars = get_field('testimonial_star', $testimonial);
+                                for ($i = 1; $i <= 5; $i++):
+                                ?>
+
+                                    <?php
+                                    if ($i <= $stars):
+                                    ?>
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/star.svg" alt="rate" />
+                                    <?php else: ?>
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/star-disable.svg" alt="rate" />
+
+
+                                <?php endif;
+                                endfor; ?>
+                            </div>
+
+                        </div>
+                    </div>
                 <?php
-                    endif;
                 endforeach; ?>
             </div>
-            <div class="swiper-pagination"></div>
+
+            <div class="w-full flex justify-center items-center">
+                <div class="swiper-pagination md:!w-[285px] !w-full max-md:!left-[unset]"></div>
+            </div>
+
         </div>
 
         <div class="container  btn-mobile" id=testimonial-form>

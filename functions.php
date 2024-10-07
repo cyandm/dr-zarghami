@@ -10,6 +10,7 @@ require_once(__DIR__ . '/inc/classes/cyn-ajax.php');
 require_once(__DIR__ . '/inc/classes/cyn-general.php');
 require_once(__DIR__ . '/inc/classes/cyn-acf-fields.php');
 require_once(__DIR__ . '/inc/classes/cyan-customize.php');
+require_once(__DIR__ . '/inc/classes/cyan-custom-code.php');
 
 
 /***************************** Instance Classes */
@@ -19,3 +20,6 @@ $cyn_register = new cyn_register;
 $cyn_ajax = new cyn_ajax;
 $cyn_general = new cyn_general;
 $cyn_customize = new cyn_customize;
+$cyn_custom = new cyn_custom_code();
+
+

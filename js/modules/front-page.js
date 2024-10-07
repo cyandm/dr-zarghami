@@ -1,40 +1,40 @@
 /****************************************************  home text effect  */
-let animateletter = document.querySelectorAll(".animate-letter");
-if (animateletter) {
-  const observerCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        typitvs(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  };
+// let animateletter = document.querySelectorAll(".animate-letter");
+// if (animateletter) {
+//   const observerCallback = (entries, observer) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         typitvs(entry.target);
+//         observer.unobserve(entry.target);
+//       }
+//     });
+//   };
 
-  const observer = new IntersectionObserver(observerCallback, {
-    threshold: 0.2,
-  });
+//   const observer = new IntersectionObserver(observerCallback, {
+//     threshold: 0.2,
+//   });
 
-  document.querySelectorAll(".animate-letter").forEach((element) => {
-    observer.observe(element);
-  });
+//   document.querySelectorAll(".animate-letter").forEach((element) => {
+//     observer.observe(element);
+//   });
 
-  function typitvs(element) {
-    let h2 = element.querySelector(".animation");
-    let text = h2.textContent;
+//   function typitvs(element) {
+//     let h2 = element.querySelector(".animation");
+//     let text = h2.textContent;
 
-    h2.textContent = text.charAt(0);
-    let i = 1;
-    let len = text.length;
-    let interval = setInterval(function () {
-      if (i < len) {
-        h2.textContent += text[i];
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 180);
-  }
-}
+//     h2.textContent = text.charAt(0);
+//     let i = 1;
+//     let len = text.length;
+//     let interval = setInterval(function () {
+//       if (i < len) {
+//         h2.textContent += text[i];
+//         i++;
+//       } else {
+//         clearInterval(interval);
+//       }
+//     }, 180);
+//   }
+// }
 
 /****************************************************  home-service-slider */
 let mobileServiceSlider = document.querySelector(".home-service-slider");
@@ -187,6 +187,8 @@ if (testimonial) {
     spaceBetween: 16,
     centeredSlides: false,
     // loop: true,
+    speed: 1500,
+
     autoplay: {
       delay: 4000,
       disableOnInteraction: true,

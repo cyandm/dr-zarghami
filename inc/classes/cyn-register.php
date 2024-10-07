@@ -184,7 +184,7 @@ if (!class_exists('cyn_register')) {
                 'hierarchical' => false,
                 'menu_position' => null,
                 'menu_icon' => 'dashicons-video-alt3',
-                'supports' => array('title', 'thumbnail', 'category', 'excerpt'),
+                'supports' => array('title', 'category', 'editor'),
                 'taxonomies' => array('category', 'post_tag'),
             ];
 

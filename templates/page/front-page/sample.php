@@ -11,7 +11,7 @@
             </div>
 
             <div class="w-full">
-                <a href="<?= get_field('surgery_video_link'); ?>" class="btn-b float-left">مطالعه کامل </a>
+                <a href="<?= get_field('surgery_video_link'); ?>" class="btn-b float-left max-lg:w-full">مطالعه کامل </a>
                 <a href="<?= get_field('surgery_video_link'); ?>" class="btn-mobile btn w-full float-left">مطالعه کامل </a>
             </div>
         </div>

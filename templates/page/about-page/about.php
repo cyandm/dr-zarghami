@@ -13,7 +13,7 @@ $cover_video_3 = get_field('about_poster_3');
         <p><?= get_field('about_section_subtitle'); ?></p>
     </div>
     <div class="about-section pc flex gap-4">
-
+sntnrn
 
         <video controls class="about-video w-3/5 h-[680px] object-cover rounded-2xl"
             src="<?= $video_file_1["url"] ?>"

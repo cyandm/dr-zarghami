@@ -1,6 +1,6 @@
 <?php $page_id = get_queried_object_id();
 
-$aboutSliders = get_field('about_slider_group', $page_id);?>
+$aboutSliders = get_field('about_slider_group', $page_id); ?>
 <section class="mt2 about-section-slider">
     <div class="swiper about-slider container">
         <div class="swiper-wrapper">
@@ -18,9 +18,9 @@ $aboutSliders = get_field('about_slider_group', $page_id);?>
                                     </span> </h2>
                                 <div class="slide-description"><?= $slide['slider_description'] ?></div>
                             </div>
-
+                            nfdsnstnsen
                         </div>
-                    <?php endif;
+            <?php endif;
                 endforeach;
             endif; ?>
         </div>

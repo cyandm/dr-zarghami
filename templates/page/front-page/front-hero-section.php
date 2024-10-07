@@ -35,7 +35,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                         <div class="hero-service-box box-<?= $classNum ?>">
                                             <div class="service-box-title">
                                                 <h4 class="h4"><?= $item->post_title ?></h4>
-                                                <p class="caption"><?= get_field('sub_title', $item->ID) ?></p>
+                                                <p class="caption max-lg:hidden"><?= get_field('sub_title', $item->ID) ?></p>
                                             </div>
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
@@ -58,7 +58,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                         <div class="hero-service-box box-<?= $classNum ?>">
                                             <div class="service-box-title">
                                                 <h4 class="h4"><?= $item->post_title ?></h4>
-                                                <p class="caption"><?= get_field('sub_title', $item->ID) ?></p>
+                                                <p class="caption max-lg:hidden"><?= get_field('sub_title', $item->ID) ?></p>
                                             </div>
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
@@ -82,7 +82,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                         <div class="hero-service-box box-<?= $classNum ?>">
                                             <div class="service-box-title">
                                                 <h4 class="h4"><?= $item->post_title ?></h4>
-                                                <p class="caption"><?= get_field('sub_title', $item->ID) ?></p>
+                                                <p class="caption max-lg:hidden"><?= get_field('sub_title', $item->ID) ?></p>
                                             </div>
                                             <div class="service-box-img">
                                                 <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>
@@ -162,7 +162,7 @@ $imgSmall = get_field('image_helth_small', $page_id);
                                 <div class="hero-service-box box-<?= $classNum ?>">
                                     <div class="service-box-title">
                                         <h4 class="h4"><?= $item->post_title ?></h4>
-                                        <p class="caption"><?= get_field('sub_title', $item->ID) ?></p>
+                                        <p class="caption max-lg:hidden"><?= get_field('sub_title', $item->ID) ?></p>
                                     </div>
                                     <div class="service-box-img">
                                         <?php $thumbnail_id = get_post_thumbnail_id($item->ID); ?>

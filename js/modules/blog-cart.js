@@ -9,14 +9,14 @@ if (blogSlider) {
       clickable: true,
     },
     autoplay: {
-      delay: 3000,
+      delay: 5000,
       disableOnInteraction: false,
     },
     breakpoints: {
       999: {
         slidesPerView: 3,
       },
-      768: {
+      680: {
         slidesPerView: 2,
       },
       280: {

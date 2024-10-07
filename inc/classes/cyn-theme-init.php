@@ -83,6 +83,8 @@ if (!class_exists('cyn-theme-init')) {
 
         public function cyn_theme_setup()
         {
+            add_filter('the_content', 'wpautop');
+
             add_theme_support('custom-logo');
             add_theme_support('post-thumbnails');
             add_theme_support('title-tag');

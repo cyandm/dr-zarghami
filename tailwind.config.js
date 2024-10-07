@@ -28,14 +28,19 @@ module.exports = {
         blue: {
           1: "#86c0df",
           2: "#002864",
-          3: "#1C82AD",
+          3: "#0D54A5",
+          4: "#06a1aa",
         },
+        red: {
+          1: "#E12727",
+         },
         cyn: {
           1: "#ffa5a5",
-          // '2': '#1dbacf',
-        },
+         },
       },
       fontSize: {
+        "2xl": "2.75rem",
+        "3xl": "2rem",
         title: "4.5rem",
         title1: "2.5rem",
         title2: "1.75rem",

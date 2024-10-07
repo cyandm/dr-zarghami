@@ -5,13 +5,13 @@
   flex-wrap: wrap;
   align-items: start;
 
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     margin-top: 1.5rem;
     flex-direction: column;
   }
 
   .sidebar {
-    @media (width <= 800px) {
+    @media (max-width: 800px) {
       flex-basis: 100%;
       width: 100%;
     }
@@ -30,7 +30,7 @@
       gap: 2rem;
       align-items: center;
       justify-content: center;
-      @media (width <= 768px) {
+      @media (max-width: 768px) {
         flex-direction: column;
       }
       .search-title {

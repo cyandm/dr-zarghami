@@ -11,7 +11,7 @@
     height: 3.62rem;
     transition: 0.5s;
 
-    @media (width <= 1260px) {
+    @media (max-width: 1260px) {
       width: 100%;
     }
     div {

@@ -39,17 +39,10 @@ if (!class_exists('cyn_acf')) {
                 cyn_acf_add_image("about_poster", 'پوستر ویدیو',),
                 cyn_acf_add_file("about_video", '  ویدیو درباره ', '', '50'),
                 cyn_acf_add_url("about_video_link", ' لینک ویدیو  ', '', ' 50'),
-
-                cyn_acf_add_tab('نوبت گیری'),
-                cyn_acf_add_text("turn_title", ' تیتر بخش  ', '', ' 50'),
-                cyn_acf_add_text("turn_subtitle", ' متن بخش  ', '', ' 50'),
-                cyn_acf_add_image("turn_img", 'عکس بخش نوبت گیری',),
-
                 cyn_acf_add_tab(' پادکست های پزشکی'),
                 cyn_acf_add_text("podcasts_section_title", ' تیتر بخش  ', '', ' 50'),
                 cyn_acf_add_text("podcasts_section_subtitle", ' متن بخش  ', '', ' 50'),
-                cyn_acf_add_post_object("choose_podcasts", ' انتخاب پادکست  ', 'podcast', '', 1),
-
+                // cyn_acf_add_post_object("choose_podcasts", ' انتخاب پادکست  ', 'podcast', '', 1),
                 cyn_acf_add_tab("متن درمورد جراحی"),
                 cyn_acf_add_image("surgery_img", 'عکس در مورد جراحی'),
                 cyn_acf_add_text("surgery_section_title", ' تیتر بخش  ', '', ' 50'),
@@ -72,9 +65,9 @@ if (!class_exists('cyn_acf')) {
             for ($i = 1; $i < 5; $i++) {
                 array_push(
                     $arr,
-                    cyn_acf_add_image("points_img_$i", '  عکس نکته', '', '50'),
-                    cyn_acf_add_text("points_title_$i", 'تیتر نکته', '', '50'),
-                    cyn_acf_add_text("points_text_$i", 'متن نکته', '', '100'),
+                    cyn_acf_add_image("points_img_$i", "عکس نکته.$i", '', '50'),
+                    cyn_acf_add_text("points_title_$i", "تیتر نکته.$i", '', '50'),
+                    cyn_acf_add_text("points_text_$i", "متن نکته.$i", '', '100'),
                 );
             }
             $fields = array_merge($fields, $arr);
@@ -94,7 +87,7 @@ if (!class_exists('cyn_acf')) {
         {
             $fields = [
 
-                cyn_acf_add_file("podcasts_voice", ' فایل پادکست ', '', '50'),
+                cyn_acf_add_file("podcast_file", ' فایل پادکست ', '', '50'),
 
             ];
 
@@ -103,7 +96,7 @@ if (!class_exists('cyn_acf')) {
                     [
                         'param' => 'post_type',
                         'operator' => '==',
-                        'value' => 'podcasts',
+                        'value' => 'podcast',
                     ],
                 ],
             ];
@@ -209,6 +202,8 @@ if (!class_exists('cyn_acf')) {
         {
             $fields = [
                 cyn_acf_add_file("testimonial_video", 'ویدیو مورد نظر جهت نمایش در قسمت نظرات', '', ' 50'),
+                cyn_acf_add_number("testimonial_star", 'امتیاز نظرات', '', ' 10'),
+
             ];
 
             $location = [

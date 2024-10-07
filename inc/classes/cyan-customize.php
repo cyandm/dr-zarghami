@@ -10,6 +10,7 @@ if (!class_exists('cyn_customize')) {
 
         public function cyn_basic_settings($wp_customize)
         {
+            $this->cyn_register_panel_custom_code($wp_customize);
 
             $this->cyn_register_footer($wp_customize);
         }
@@ -65,18 +66,18 @@ if (!class_exists('cyn_customize')) {
         {
 
             $wp_customize->add_panel(
-                'footer_panel',
+                'customize_panel',
                 [
-                    'title' => 'تنظیمات فوتر و بنر تماس با ما',
+                    'title' => 'شخصی سازی ',
                     'priority' => 1
                 ]
             );
             $wp_customize->add_section(
                 'information',
                 [
-                    'title' => 'اطلاعات',
+                    'title' => ' تماس با ما',
                     'priority' => 1,
-                    'panel' => 'footer_panel'
+                    'panel' => 'customize_panel'
                 ]
             );
             $wp_customize->add_section(
@@ -84,45 +85,48 @@ if (!class_exists('cyn_customize')) {
                 [
                     'title' => 'شبکه های اجتماعی',
                     'priority' => 1,
-                    'panel' => 'footer_panel'
+                    'panel' => 'customize_panel'
+                ]
+            );
+       
+            $wp_customize->add_section(
+                'footer',
+                [
+                    'title' => 'فوتر ',
+                    'priority' => 1,
+                    'panel' => 'customize_panel'
                 ]
             );
             $wp_customize->add_section(
-                'footer_logo',
+                'visit',
                 [
-                    'title' => 'لوگوی فوتر',
+                    'title' => 'نوبت گیری ',
                     'priority' => 1,
-                    'panel' => 'footer_panel'
+                    'panel' => 'customize_panel'
                 ]
             );
-            $wp_customize->add_section(
-                'footer_location',
-                [
-                    'title' => 'لکیشن ',
-                    'priority' => 1,
-                    'panel' => 'footer_panel'
-                ]
-            );
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'doctor_name', 'نام دکتر نمایش در فوتر');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'doctor_skill', 'حرفه دکتر نمایش در فوتر');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'developer_name', 'اسم شرکت توسعه دهنده');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_title', 'تیتر شماره تلفن اول');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number2_title', 'تیتر شماره تلفن دوم');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number3_title', 'تیتر شماره تلفن سوم');
+            $this->cyn_add_control($wp_customize, 'visit', 'text', 'visit_but_text', 'متن دکمه دریافت نوبت در هدر');
+            $this->cyn_add_control($wp_customize, 'visit', 'url', 'visit_but_url', 'لینک دکمه دریافت نوبت در هدر');
+
+            $this->cyn_add_control($wp_customize, 'visit', 'url', 'online',' لینک دریافت نوبت اصلی');
+            $this->cyn_add_control($wp_customize, 'visit', 'url', 'online_consultation', 'لینک دریافت مشاوره');
+            $this->cyn_add_control($wp_customize, 'visit', 'text', 'visit_title', 'تیتر دریافت نوبت');
+            $this->cyn_add_control($wp_customize, 'visit', 'text', 'visit_text', 'متن دریافت نوبت');
+
+            $this->cyn_add_control($wp_customize, 'visit', 'text', 'consultation_title', 'تیتر دریافت مشاوره');
+            $this->cyn_add_control($wp_customize, 'visit', 'text', 'consultation_text', 'متن دریافت مشاوره');
+
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'doctor_name', 'نام دکتر نمایش در فوتر');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'doctor_skill', 'حرفه دکتر نمایش در فوتر');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'developer_name', 'اسم شرکت توسعه دهنده');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number_title', 'تیتر بخش تماس در فوتر');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number2_title', 'متن شماره تلفن بیمارستان');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number', 'متن لینک به صفحه تماس با ما');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_link', 'لینک به صفحه تماس با ما');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number2', 'شماره تلفن دوم');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number3', 'شماره تلفن سوم');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number2', 'شماره تلفن مطب ');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'email', 'ایمیل');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'address', 'آدرس');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'open_time', 'ساعت مراجعه');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'online_visit', 'متن ویزیت آنلاین');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'online_visit_text', 'متن لینک دار ویزیت آنلاین');
-            $this->cyn_add_control($wp_customize, 'information', 'url', 'online', 'لینک مراجعه');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'online_text', 'متن نوبت گیری با اسکن کد');
-            $this->cyn_add_control($wp_customize, 'information', 'url', 'online_url', 'لینک کد');
-            $this->cyn_add_control($wp_customize, 'information', 'file', 'online_file', 'عکس کد');
-            $this->cyn_add_control($wp_customize, 'social_media', 'text', 'social_link_text', 'متن پاپ آپ هدر',);
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_1', 'لینک شبکه اول',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_1', 'لوگوی شبکه اول');
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_2', 'لینک شبکه دوم',);
@@ -133,39 +137,69 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_4', 'لوگوی شبکه چهارم');
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_5', 'لینک شبکه پنجم',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_5', 'لوگوی شبکه پنجم');
-            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_1', 'لینک لوکیشن اول',);
-            $this->cyn_add_control($wp_customize, 'footer_location', 'file', 'location_logo_1', 'لوگوی لوکیشن اول');
-            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_2', 'لینک لوکیشن دوم',);
-            $this->cyn_add_control($wp_customize, 'footer_location', 'file', 'location_logo_2', 'لوگوی لوکیشن دوم');
-            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_3', 'لینک لوکیشن سوم',);
-            $this->cyn_add_control($wp_customize, 'footer_location', 'file', 'location_logo_3', 'لوگوی لوکیشن سوم');
-            $this->cyn_add_control($wp_customize, 'footer_location', 'url', 'location_link_4', 'لینک لوکیشن چهارم',);
-            $this->cyn_add_control($wp_customize, 'footer_location', 'file', 'location_logo_4', 'لوگوی لوکیشن چهارم');
+            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_1', 'لینک لوکیشن اول',);
+            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_1', 'لوگوی لوکیشن اول');
+            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_2', 'لینک لوکیشن دوم',);
+            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_2', 'لوگوی لوکیشن دوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_3', 'لینک لوکیشن سوم',);
+            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_3', 'لوگوی لوکیشن سوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_4', 'لینک لوکیشن چهارم',);
+            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_4', 'لوگوی لوکیشن چهارم');
+        }
+        private function cyn_register_panel_custom_code($wp_customize)
+        {
+            $wp_customize->add_panel(
+                'custom_code',
+                [
+                    'title' => 'تنظیمات کدهای سفارشی',
+                    'priority' => 1
+                ]
+            );
+
+            $wp_customize->add_section(
+                'head_section',
+                [
+                    'title' => 'داخل تگ head',
+                    'priority' => 1,
+                    'panel' => 'custom_code'
+                ]
+            );
+
+
+            for ($i = 1; $i <= 10; $i++) {
+                $this->cyn_add_control($wp_customize, 'head_section', 'textarea', "cyn_head_code_$i", "کد سفارشی $i");
+            }
+
+            $wp_customize->add_section(
+                'start_body_section',
+                [
+                    'title' => 'ابتدای تگ body',
+                    'priority' => 1,
+                    'panel' => 'custom_code'
+                ]
+            );
+
+            for ($i = 1; $i <= 10; $i++) {
+                $this->cyn_add_control($wp_customize, 'start_body_section', 'textarea', "cyn_start_body_code_$i", "کد سفارشی $i");
+            }
+
+
+            $wp_customize->add_section(
+                'end_body_section',
+                [
+                    'title' => 'انتهای تگ body',
+                    'priority' => 1,
+                    'panel' => 'custom_code'
+                ]
+            );
+
+            for ($i = 1; $i <= 10; $i++) {
+                $this->cyn_add_control($wp_customize, 'end_body_section', 'textarea', "cyn_end_body_code_$i", "کد سفارشی $i");
+            }
         }
 
 
-        // private function cyn_register_panel_demo_2($wp_customize)
-        // {
-
-        // 	$wp_customize->add_panel(
-        // 		'demo_panel_2',
-        // 		[
-        // 			'title' => 'CyanTheme - Demo Panel 2',
-        // 			'priority' => 2
-        // 		]
-        // 	);
 
 
-        // 	$wp_customize->add_section(
-        // 		'demo_section_2',
-        // 		[
-        // 			'title' => 'Demo section 2',
-        // 			'priority' => 1,
-        // 			'panel' => 'demo_panel_2'
-        // 		]
-        // 	);
-
-        // 	$this->cyn_add_control($wp_customize, 'demo_section_2', 'file', 'demo_file_control', 'Demo File Control');
-        // }
     }
 }

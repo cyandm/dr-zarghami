@@ -2,51 +2,52 @@
 $page_id = get_option('page_on_front');
 $turn_img = get_field('turn_img', $page_id);
 ?>
-<div class="h-auto bg-no-repeat	bg-contain bg-[#92D5C0] rounded-xl max-lg:bg-bottom max-lg:pb-[340px] max-md:pb-[280px]" style="background-image: url(<?= wp_get_attachment_image_url($turn_img, 'full w-full', false, []); ?>);">
-    <div class="w-2/4 min-h-[500px] p-12 max-lg:p-4  body grid gap-4	max-lg:w-full">
-        <div class="p-4 rounded-lg bg-white-1 ">
-            <h3 class="h3">ویزیت حضوری</h3>
-            <p><?= get_option('address'); ?></p>
-            <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-2 ">
+<div class="h-auto bg-no-repeat	bg-contain  rounded-xl   visit  ">
+    <div class=" p-12 max-lg:p-4  flex flex-col justify-between   gap-4 bg-blue-4	max-lg:w-full rounded-3xl	text-white-2">
+        <div>
+            <h3 class="text-h3 py-4 nax-lg:text-h4">ویزیت حضوری</h3>
+            <p class="opacity-70"><?= get_option('address'); ?></p>
 
-                <div class="flex flex-col">
-                    <span><?= get_option('phone_number_title'); ?></span>
-                    <a href="<?= get_option('phone_number_link'); ?>" class="text-blue-3"><?= get_option('phone_number'); ?></a>
-                </div>
-                <div class="flex flex-col">
-                    <span><?= get_option('phone_number2_title'); ?></span>
-                    <a href="tel:<?= get_option('phone_number2'); ?>" class="text-blue-3"><?= get_option('phone_number2'); ?></a>
-                </div>
-                <div class="flex flex-col">
-                    <span><?= get_option('phone_number3_title'); ?></span>
-                    <a href="tel:<?= get_option('phone_number3'); ?>" class="text-blue-3"><?= get_option('phone_number3'); ?></a>
-                </div>
-
-            </div>
-            <p>ایمیل</p>
-            <a href="mailto:<?= get_option('email'); ?>" class="text-blue-3"><?= get_option('email'); ?></a>
-
-            <p class="h3 pt-4"><?= get_option('online_visit'); ?></p>
-            <a href="<?= get_option('online'); ?>" class="text-blue-3"><?= get_option('online_visit_text'); ?></a>
-
-            <p class="h3 pt-4"><?= get_option('online_text'); ?></p>
-            <a href="<?= get_option('online_url'); ?>" class="text-blue-3">
-                <img src="<?= get_option("online_file") ?>" class="pt-2 rounded-2xl max-w-[130px]" />
-            </a>
-
-            <p class="h3 pt-4">ارتباط با پزشک</p>
-            <div class="grayscale flex items-center gap-3 ">
-                <?php
-                for ($i = 1; $i < 5; $i++) {
-                ?>
-                    <a href="<?= get_option("social_link_$i"); ?>" class="w-6 aspect-square">
-                        <img src="<?= get_option("social_logo_$i") ?>" />
-
-                    </a>
-
-                <?php } ?>
-            </div>
         </div>
 
+        <div>
+            <p class="text-h3 py-4 nax-lg:text-h4"><?= get_option('phone_number2_title'); ?></p>
+            <a href="tel:<?= get_option('phone_number2'); ?>"
+                class="opacity-70"><?= get_option('phone_number2'); ?></a>
+            <a href="tel:<?= get_option('phone_number3'); ?>"
+                class="opacity-70"><?= get_option('phone_number3'); ?></a>
+        </div>
+        <div>
+            <p class="text-h3 py-4 nax-lg:text-h4">ایمیل</p>
+            <a href="mailto:<?= get_option('email'); ?>" class="opacity-70"><?= get_option('email'); ?></a>
+        </div>
     </div>
+    <div class="  p-4 max-lg:p-4    bg-blue-3 items-center	max-lg:w-full rounded-3xl text-white-2	grid gap-4">
+        <p class="text-h2 nax-lg:text-h3"><?= get_option('visit_title') ? get_option('visit_title')  :"دریافت نوبت"; ?></p>
+                 <p class="text-caption"> <?= get_option('visit_text') ? get_option('visit_text') : "برای اخذ نوبت آنلاین به لینک زیر مراجعه نمایید" ?>
+                </p>
+<div class="text-left">
+
+        <a href="<?= get_option('online'); ?>" class="p-2 w-[170px] text-blue-3 bg-white-2 flex justify-around text-caption rounded-lg float-left	whitespace-nowrap	">نوبت آنلاین<img src="<?= get_stylesheet_directory_uri() ?>/imgs/nobat.svg" alt="visit"></a>
+    </div>
+    </div>
+    <div class="bg-red-1  rounded-3xl	p-4 grid   items-center text-white-2">
+
+        <p class="text-h3 nax-lg:text-h3"><?= get_option('consultation_title') ? get_option('consultation_title') : "دریافت مشاوره"; ?></p>
+                 <p class="text-caption"> <?= get_option('consultation_text') ? get_option('consultation_text') : "برای اخذ نوبت آنلاین به لینک زیر مراجعه نمایید" ?> </p>
+<div class="text-left">
+             <a href="<?= get_option('online_consultation'); ?>" class="p-2 w-[170px] text-red-1 bg-white-2 flex justify-around text-caption rounded-lg float-left	whitespace-nowrap	">ویزیت آنلاین <img src="<?= get_stylesheet_directory_uri() ?>/imgs/visit.svg" alt="visit"></a>
+
+</div>
+
+
+    </div>
+
+
+
+
+
+
+
+
 </div>
