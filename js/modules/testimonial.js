@@ -34,3 +34,20 @@ function testimonial() {
 }
 
 testimonial();
+
+function sliderEqualHeight() {
+  const sliderParent = document.querySelector(".slider-height");
+
+  if (!sliderParent) return;
+
+  const sliderItems = document.querySelectorAll(".slider-height .swiper-slide");
+  const sliderHeight = sliderParent.offsetHeight;
+
+  sliderItems.forEach((el) => {
+    el.style.height = sliderHeight + "px";
+  });
+}
+
+sliderEqualHeight();
+
+window.addEventListener("resize", sliderEqualHeight);

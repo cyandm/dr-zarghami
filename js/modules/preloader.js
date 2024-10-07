@@ -1,5 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
-  setTimeout(function () {
-    document.getElementById("preloader").style.display = "none";
-  }, 3000);
-});
+function preloader() {
+  const preloader = document.getElementById("preloader");
+
+  if (!preloader) return;
+
+  window.addEventListener("DOMContentLoaded", () => {
+    preloader.classList.replace("opacity-100", "opacity-0");
+    setTimeout(() => {
+      preloader.remove();
+    }, 3000);
+  });
+}
+
+preloader();

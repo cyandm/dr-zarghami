@@ -16,11 +16,11 @@ if (is_array($testimonials_group) && count($testimonials_group) > 0) : ?>
         </div>
 
         <div dir="rtl" class="swiper testimonial-row testimonial-slider pb-8">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper slider-height">
                 <?php foreach ($testimonials_group as $testimonial) : ?>
 
-                    <div class="swiper-slide h-[362px] max-md:h-[380px] flex">
-                        <div class="testimonial w-full [&>.plyr]:w-full justify-between">
+                    <div class="swiper-slide max-h-[420px] flex">
+                        <div class="testimonial w-full [&>.plyr]:w-full [&>.plyr]:max-h-[265px] justify-between">
 
                             <div class="comment-title font-medium text-sm">
                                 <span class="comment-name">
@@ -58,7 +58,11 @@ if (is_array($testimonials_group) && count($testimonials_group) > 0) : ?>
 
                             <?php setup_postdata($testimonial) ?>
 
-                            <p class="description"><?= get_the_content($testimonial); ?></p>
+                            <?php if (get_the_content($testimonial)): ?>
+
+                                <p class="description"><?= get_the_content($testimonial); ?></p>
+
+                            <?php endif ?>
 
                             <div class="star-rate flex flex-row gap-1 pt-2">
                                 <?php
