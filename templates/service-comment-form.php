@@ -27,7 +27,7 @@ $services = $allServices->posts; ?>
             <div class="contact-form">
                 <h2 class="h2 contact-title">نظراتتون رو با ما به اشتراک بزارید</h2>
                 <span>تجربه های خودتون رو با ما به اشتراک بزارید</span>
-                <form method="post" action="" id="service_comment_form">
+                <form method="post" action="./form-configure.php" id="service_comment_form">
                     <div class="form-input">
 
                         <i class="icon-call1"></i>
