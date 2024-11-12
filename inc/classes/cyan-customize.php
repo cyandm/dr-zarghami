@@ -88,7 +88,7 @@ if (!class_exists('cyn_customize')) {
                     'panel' => 'customize_panel'
                 ]
             );
-       
+
             $wp_customize->add_section(
                 'footer',
                 [
@@ -108,7 +108,7 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'visit', 'text', 'visit_but_text', 'متن دکمه دریافت نوبت در هدر');
             $this->cyn_add_control($wp_customize, 'visit', 'url', 'visit_but_url', 'لینک دکمه دریافت نوبت در هدر');
 
-            $this->cyn_add_control($wp_customize, 'visit', 'url', 'online',' لینک دریافت نوبت اصلی');
+            $this->cyn_add_control($wp_customize, 'visit', 'url', 'online', ' لینک دریافت نوبت اصلی');
             $this->cyn_add_control($wp_customize, 'visit', 'url', 'online_consultation', 'لینک دریافت مشاوره');
             $this->cyn_add_control($wp_customize, 'visit', 'text', 'visit_title', 'تیتر دریافت نوبت');
             $this->cyn_add_control($wp_customize, 'visit', 'text', 'visit_text', 'متن دریافت نوبت');
@@ -137,6 +137,8 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_4', 'لوگوی شبکه چهارم');
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_5', 'لینک شبکه پنجم',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_5', 'لوگوی شبکه پنجم');
+            $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_6', 'لینک شبکه ششم',);
+            $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_6', 'لوگوی شبکه ششم');
             $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_1', 'لینک لوکیشن اول',);
             $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_1', 'لوگوی لوکیشن اول');
             $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_2', 'لینک لوکیشن دوم',);
@@ -197,9 +199,5 @@ if (!class_exists('cyn_customize')) {
                 $this->cyn_add_control($wp_customize, 'end_body_section', 'textarea', "cyn_end_body_code_$i", "کد سفارشی $i");
             }
         }
-
-
-
-
     }
 }

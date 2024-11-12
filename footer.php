@@ -51,7 +51,7 @@ $locations = get_field('locations_links', $front_page_id);
             </div>
         </div>
     </div>
-    <div class="social-row center container">
+    <div class="social-row center container w-full whitespace-nowrap">
         <div class="logo-contain">
             <?php the_custom_logo() ?>
         </div>
@@ -59,14 +59,18 @@ $locations = get_field('locations_links', $front_page_id);
         <p class="caption"><?= get_option("doctor_skill"); ?></p>
         <div class="grayscale flex items-center gap-3 ">
             <?php
-            for ($i = 1; $i < 6; $i++) {
+            for ($i = 1; $i <= 6; $i++):
+                if (!empty(get_option("social_link_$i"))):
             ?>
-                <a href="<?= get_option("social_link_$i"); ?>" class="w-6 flex items-center aspect-square">
-                    <img src="<?= get_option("social_logo_$i") ?>" />
+                    <a href="<?= get_option("social_link_$i"); ?>" class="w-6 flex items-center aspect-square">
+                        <img src="<?= get_option("social_logo_$i") ?>" />
 
-                </a>
+                    </a>
 
-            <?php } ?>
+            <?php
+                endif;
+            endfor;
+            ?>
         </div>
 
         <p class="caption"><?= get_option("developer_name"); ?></p>
