@@ -56,7 +56,7 @@ $defaultCallNumber = get_field('call_number', $front_id);
 
 
             <div class="btn-contain">
-                <a href="<?= get_option('visit_but_link'); ?>" class="btn open-call-popup">
+                <a href="<?= get_option('visit_but_url'); ?>" class="btn open-call-popup">
                     <?= get_option('visit_but_text') ? get_option('visit_but_text') : "دریافت نوبت" ?>
                 </a>
             </div>

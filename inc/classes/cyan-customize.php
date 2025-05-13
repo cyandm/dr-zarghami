@@ -120,13 +120,26 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'footer', 'text', 'doctor_skill', 'حرفه دکتر نمایش در فوتر');
             $this->cyn_add_control($wp_customize, 'footer', 'text', 'developer_name', 'اسم شرکت توسعه دهنده');
             $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number_title', 'تیتر بخش تماس در فوتر');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number2_title', 'متن شماره تلفن بیمارستان');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number', 'متن لینک به صفحه تماس با ما');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_link', 'لینک به صفحه تماس با ما');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number2', 'شماره تلفن مطب ');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'email', 'ایمیل');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'address', 'آدرس');
-            $this->cyn_add_control($wp_customize, 'information', 'text', 'open_time', 'ساعت مراجعه');
+
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'hospital_title_hospital_one', 'عنوان بیمارستان اول');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_hospital_one_link', 'شماره تلفن اول');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_hospital_one_link_two', 'شماره تلفن دوم');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'email_hospital_one', 'ایمیل');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'address_title_hospital_one', 'عنوان آدرس');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'address_hospital_one', 'آدرس');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'open_time_hospital_one', 'ساعت مراجعه');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'online_hospital_one', 'لینک نوبت آنلاین');
+
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'hospital_title_hospital_two', 'عنوان بیمارستان دوم');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_hospital_two_link', 'شماره تلفن اول');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_hospital_two_link_two', 'شماره تلفن دوم');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'email_hospital_two', 'ایمیل');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'address_title_hospital_two', 'عنوان آدرس');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'address_hospital_two', 'آدرس');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'open_time_hospital_two', 'ساعت مراجعه');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'online_hospital_two', 'لینک نوبت آنلاین');
+
+
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_1', 'لینک شبکه اول',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_1', 'لوگوی شبکه اول');
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_2', 'لینک شبکه دوم',);

@@ -27,6 +27,8 @@ if (!class_exists('cyn_acf')) {
             add_action('acf/init', [$this, 'cyn_partners']);
             add_action('acf/init', [$this, 'cyn_contact']);
             add_action('acf/init', [$this, 'cyn_testimonial']);
+            add_action('acf/init', [$this, 'cyn_gallery']);
+            add_action('acf/init', [$this, 'cyn_gallery_page']);
         }
 
         public function cyn_front_page()
@@ -37,7 +39,7 @@ if (!class_exists('cyn_acf')) {
                 cyn_acf_add_text("about_subtitle", ' متن بخش  ', '', ' 50'),
                 cyn_acf_add_url("about_button_link", ' لینک دکمه  ', '', ' 50'),
                 cyn_acf_add_image("about_poster", 'پوستر ویدیو',),
-                cyn_acf_add_file("about_video", '  ویدیو درباره ', '', '50'),
+                cyn_acf_add_file("about_video", '  ویدیو درباره ', '50'),
                 cyn_acf_add_url("about_video_link", ' لینک ویدیو  ', '', ' 50'),
                 cyn_acf_add_tab(' پادکست های پزشکی'),
                 cyn_acf_add_text("podcasts_section_title", ' تیتر بخش  ', '', ' 50'),
@@ -65,7 +67,7 @@ if (!class_exists('cyn_acf')) {
             for ($i = 1; $i < 5; $i++) {
                 array_push(
                     $arr,
-                    cyn_acf_add_image("points_img_$i", "عکس نکته.$i", '', '50'),
+                    cyn_acf_add_image("points_img_$i", "عکس نکته.$i"),
                     cyn_acf_add_text("points_title_$i", "تیتر نکته.$i", '', '50'),
                     cyn_acf_add_text("points_text_$i", "متن نکته.$i", '', '100'),
                 );
@@ -87,7 +89,7 @@ if (!class_exists('cyn_acf')) {
         {
             $fields = [
 
-                cyn_acf_add_file("podcast_file", ' فایل پادکست ', '', '50'),
+                cyn_acf_add_file("podcast_file", ' فایل پادکست ', '50'),
 
             ];
 
@@ -110,11 +112,11 @@ if (!class_exists('cyn_acf')) {
                 cyn_acf_add_text("about_section_title", ' تیتر بخش  ', '', ' 50'),
                 cyn_acf_add_text("about_section_subtitle", 'زیر تیتر بخش ', '', ' 50'),
                 cyn_acf_add_image("about_poster_1", 'پوستر  ویدیو اول',),
-                cyn_acf_add_file("about_video_1", '  ویدیو اول درباره  دکتر ', '', '50'),
+                cyn_acf_add_file("about_video_1", '  ویدیو اول درباره  دکتر ', '50'),
                 cyn_acf_add_image("about_poster_2", 'پوستر  ویدیو دوم',),
-                cyn_acf_add_file("about_video_2", '  ویدیو دوم درباره  دکتر ', '', '50'),
+                cyn_acf_add_file("about_video_2", '  ویدیو دوم درباره  دکتر ', '50'),
                 cyn_acf_add_image("about_poster_3", 'پوستر  ویدیو سوم',),
-                cyn_acf_add_file("about_video_3", '  ویدیو سوم درباره  دکتر ', '', '50'),
+                cyn_acf_add_file("about_video_3", '  ویدیو سوم درباره  دکتر ', '50'),
                 cyn_acf_add_tab('تاریخچه کلینیک'),
                 cyn_acf_add_text("clinic_history_title", ' تایتل تاریخچه کلینیک ', '', ' 50'),
                 cyn_acf_add_text("clinic_history_sub_title", ' ساب تایتل تاریخچه کلینیک ', '', ' 50'),
@@ -135,7 +137,7 @@ if (!class_exists('cyn_acf')) {
             for ($i = 1; $i < 6; $i++) {
                 array_push(
                     $arr,
-                    cyn_acf_add_image("certificate_img_$i", '  عکس گواهینامه', '', '50'),
+                    cyn_acf_add_image("certificate_img_$i", '  عکس گواهینامه'),
                 );
             }
             $fields = array_merge($fields, $arr);
@@ -150,8 +152,6 @@ if (!class_exists('cyn_acf')) {
             ];
             cyn_register_acf_group(' تنظیمات صفحه درباره ما ', $fields, $location);
         }
-
-
         public function cyn_partners()
         {
             $fields = [
@@ -173,8 +173,6 @@ if (!class_exists('cyn_acf')) {
             ];
             cyn_register_acf_group(' صفحه همکاران ', $fields, $location);
         }
-
-
         public function cyn_contact()
         {
             $fields = [
@@ -196,12 +194,10 @@ if (!class_exists('cyn_acf')) {
             cyn_register_acf_group(' صفحه تماس با ما ', $fields, $location);
         }
 
-
-
         public function cyn_testimonial()
         {
             $fields = [
-                cyn_acf_add_file("testimonial_video", 'ویدیو مورد نظر جهت نمایش در قسمت نظرات', '', ' 50'),
+                cyn_acf_add_file("testimonial_video", 'ویدیو مورد نظر جهت نمایش در قسمت نظرات',  ' 50'),
                 cyn_acf_add_number("testimonial_star", 'امتیاز نظرات', '', ' 10'),
 
             ];
@@ -216,6 +212,48 @@ if (!class_exists('cyn_acf')) {
                 ],
             ];
             cyn_register_acf_group('قسمت نظرات', $fields, $location);
+        }
+
+        public function cyn_gallery_page()
+        {
+            $fields = [
+                cyn_acf_add_text("gallery_videos_title", 'عنوان ویدیوها', '',),
+                cyn_acf_add_text("gallery_videos_subtitle", 'زیر عنوان ویدیوها', '',),
+                cyn_acf_add_text("gallery_images_title", 'عنوان عکس ها', '',),
+                cyn_acf_add_text("gallery_images_subtitle", 'زیر عنوان عکس ها', '',),
+            ];
+
+            $location = [
+                [
+                    [
+                        'param' => 'page_template',
+                        'operator' => '==',
+                        'value' => 'templates/gallery.php',
+                    ],
+                ],
+            ];
+            cyn_register_acf_group('گالری', $fields, $location);
+        }
+
+        public function cyn_gallery()
+        {
+            $fields = [
+                cyn_acf_add_text("gallery_title", 'عنوان', '',),
+                cyn_acf_add_file("gallery_video", 'ویدیو', ' 33'),
+                cyn_acf_add_image("gallery_video_cover", 'کاور ویدیو',),
+                cyn_acf_add_image("gallery_img", 'عکس',),
+            ];
+
+            $location = [
+                [
+                    [
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'gallery',
+                    ],
+                ],
+            ];
+            cyn_register_acf_group('گالری', $fields, $location);
         }
     }
 }

@@ -190,6 +190,77 @@ if (!class_exists('cyn_register')) {
 
             register_post_type('testimonial', $args);
 
+
+            /***************************** register testimonial post type */
+            $labels = array(
+                'name' => 'نظرات',
+                'singular_name' => 'نظر',
+                'menu_name' => 'نظرات',
+                'name_admin_bar' => 'نظرات',
+                'add_new' => 'افزودن نظر',
+                'add_new_item' => 'افزودن نظر جدید',
+                'new_item' => 'نظر جدید',
+                'edit_item' => 'ویرایش نظر',
+                'view_item' => 'دیدن نظر',
+                'all_items' => 'همه نظرات',
+                'search_items' => 'جستجو نظرات',
+                'not_found' => 'نظر پیدا نشد',
+                'not_found_in_trash' => 'نظر پیدا نشد'
+            );
+            $args = [
+                'labels' =>  $labels,
+                'public' => true,
+                'publicly_queryable' => true,
+                'show_ui' => true,
+                'show_in_menu' => true,
+                'query_var' => true,
+                'rewrite' => array('slug' => 'testimonial'),
+                'exclude_from_search' => false,
+                'has_archive' => true,
+                'hierarchical' => false,
+                'menu_position' => null,
+                'menu_icon' => 'dashicons-video-alt3',
+                'supports' => array('title', 'category', 'editor'),
+                'taxonomies' => array('category', 'post_tag'),
+            ];
+
+            register_post_type('testimonial', $args);
+
+
+            /***************************** register gallery post type */
+            $labels = array(
+                'name' => 'گالری',
+                'singular_name' => 'گالری',
+                'menu_name' => 'گالری',
+                'name_admin_bar' => 'گالری',
+                'add_new' => 'افزودن به گالری',
+                'add_new_item' => 'افزودن به گالری',
+                'new_item' => 'افزودن جدید',
+                'edit_item' => 'ویرایش گالری',
+                'view_item' => 'دیدن گالری',
+                'all_items' => 'همه',
+                'search_items' => 'جستجو گالری',
+                'not_found' => 'گالری پیدا نشد',
+                'not_found_in_trash' => 'گالری پیدا نشد'
+            );
+            $args = [
+                'labels' =>  $labels,
+                'public' => true,
+                'publicly_queryable' => true,
+                'show_ui' => true,
+                'show_in_menu' => true,
+                'query_var' => true,
+                'rewrite' => array('slug' => 'gallery'),
+                'exclude_from_search' => false,
+                'has_archive' => true,
+                'hierarchical' => false,
+                'menu_position' => null,
+                'menu_icon' => 'dashicons-format-gallery',
+                'supports' => array('title', 'category', 'editor'),
+                //'taxonomies' => array('category'),
+            ];
+
+            register_post_type('gallery', $args);
         }
         public function cyn_taxonomy_register()
         {
@@ -221,6 +292,7 @@ if (!class_exists('cyn_register')) {
             }
 
             make_taxonomy('دسته‌بندی خدمات', 'service_type', ['service']);
+            make_taxonomy('بخش گالری', 'gallery_department', ['gallery']);
         }
 
         public function cyn_term_register()

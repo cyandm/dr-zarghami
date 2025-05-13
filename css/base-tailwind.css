@@ -3,5 +3,26 @@
 @tailwind utilities;
 @layer utilities {
   .back {
-background: linear-gradient(180deg, #002864 , #000b30);  }
+    background: linear-gradient(180deg, #002864, #000b30);
+  }
+}
+
+img.custom-logo {
+  width: 120px;
+}
+
+.blog-content .all-content .content-single video,
+.blog-content .all-content .content-single .wp-video,
+.blog-content .all-content .content-single .wp-video-shortcode {
+  width: 100% !important;
+  border-radius: 1rem !important;
+}
+
+.blog-content .all-content .content-single .wp-video-shortcode .mejs-controls {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.blog-content .all-content .content-single .wp-video {
+  margin-block: 2rem;
 }

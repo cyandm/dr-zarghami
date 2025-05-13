@@ -11,3 +11,10 @@ const lightbox = new PhotoSwipeLightbox({
   pswpModule: () => import("photoswipe"),
 });
 lightbox.init();
+
+const lightboxGallery = new PhotoSwipeLightbox({
+  gallery: ".gallery",
+  children: "#gallery-zoom",
+  pswpModule: () => import("photoswipe"),
+});
+lightboxGallery.init();
