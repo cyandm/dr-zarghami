@@ -8,6 +8,11 @@
   background: var(--blue-4, rgba(15, 123, 156, 0.04));
   flex-wrap: wrap;
   height: 32rem;
+  margin-bottom: 7.5rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2.5rem;
+  }
 
   @media (max-width: 992px) {
     justify-content: center;
@@ -90,10 +95,7 @@
 
 //----------------------------------------------extra-services style
 .extra-services {
-  margin-top: 7.5rem;
-  @media (max-width: 768px) {
-    margin-top: 2.5rem;
-  }
+  margin-top: 2.5rem;
 
   .extra-services-row {
     display: flex;

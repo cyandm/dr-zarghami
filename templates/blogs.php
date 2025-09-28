@@ -9,7 +9,7 @@ $stickies = get_posts(['post__in' => get_option('sticky_posts')]);
 
 <?php get_header(); ?>
 
-<main class=" main blogs" id="blog-overview">
+<main class="main blogs" id="blog-overview">
     <!-- -------------------------------- categories tab -->
     <section class="category-tabs container">
         <?php get_template_part(
@@ -21,7 +21,7 @@ $stickies = get_posts(['post__in' => get_option('sticky_posts')]);
             null,
         ); ?>
     </section>
-    
+
     <!-- -------------------------------- Pin Blogs -->
     <section class=" pin-blogs">
         <?php if (!empty($stickies)): ?>
@@ -47,12 +47,19 @@ $stickies = get_posts(['post__in' => get_option('sticky_posts')]);
                 'post_type' => 'post',
                 'posts_per_page' => 8,
                 'paged' => $paged,
-        
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'category',
+                        'field'    => 'slug',
+                        'terms'    => 'students',
+                        'operator' => 'NOT IN',
+                    ),
+                ),
             );
             $posts = new WP_Query($allposts);
 
             if ($posts->have_posts()) :
-                 while ($posts->have_posts()) : $posts->the_post();
+                while ($posts->have_posts()) : $posts->the_post();
 
                     $post_id = get_the_ID();
 
@@ -61,7 +68,7 @@ $stickies = get_posts(['post__in' => get_option('sticky_posts')]);
                         'templates/components/blog-cart',
                         null,
                     );
-                     
+
                 endwhile;
 
                 echo '<div class="pagination">';
@@ -74,54 +81,54 @@ $stickies = get_posts(['post__in' => get_option('sticky_posts')]);
                     'mid_size' => 1,
                 ));
                 echo '</div>';
-         
+
             endif;
             wp_reset_query(); ?>
 
         </div>
     </section>
 
-        <section class="all-blogs">
+    <section class="all-blogs">
         <div id="all" class="all-blogs-row container">
             <?php
-                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $args = array(
-                    'post_type' => 'post',
-                    'posts_per_page' => 1,
-                    'paged' => $paged,
-                     'tax_query' => [
-                        [
-                            'taxonomy' => 'post_tag',
-                            'terms' => 'special',
-                            'field' => 'slug',
-                            // 'operator' => 'NOT IN',
-                        ]
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 1,
+                'paged' => $paged,
+                'tax_query' => [
+                    [
+                        'taxonomy' => 'post_tag',
+                        'terms' => 'special',
+                        'field' => 'slug',
+                        // 'operator' => 'NOT IN',
                     ]
-                );
-                $posts = new WP_Query($args);
+                ]
+            );
+            $posts = new WP_Query($args);
 
-                if ($posts->have_posts()):
-                     while ($posts->have_posts()):
-                        $posts->the_post();
+            if ($posts->have_posts()):
+                while ($posts->have_posts()):
+                    $posts->the_post();
 
-                        $post_id = get_the_ID();
+                    $post_id = get_the_ID();
 
-                        // set_query_var('id', $post_id);
-                      
-                            set_query_var('page-name', 'blogs');
-                            get_template_part(
-                                'templates/components/blog-special',
-                                null,
-                            );
-                        
-                     endwhile;
-     
-              
-                endif;
-                wp_reset_query(); ?>
-        
-            </div>
-        </section>
+                    // set_query_var('id', $post_id);
+
+                    set_query_var('page-name', 'blogs');
+                    get_template_part(
+                        'templates/components/blog-special',
+                        null,
+                    );
+
+                endwhile;
+
+
+            endif;
+            wp_reset_query(); ?>
+
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>

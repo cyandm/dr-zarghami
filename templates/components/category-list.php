@@ -22,6 +22,7 @@ $terms = $all_terms->query; ?>
         endforeach; ?>
     </select>
 </div>
+
 <?php
 if (is_single() || is_search()) : ?>
     <?php $post_id = get_queried_object_id();

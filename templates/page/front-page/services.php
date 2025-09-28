@@ -88,7 +88,7 @@
                                              <?php echo get_field('service_description_front', $service->ID) ?>
                                          </div>
 
-                                         <div class="service-btn">
+                                         <div class="service-btn px-4 pb-6">
                                              <a href="<?= get_permalink($service->ID) ?>" class="btn">اطلاعات بیشتر</a>
                                          </div>
                                      </div>

@@ -8,7 +8,7 @@ $doctors = get_field('team_images', $page_id);
 $blogs = get_field('choose_blogs', $page_id);
 ?>
 
-<main class="  main single-service-page">
+<main class="main single-service-page">
     <!--    ******************************************* single service main section-->
     <section class="single-service">
         <?php $excerpt = get_field('service_description', $page_id);
@@ -18,7 +18,12 @@ $blogs = get_field('choose_blogs', $page_id);
                     <h1 class="h2"><?= get_the_title($page_id) ?></h1>
                     <div class="single-excerpt-content"><?= $excerpt ?></div>
                 </div>
-                <a href="<?= get_option('visit_but_url'); ?>" class="btn-b">تماس بگیر</a>
+
+                <div class="flex gap-2">
+                    <a href="#contact-item" class="btn-b btn-pulse">نوبت بگیر</a>
+                    <a href="<?= get_option('visit_but_url'); ?>" class="btn-b">تماس بگیر</a>
+                </div>
+
             </div>
             <div class="single_service-img">
                 <?= $img ?>
@@ -26,8 +31,10 @@ $blogs = get_field('choose_blogs', $page_id);
         <?php endif; ?>
     </section>
 
-    <!--*******************************************  extra-services section-->
+    <!--*******************************************  reserve nobat section-->
+    <?= get_template_part('templates/page/front-page/turn', null,);  ?>
 
+    <!--*******************************************  extra-services section-->
     <?php if (is_array($extraServices) && count($extraServices) > 0): ?>
 
         <section class="extra-services">

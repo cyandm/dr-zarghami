@@ -49,7 +49,10 @@ $defaultCallNumber = get_field('call_number', $front_id);
                             </div>
                         </div>
                         <div class="menu-contain">
-                            <?php wp_nav_menu(['menu' => 'header-menu']); ?>
+                            <?php wp_nav_menu([
+                                'menu' => 'header_menu',
+                                'theme_location' => 'header_menu'
+                            ]); ?>
 
                         </div>
 
@@ -57,12 +60,13 @@ $defaultCallNumber = get_field('call_number', $front_id);
                     </div>
                 </div>
 
-                <div class="relative group">
+                <div class="relative group mr-2">
                     <div class="shadow-xl rounded-full bg-[#ffffff] p-2 w-10 h-10 flex justify-center items-center cursor-pointer border border-blue-4 transition-all duration-200 group-hover:[&>svg]:fill-blue-4 [&>svg]:w-8 [&>svg]:h-8">
-                        <!-- <img src="<?= get_stylesheet_directory_uri() ?>/imgs/earth.svg" alt="visit" class="group-hover:opacity-0">
-                        <img src="<?= get_stylesheet_directory_uri() ?>/imgs/earth-white.svg" alt="visit" class="group-hover:opacity-1"> -->
 
-                        <?php echo get_template_part('imgs/earth'); ?>
+                        <? //php echo get_template_part('imgs/uae-flag'); 
+                        ?>
+
+                        <span class="pt-1">AR</span>
 
                     </div>
 
@@ -90,17 +94,23 @@ $defaultCallNumber = get_field('call_number', $front_id);
                 <?php the_custom_logo() ?>
             </div>
             <div class="menu-contain">
-                <?php wp_nav_menu(['menu' => 'header-menu']); ?>
+                <?php wp_nav_menu(['menu' => 'header_menu']); ?>
             </div>
 
             <div class="btn-contain flex justify-between items-center gap-4">
 
                 <div class="relative group">
                     <div class="shadow-xl rounded-full bg-[#ffffff] p-2 w-12 h-12 flex justify-center items-center cursor-pointer border border-blue-4 transition-all duration-200 group-hover:[&>svg]:fill-blue-4 [&>svg]:w-8 [&>svg]:h-8">
-                        <!-- <img src="<?= get_stylesheet_directory_uri() ?>/imgs/earth.svg" alt="visit" class="group-hover:opacity-0">
-                        <img src="<?= get_stylesheet_directory_uri() ?>/imgs/earth-white.svg" alt="visit" class="group-hover:opacity-1"> -->
+                        <!-- <img src="<? //= get_stylesheet_directory_uri() 
+                                        ?>/imgs/earth.svg" alt="visit" class="group-hover:opacity-0"> -->
 
-                        <?php echo get_template_part('imgs/earth'); ?>
+                        <!-- <img src="<? //= get_stylesheet_directory_uri() 
+                                        ?>/imgs/earth-white.svg" alt="visit" class="group-hover:opacity-1"> -->
+
+                        <? //php echo get_template_part('imgs/uae-flag'); 
+                        ?>
+
+                        <span class="pt-1">AR</span>
 
                     </div>
 
@@ -123,7 +133,9 @@ $defaultCallNumber = get_field('call_number', $front_id);
 
     <!-- call icon for all pages -->
     <!-- <div class="call-icon">
-        <a href="tel:<?= get_option('phone_number2') ?>">
-            <img src="<?= get_stylesheet_directory_uri() ?>/imgs/call.png" alt="تماس">
+        <a href="tel:<? //= get_option('phone_number2') 
+                        ?>">
+            <img src="<? //= get_stylesheet_directory_uri() 
+                        ?>/imgs/call.png" alt="تماس">
         </a>
     </div> -->

@@ -105,6 +105,7 @@ if (!class_exists('cyn_customize')) {
                     'panel' => 'customize_panel'
                 ]
             );
+
             $this->cyn_add_control($wp_customize, 'visit', 'text', 'visit_but_text', 'متن دکمه دریافت نوبت در هدر');
             $this->cyn_add_control($wp_customize, 'visit', 'url', 'visit_but_url', 'لینک دکمه دریافت نوبت در هدر');
 
@@ -116,10 +117,34 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'visit', 'text', 'consultation_title', 'تیتر دریافت مشاوره');
             $this->cyn_add_control($wp_customize, 'visit', 'text', 'consultation_text', 'متن دریافت مشاوره');
 
+            $this->cyn_add_control($wp_customize, 'visit', 'text', 'consultation_title_two', 'تیتر شبکه اجتماعی برای مشاوره و دریافت نوبت');
+            $this->cyn_add_control($wp_customize, 'visit', 'text', 'consultation_text_two', 'متن شبکه اجتماعی برای مشاوره و دریافت نوبت');
+            $this->cyn_add_control($wp_customize, 'visit', 'url', 'online_consultation_two', 'لینک شبکه اجتماعی برای مشاوره و دریافت نوبت');
+
+
             $this->cyn_add_control($wp_customize, 'footer', 'text', 'doctor_name', 'نام دکتر نمایش در فوتر');
             $this->cyn_add_control($wp_customize, 'footer', 'text', 'doctor_skill', 'حرفه دکتر نمایش در فوتر');
             $this->cyn_add_control($wp_customize, 'footer', 'text', 'developer_name', 'اسم شرکت توسعه دهنده');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'open_time', 'ساعت مراجعه');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'address', 'آدرس درمانگاه');
             $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number_title', 'تیتر بخش تماس در فوتر');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number_link', 'لینک بخش تماس در فوتر');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number', 'شماره یا متن تماس در فوتر');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number2_title', 'تیتر بخش تماس در فوتر دوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number2_link', 'لینک بخش تماس در فوتر دوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number2', 'شماره یا متن تماس در فوتر دوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number3_title', 'تیتر بخش تماس در فوتر سوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number3_link', 'لینک بخش تماس در فوتر سوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'phone_number3', 'شماره یا متن تماس در فوتر سوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'text', 'email', 'ایمیل');
+            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_1', 'لینک لوکیشن اول',);
+            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_1', 'لوگوی لوکیشن اول');
+            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_2', 'لینک لوکیشن دوم',);
+            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_2', 'لوگوی لوکیشن دوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_3', 'لینک لوکیشن سوم',);
+            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_3', 'لوگوی لوکیشن سوم');
+            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_4', 'لینک لوکیشن چهارم',);
+            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_4', 'لوگوی لوکیشن چهارم');
 
             $this->cyn_add_control($wp_customize, 'information', 'text', 'hospital_title_hospital_one', 'عنوان بیمارستان اول');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_hospital_one_link', 'شماره تلفن اول');
@@ -127,6 +152,9 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'information', 'text', 'email_hospital_one', 'ایمیل');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'address_title_hospital_one', 'عنوان آدرس');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'address_hospital_one', 'آدرس');
+            $this->cyn_add_control($wp_customize, 'information', 'url', 'balad_hospital_one', 'لینک آدرس بلد');
+            $this->cyn_add_control($wp_customize, 'information', 'url', 'neshan_hospital_one', 'لینک آدرس نشان');
+            $this->cyn_add_control($wp_customize, 'information', 'url', 'maps_hospital_one', 'لینک آدرس گوگل مپ');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'open_time_hospital_one', 'ساعت مراجعه');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'online_hospital_one', 'لینک نوبت آنلاین');
 
@@ -136,9 +164,23 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'information', 'text', 'email_hospital_two', 'ایمیل');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'address_title_hospital_two', 'عنوان آدرس');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'address_hospital_two', 'آدرس');
+            $this->cyn_add_control($wp_customize, 'information', 'url', 'balad_hospital_two', 'لینک آدرس بلد');
+            $this->cyn_add_control($wp_customize, 'information', 'url', 'neshan_hospital_two', 'لینک آدرس نشان');
+            $this->cyn_add_control($wp_customize, 'information', 'url', 'maps_hospital_two', 'لینک آدرس گوگل مپ');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'open_time_hospital_two', 'ساعت مراجعه');
             $this->cyn_add_control($wp_customize, 'information', 'text', 'online_hospital_two', 'لینک نوبت آنلاین');
 
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'hospital_title_hospital_three', 'عنوان بیمارستان سوم');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_hospital_three_link', 'شماره تلفن اول');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'phone_number_hospital_three_link_two', 'شماره تلفن دوم');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'email_hospital_three', 'ایمیل');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'address_title_hospital_three', 'عنوان آدرس');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'address_hospital_three', 'آدرس');
+            $this->cyn_add_control($wp_customize, 'information', 'url', 'balad_hospital_three', 'لینک آدرس بلد');
+            $this->cyn_add_control($wp_customize, 'information', 'url', 'neshan_hospital_three', 'لینک آدرس نشان');
+            $this->cyn_add_control($wp_customize, 'information', 'url', 'maps_hospital_three', 'لینک آدرس گوگل مپ');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'open_time_hospital_three', 'ساعت مراجعه');
+            $this->cyn_add_control($wp_customize, 'information', 'text', 'online_hospital_three', 'لینک نوبت آنلاین');
 
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_1', 'لینک شبکه اول',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_1', 'لوگوی شبکه اول');
@@ -152,14 +194,6 @@ if (!class_exists('cyn_customize')) {
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_5', 'لوگوی شبکه پنجم');
             $this->cyn_add_control($wp_customize, 'social_media', 'url', 'social_link_6', 'لینک شبکه ششم',);
             $this->cyn_add_control($wp_customize, 'social_media', 'file', 'social_logo_6', 'لوگوی شبکه ششم');
-            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_1', 'لینک لوکیشن اول',);
-            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_1', 'لوگوی لوکیشن اول');
-            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_2', 'لینک لوکیشن دوم',);
-            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_2', 'لوگوی لوکیشن دوم');
-            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_3', 'لینک لوکیشن سوم',);
-            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_3', 'لوگوی لوکیشن سوم');
-            $this->cyn_add_control($wp_customize, 'footer', 'url', 'location_link_4', 'لینک لوکیشن چهارم',);
-            $this->cyn_add_control($wp_customize, 'footer', 'file', 'location_logo_4', 'لوگوی لوکیشن چهارم');
         }
         private function cyn_register_panel_custom_code($wp_customize)
         {

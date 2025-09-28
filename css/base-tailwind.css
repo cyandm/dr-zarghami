@@ -26,3 +26,7 @@ img.custom-logo {
 .blog-content .all-content .content-single .wp-video {
   margin-block: 2rem;
 }
+
+.teaching-students a {
+  font-weight: 600;
+}

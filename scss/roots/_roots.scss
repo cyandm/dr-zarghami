@@ -93,6 +93,33 @@ li {
     color: $blue_1;
     box-shadow: none;
   }
+
+  @keyframes btnPulse {
+    0% {
+      background: $blue_1;
+      color: $white_2;
+      box-shadow: 0px 0px 4px 0px rgba(#ffffff, 45%) inset,
+        0px 8px 14px 0px rgba(#06a1aa, 40%);
+      border: 1px solid transparent;
+    }
+    50% {
+      background: $white_2;
+      color: $blue_1;
+      box-shadow: none;
+      border: 1px solid $blue_1;
+    }
+    100% {
+      background: $blue_1;
+      color: $white_2;
+      box-shadow: 0px 0px 4px 0px rgba(#ffffff, 45%) inset,
+        0px 8px 14px 0px rgba(#06a1aa, 40%);
+      border: 1px solid transparent;
+    }
+  }
+
+  &-pulse {
+    animation: btnPulse 3s ease-in-out infinite;
+  }
 }
 
 .btn-icon {
@@ -132,7 +159,7 @@ li {
   display: flex;
   align-items: start;
   flex-direction: column;
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     margin-bottom: 0;
     padding: 1rem;
   }
@@ -142,7 +169,7 @@ li {
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 3.65rem;
-    @media (max-width:768px) {
+    @media (max-width: 768px) {
       font-size: 1.75rem;
       line-height: normal;
     }
@@ -215,7 +242,7 @@ li {
   display: flex;
   align-items: start;
   flex-direction: column;
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     //padding: 1rem;
   }
 
@@ -223,7 +250,7 @@ li {
     color: $black_1;
     font-size: 1.75rem;
     font-weight: 700;
-    @media (max-width:768px) {
+    @media (max-width: 768px) {
       font-size: 1.25rem;
 
       font-weight: 500;
@@ -261,7 +288,7 @@ li {
     transform: translateY(5rem);
     filter: blur(62px);
     opacity: 1;
-    @media (max-width:992px) {
+    @media (max-width: 992px) {
       width: 5.5625rem;
       height: 5.5625rem;
     }
@@ -273,7 +300,7 @@ li {
     background: rgba(0, 217, 232, 0.5);
     filter: blur(62px);
     opacity: 1;
-    @media (max-width:992px) {
+    @media (max-width: 992px) {
       width: 5.5625rem;
       height: 5.5625rem;
     }

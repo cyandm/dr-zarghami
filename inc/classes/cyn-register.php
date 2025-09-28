@@ -16,19 +16,19 @@ if (!class_exists('cyn_register')) {
         {
             /***************************** register Service post type */
             $labels = array(
-                'name' => 'سرویس',
-                'singular_name' => 'سرویس',
-                'menu_name' => 'سرویس',
-                'name_admin_bar' => 'سرویس',
-                'add_new' => 'افزودن سرویس',
-                'add_new_item' => 'افزودن سرویس جدید',
-                'new_item' => 'سرویس جدید',
-                'edit_item' => 'ویرایش سرویس',
-                'view_item' => 'دیدن سرویس',
-                'all_items' => 'همه سرویس ها',
-                'search_items' => 'جستجو سرویس',
-                'not_found' => 'سرویس پیدا نشد',
-                'not_found_in_trash' => 'سرویس پیدا نشد'
+                'name' => 'خدمات',
+                'singular_name' => 'خدمت',
+                'menu_name' => 'خدمات',
+                'name_admin_bar' => 'خدمات',
+                'add_new' => 'افزودن خدمت',
+                'add_new_item' => 'افزودن خدمت جدید',
+                'new_item' => 'خدمت جدید',
+                'edit_item' => 'ویرایش خدمت',
+                'view_item' => 'دیدن خدمت',
+                'all_items' => 'همه خدمت ها',
+                'search_items' => 'جستجو خدمات',
+                'not_found' => 'خدمت پیدا نشد',
+                'not_found_in_trash' => 'خدمت پیدا نشد'
             );
             $args = [
                 'labels' => $labels,

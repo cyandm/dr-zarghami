@@ -29,6 +29,7 @@ if (!class_exists('cyn_acf')) {
             add_action('acf/init', [$this, 'cyn_testimonial']);
             add_action('acf/init', [$this, 'cyn_gallery']);
             add_action('acf/init', [$this, 'cyn_gallery_page']);
+            add_action('acf/init', [$this, 'cyn_student_page']);
         }
 
         public function cyn_front_page()
@@ -254,6 +255,27 @@ if (!class_exists('cyn_acf')) {
                 ],
             ];
             cyn_register_acf_group('گالری', $fields, $location);
+        }
+
+
+        public function cyn_student_page()
+        {
+            $fields = [
+                cyn_acf_add_text("send_article_title", ' عنوان بالای فرم ', '', ' 50'),
+                cyn_acf_add_text("send_article_subtitle", ' زیر عنوان بالای فرم ', '', ' 50'),
+                cyn_acf_add_image("send_article_img", 'عکس کنار فرم ارسال مقاله',),
+            ];
+
+            $location = [
+                [
+                    [
+                        'param' => 'page_template',
+                        'operator' => '==',
+                        'value' => 'templates/student.php',
+                    ],
+                ],
+            ];
+            cyn_register_acf_group('فرم ارسال مقاله', $fields, $location);
         }
     }
 }

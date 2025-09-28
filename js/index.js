@@ -15,3 +15,4 @@ import "./modules/image-opener";
 import "./modules/call-popup";
 import "./modules/change-position-header-with-scroll";
 import "./modules/preloader";
+import "./modules/studentForm";

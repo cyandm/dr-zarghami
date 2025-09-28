@@ -91,7 +91,7 @@ if (!class_exists('cyn-theme-init')) {
             add_theme_support('automatic-feed-links');
 
             register_nav_menus([
-                'header-menu' => 'Header Menu',
+                'header_menu' => 'Header Menu',
                 'footer_menu_main' => 'Footer Menu Main',
                 'footer_menu_information' => 'Footer Menu Information'
             ]);

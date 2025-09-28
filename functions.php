@@ -21,5 +21,3 @@ $cyn_ajax = new cyn_ajax;
 $cyn_general = new cyn_general;
 $cyn_customize = new cyn_customize;
 $cyn_custom = new cyn_custom_code();
-
-
