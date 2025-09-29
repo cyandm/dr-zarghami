@@ -1978,6 +1978,12 @@ video {
           flex: 2;
 }
 
+.flex-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
+}
+
 .flex-shrink {
   -ms-flex-negative: 1;
       flex-shrink: 1;
@@ -2068,6 +2074,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
 }
 
 .touch-auto {
@@ -3179,6 +3189,11 @@ video {
   border-color: rgb(252 165 165 / var(--tw-border-opacity));
 }
 
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
 .bg-\[\#0694AA\] {
   --tw-bg-opacity: 1;
   background-color: rgb(6 148 170 / var(--tw-bg-opacity));
@@ -3674,6 +3689,11 @@ video {
 .text-red-1 {
   --tw-text-opacity: 1;
   color: rgb(225 39 39 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .text-white-2 {
@@ -5806,6 +5826,11 @@ img.custom-logo {
 .hover\:before\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
+}
+
+.focus\:border-blue-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
 }
 
 .focus\:outline-none:focus {

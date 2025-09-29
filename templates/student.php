@@ -112,7 +112,7 @@ $send_article_subtitle = get_field('send_article_subtitle');
                     </div>
 
                     <div class="form-group w-full p-4 rounded-2xl border border-gray-200 bg-[rgba(15,123,156,0.04)] backdrop-blur-sm">
-                        <label for="article_content" class="text-gray-600 text-base">محتوای مقاله:</label>
+                        <label for="article_content" class="text-gray-600 text-base cursor-default">محتوای مقاله: <span class="text-red-500">(میتوانید به جای نوشتن در جعبه متن از امکان آپلود فایل متنی که در زیر جعبه وجود دارد استفاده نمایید)</span></label>
                         <?php
                         wp_editor('', 'article_content', array(
                             'textarea_name' => 'article_content',
@@ -131,14 +131,23 @@ $send_article_subtitle = get_field('send_article_subtitle');
                                 'verify_html' => true,                  // اعتبارسنجی HTML
                                 'cleanup' => true,                      // پاکسازی کد
                                 'convert_urls' => false,                // جلوگیری از تبدیل خودکار URL
-                                // 🚫 محدود کردن تگ‌های مجاز
+                                //محدود کردن تگ‌های مجاز
                                 'valid_elements' => 'p,br,strong/b,em/i,u,strike,ol,ul,li,a[href|title],h1,h2,h3,h4,h5,h6,blockquote,pre,code,span[style],div[style]',
-                                // ❌ حذف تگ‌های خطرناک
+                                //حذف تگ‌های خطرناک
                                 'invalid_elements' => 'script,object,embed,iframe,form,input,textarea,button,select,option,applet,meta,link,style,base,basefont,frame,frameset,head,html,body,title,area,map,param,isindex,nextid,sound,bgsound,marquee,blink,comment,xml,import,meta,noscript'
 
                             )
                         ));
                         ?>
+                    </div>
+
+                    <div class="form-group w-full p-4 rounded-2xl border border-gray-200 bg-[rgba(15,123,156,0.04)] backdrop-blur-sm">
+                        <label for="article_content" class="text-gray-600 text-base cursor-default">آپلود فایل متنی: <span class="text-red-500">(فقط مجاز هستید فایل با فرمت Word(docx) و txt آپلود نمایید)</span></label>
+                        <input type="file"
+                            name="article_file"
+                            id="article_file"
+                            accept=".docx,.txt"
+                            class="w-full mt-2 p-2 border border-gray-300 rounded-lg cursor-pointer">
                     </div>
 
                     <div class="form-btn flex items-end justify-end w-full">

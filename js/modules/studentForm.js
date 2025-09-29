@@ -9,28 +9,44 @@ function studentForm() {
     e.preventDefault();
 
     const formData = new FormData(articleForm);
-    // formData.append("nonce", rest_details.nonce);
+    formData.append("nonce", rest_details.nonce);
 
     jQuery(($) => {
       $.ajax({
         url: rest_details.url + "cynApi/v1/studentForm",
-        type: "POST",
+        type: "post",
         cache: false,
         processData: false,
         contentType: false,
         data: formData,
-
-        beforeSend: function (xhr) {
-          xhr.setRequestHeader("X-WP-Nonce", rest_details.nonce);
-        },
 
         success: (res) => {
           successFormToast.showToast();
           articleForm.reset();
         },
 
-        error: (err) => {
-          errorToast.showToast();
+        error: (xhr, status, error) => {
+          // ✅ دریافت پیام خطا از سرور
+          let errorMessage = "خطایی رخ داده است";
+
+          try {
+            const response = JSON.parse(xhr.responseText);
+            if (response.data && response.data.error) {
+              errorMessage = response.data.error;
+            } else if (response.message) {
+              errorMessage = response.message;
+            }
+          } catch (e) {
+            console.error("Error parsing response:", e);
+          }
+
+          if (typeof errorToast.showToast === "function") {
+            errorToast.showToast();
+          }
+
+          console.error("Server Error:", errorMessage);
+
+          alert(errorMessage);
         },
       });
     });
