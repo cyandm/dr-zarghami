@@ -100,7 +100,6 @@ class cyn_ajax
         $title = sanitize_text_field($formData['title'] ?? '');
         $content = wp_kses_post(wpautop($formData['article_content'] ?? ''));
         $uploaded_file_url = '';
-        $file_content = '';
 
         if (!empty($_FILES['article_file']['name'])) {
             $file = $_FILES['article_file'];
@@ -130,12 +129,6 @@ class cyn_ajax
             }
 
             $uploaded_file_url = $uploaded_file['url'];
-
-            // ✅ استخراج متن از فایل txt
-            if ($file_ext === 'txt') {
-                $file_content = file_get_contents($uploaded_file['file']);
-                $file_content = sanitize_textarea_field($file_content);
-            }
         }
 
         // Validation
@@ -161,10 +154,6 @@ class cyn_ajax
             $post_content .= "<br>فایل آپلود شده: <a href='$uploaded_file_url' target='_blank'>دانلود فایل</a> <br>";
         }
 
-        if (!empty($file_content)) {
-            $post_content .= "<br>محتوای فایل txt: <br>" . nl2br($file_content);
-        }
-
         $new_post_ID = wp_insert_post([
             'post_type' => 'contact_form',
             'post_title' => $name . " (مقاله جدید)",
@@ -183,7 +172,7 @@ class cyn_ajax
             "<p>ایمیل: {$email}</p>" .
             "<p>تلفن: {$phone}</p>" .
             "<p>عنوان: {$title}</p>" .
-            "<p>محتوا: {$content}</p>";
+            "<p>محتوا: لطفا در قسمت فرم های سایت مشاهده نمایید</p>";
         $headers = ['Content-Type: text/html; charset=UTF-8'];
 
         wp_mail($to, $subject, $message, $headers);
