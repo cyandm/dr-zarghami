@@ -1,5 +1,5 @@
 <footer class="flex w-full flex-col items-center gap-4 max-md:gap-16">
-    <div class="container main-row gap-8 w-full">
+    <div class="container main-row gap-8 w-full leading-7">
 
         <div class="main-fotter-menu footer-widget">
             <h4 class="h4">دسترسی سریع</h4>

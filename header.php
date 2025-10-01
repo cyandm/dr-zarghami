@@ -18,6 +18,8 @@ $defaultCallNumber = get_field('call_number', $front_id);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= the_title() ?></title>
 
+    <script src="https://widget.arcaptcha.ir/1/api.js?domain=https://dr-zarghami.com" async defer></script>
+
     <?php wp_head() ?>
 
 </head>
